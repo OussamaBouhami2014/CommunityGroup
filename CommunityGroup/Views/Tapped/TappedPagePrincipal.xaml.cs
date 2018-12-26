@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CommunityGroup.Helpers;
 using FormsToolkit;
 using Xamarin.Forms;
 
@@ -32,14 +33,12 @@ namespace CommunityGroup.Views.Tapped
             {
                 var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
 
+                imgToolbarLogout.IsVisible = currentPage.Title == "Profile" ? true : false;
+
+                //imgToolbarLogout.IsVisible = currentPage.GetType() == typeof(Views.Profile.ProfilePage) ? true : false;
+
                 foreach (var item in this.Children)
                 {
-                    //if (string.IsNullOrWhiteSpace(item.Title))
-                    //{
-                    //    await Navigation.PushModalAsyncSingle(new Inscription.InscriptionPage(), true);
-                    //    return;
-                    //}
-
                     if (item != currentPage)
                     {
                         item.Icon = "icon" + item.Title + ".png";
@@ -50,6 +49,32 @@ namespace CommunityGroup.Views.Tapped
                     }
 
                 }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+
+        private async void Notifification_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private void Logout_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                Settings.ClearSettings();
+                Application.Current.MainPage = new NavigationPage(new Views.Login.LoginPage());
             }
             catch (Exception Ex)
             {

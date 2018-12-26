@@ -174,7 +174,7 @@
             </Style>
              <!--CellTitleStyle-->
              <Style x:Key="CellTitleStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource Accent}" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
                 <Setter Property="FontSize" Value="13" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" x:Class="CommunityGroup.Views.Chat.MessagesPage">
+    <ContentPage.Content>
+              <StackLayout Spacing="10" VerticalOptions="FillAndExpand">
+                <ListView x:Name="MessagesListView" BackgroundColor="Transparent" ItemsSource="{Binding ListActualite}" IsPullToRefreshEnabled="True" Refreshing="MessagesListView_Refreshing" HasUnevenRows="True" CachingStrategy="RecycleElementAndDataTemplate" ItemSelected="MessagesListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="Default" SeparatorColor="{StaticResource BorderColor}" Footer="" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                             <ContentView Padding="10,15" >
+            <Grid  ColumnSpacing="10" VerticalOptions="Start">
+       <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>   
+        
+     
+        <Image Grid.Column="0" Source="avatarHome.png" Aspect="AspectFill"/>
+        <StackLayout Grid.Column="1" >
+            <Label Text="Christian Crew" Style="{StaticResource CellTitleStyle}"/>
+            <Label Text="Christian Crew" Style="{StaticResource CellDetailStyle}"/>
+        </StackLayout>
+        
+         <StackLayout Grid.Column="2" >
+            <Label Text="9:32 AM" Style="{StaticResource CellTitleStyle}"/>
+        <Frame HeightRequest="10" WidthRequest="10" CornerRadius="5" HasShadow="false" Padding="0" BackgroundColor="Green" HorizontalOptions="End"/>
+        </StackLayout>
+    </Grid>
+        </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+         
+                 <!--  <StackLayout Grid.Row="0" Spacing="10" x:Name="viewAucunResultat" Opacity=".2" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" IsVisible="false" Padding="50,0">
+                        <FF:CachedImage Source="iconNotFound" HeightRequest="60" WidthRequest="60" VerticalOptions="Center"/>
+                        <Label Text="Aucun résultat trouvé !" FontAttributes="Bold" TextColor="{StaticResource DarkTextColor}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" VerticalOptions="Start" />
+                    </StackLayout>-->
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

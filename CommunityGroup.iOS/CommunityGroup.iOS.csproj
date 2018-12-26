@@ -263,6 +263,10 @@
     <BundleResource Include="Resources\iconActualite%402x.png" />
     <BundleResource Include="Resources\iconActualite%403x.png" />
     <BundleResource Include="Resources\iconLogout.png" />
+    <BundleResource Include="Resources\iconNotif.png" />
+    <BundleResource Include="Resources\iconNotifActive.png" />
+    <BundleResource Include="Resources\avatarWomen.png" />
+    <BundleResource Include="Resources\avatarHome.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

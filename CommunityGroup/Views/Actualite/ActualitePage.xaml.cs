@@ -39,9 +39,10 @@ namespace CommunityGroup.Views.Actualite
             if (item == null)
                 return;
 
-            //await Application.Current.MainPage.Navigation.PushAsyncSingle(new Views.Actualite.ActualiteDetailPage(item));
+            await Application.Current.MainPage.Navigation.PushAsyncSingle(new Views.Actualite.ActualiteDetailPage(item));
 
             ((ListView)sender).SelectedItem = null;
         }
+    
     }
 }
