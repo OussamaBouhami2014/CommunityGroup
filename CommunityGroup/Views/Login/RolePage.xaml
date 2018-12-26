@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:control="clr-namespace:CommunityGroup.Controls"
+             x:Class="CommunityGroup.Views.Login.RolePage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+        <Label Text="Je suis..." FontSize="18" Style="{StaticResource TitleBoldStyle}" />    
+        <StackLayout Padding="20,10" >
+                <control:CustomButton CBText="Un stagiaire" CBBackgroundColor="{StaticResource Accent}" CBTextColor="{StaticResource White}" Style="{StaticResource ButtonStyle}" Clicked="Stagiaire_Clicked"/>
+                <control:CustomButton CBText="Un chercheur" CBBackgroundColor="{StaticResource Accent}" CBTextColor="{StaticResource White}" Style="{StaticResource ButtonStyle}"   Clicked="Stagiaire_Clicked"/>
+                <control:CustomButton CBText="..." CBBackgroundColor="{StaticResource Accent}" CBTextColor="{StaticResource White}"  Style="{StaticResource ButtonStyle}"  Clicked="Stagiaire_Clicked"/>
+            </StackLayout>
+    </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.Splash" parent="MainTheme.Base">
+        <!--        <item name="android:windowBackground">@drawable/profileBackground</item>-->
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="LightDrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#ffffff</item>
+    </style>
+    <style name="DarkDrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#696969</item>
+    </style>
+    
     <style name="MainTheme" parent="MainTheme.Base">
+        <item name="android:background">@color/transparent</item>
+        <!--to change listview pressed orange color-->
+        <item name="android:colorPressedHighlight">@color/colorHighlight</item>
+        <item name="android:colorLongPressedHighlight">@color/colorHighlight</item>
+        <item name="android:colorFocusedHighlight">@color/colorHighlight</item>
+        <item name="android:colorActivatedHighlight">@color/colorHighlight</item>
+        <!--to change listview pressed orange color-->
+        <item name="android:windowFullscreen">true</item>
+        <!--to change navigation icon color-->
+          <item name="android:statusBarColor">@color/colorStatutBar</item>
     </style>
     <!-- Base theme applied no matter what API -->
     <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -10,18 +31,20 @@
         <item name="windowActionBar">false</item>
         <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
         <!-- colorPrimary is used for the default action bar background -->
-        <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <!-- colorPrimaryDark is used for the status bar -->
-        <item name="colorPrimaryDark">#1976D2</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
         <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-        <item name="colorAccent">#FF4081</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--to remove listview pressed orange color-->
+        <!--to remove listview pressed orange color-->
         <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
         <item name="windowActionModeOverlay">true</item>
         <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
     </style>
     <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent">#FF4081</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 </resources>

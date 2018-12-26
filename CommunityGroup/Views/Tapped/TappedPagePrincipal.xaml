@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control:BottomNavTabPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local_Accueil="clr-namespace:CommunityGroup.Views.Accueil"
+             xmlns:local_Profile="clr-namespace:CommunityGroup.Views.Profile"
+             xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             x:Class="CommunityGroup.Views.Tapped.TappedPagePrincipal"
+             xmlns:control="clr-namespace:CommunityGroup.Controls" 
+             BarBackgroundColor="{StaticResource Primary}"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="{StaticResource White}"
+            android:TabbedPage.BarSelectedItemColor="{StaticResource Accent}">
+  <!--  <NavigationPage.TitleView>
+        <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <FF:CachedImage x:Name="imgToolbarLogo"  Source="logoA4CWhite.png" Aspect="AspectFit" WidthRequest="{OnPlatform Android='90' iOS='90' Default='90'}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        </Grid>
+    </NavigationPage.TitleView>-->
+
+    <TabbedPage.Children>
+        <NavigationPage Title="Accueil" Icon="profil.png">
+            <x:Arguments>
+                <local_Accueil:AccueilPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="..." Icon="profil.png">
+            <x:Arguments>
+                     <local_Accueil:AccueilPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="..." Icon="profil.png">
+            <x:Arguments>
+                    <local_Accueil:AccueilPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="..." Icon="profil.png">
+            <x:Arguments>
+                     <local_Accueil:AccueilPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Profil" Icon="profil.png">
+            <x:Arguments>
+                <local_Profile:ProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</control:BottomNavTabPage>

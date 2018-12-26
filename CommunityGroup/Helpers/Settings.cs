@@ -383,6 +383,24 @@ namespace CommunityGroup.Helpers
 
         #endregion
 
+
+        #region IsLogOut
+        private const string IsLogOutKey = "IsLogOutKey";
+        private static readonly bool IsLogOutDefault = true;
+
+        public static bool IsLogOut
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(IsLogOutKey, IsLogOutDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(IsLogOutKey, value);
+            }
+        }
+        #endregion
+
         //#region IsLogOut
         //private const string IsLogOutKey = "IsLogOutKey";
         //private static readonly bool IsLogOutDefault = false;

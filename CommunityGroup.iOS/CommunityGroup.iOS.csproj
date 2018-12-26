@@ -95,6 +95,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Effects\EntryMoveNextEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -185,5 +186,43 @@
     <BundleResource Include="Resources\animSwipe.json" />
     <BundleResource Include="Resources\animMirrorLoading.json" />
     <BundleResource Include="Resources\animLoading.json" />
+    <BundleResource Include="Resources\profil%403x.png" />
+    <BundleResource Include="Resources\add%401x.png" />
+    <BundleResource Include="Resources\add%402x.png" />
+    <BundleResource Include="Resources\add%403x.png" />
+    <BundleResource Include="Resources\avatarProfil.png" />
+    <BundleResource Include="Resources\iconAdd.png" />
+    <BundleResource Include="Resources\iconAddWhite%401x.png" />
+    <BundleResource Include="Resources\iconAddWhite%402x.png" />
+    <BundleResource Include="Resources\iconAddWhite%403x.png" />
+    <BundleResource Include="Resources\iconCamera%401x.png" />
+    <BundleResource Include="Resources\iconCamera%402x.png" />
+    <BundleResource Include="Resources\iconCamera%403x.png" />
+    <BundleResource Include="Resources\iconClose%401x.png" />
+    <BundleResource Include="Resources\iconClose%402x.png" />
+    <BundleResource Include="Resources\iconClose%403x.png" />
+    <BundleResource Include="Resources\iconGallery%401x.png" />
+    <BundleResource Include="Resources\iconGallery%402x.png" />
+    <BundleResource Include="Resources\iconGallery%403x.png" />
+    <BundleResource Include="Resources\iconShowPassword%401x.png" />
+    <BundleResource Include="Resources\iconShowPassword%402x.png" />
+    <BundleResource Include="Resources\iconShowPassword%403x.png" />
+    <BundleResource Include="Resources\iconShowPasswordGray%401x.png" />
+    <BundleResource Include="Resources\iconShowPasswordGray%402x.png" />
+    <BundleResource Include="Resources\iconShowPasswordGray%403x.png" />
+    <BundleResource Include="Resources\info_blanc%401x.png" />
+    <BundleResource Include="Resources\info_blanc%402x.png" />
+    <BundleResource Include="Resources\info_blanc%403x.png" />
+    <BundleResource Include="Resources\info%401x.png" />
+    <BundleResource Include="Resources\info%402x.png" />
+    <BundleResource Include="Resources\info%403x.png" />
+    <BundleResource Include="Resources\next%401x.png" />
+    <BundleResource Include="Resources\next%402x.png" />
+    <BundleResource Include="Resources\next%403x.png" />
+    <BundleResource Include="Resources\profil%401x.png" />
+    <BundleResource Include="Resources\profil%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Effects\" />
   </ItemGroup>
 </Project>

@@ -30,5 +30,15 @@
     <Folder Include="Popups\" />
     <Folder Include="Enums\" />
     <Folder Include="Constants\" />
+    <Folder Include="Views\ Inscription\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Tapped\" />
+    <Folder Include="Views\Accueil\" />
+    <Folder Include="Controls\RadioButton\" />
+    <Folder Include="Views\Profile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Controls\CustomDatePicker.xml" />
   </ItemGroup>
 </Project>

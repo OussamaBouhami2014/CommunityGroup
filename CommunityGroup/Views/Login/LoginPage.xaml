@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base:BasePage xmlns:base="clr-namespace:CommunityGroup.Views" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Login.LoginPage" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" Title="Login" BackgroundColor="{StaticResource LightBackgroundColor}">
+    <base:BasePage.Content>
+        <ScrollView>
+            <Grid x:Name="viewPage">
+                <Grid x:Name="viewBackground" >
+                </Grid>
+                <Grid x:Name="viewMain" Opacity="1">
+                        <StackLayout Spacing="30" >
+                            <Grid x:Name="viewLogo" Padding="20,0"  Grid.Row="0" HeightRequest="100" WidthRequest="200" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" >
+                                <Image Source="info.png"/>
+                                <Image  x:Name="imageLogo" Source="info.png" />
+                            </Grid>
+                            
+                            <StackLayout x:Name="viewInputs" Padding="20,0"  VerticalOptions="CenterAndExpand"  Spacing="50">
+                               
+                                <StackLayout Spacing="5" VerticalOptions="Center">
+                             
+                                    <control:CustomEntry x:Name="EntryUsername" IsTextPredictionEnabled="false" Keyboard="Email" Placeholder="Nom d'utilisateur" PlaceholderColor="{StaticResource LightTextColor}" BackgroundColor="{StaticResource White}" FontSize="15" ErrorText="{Binding User.Email.NotValidMessageError}" Text="{Binding User.Email.Name}" ReturnType="Next"
+                                        Completed="EntryUsername_Completed" IsBorderErrorVisible="{Binding User.Email.IsNotValid, Mode=TwoWay}">
+                                        <control:CustomEntry.Keyboard>
+                                            <Keyboard x:FactoryMethod="Create">
+                                                <x:Arguments>
+                                                    <KeyboardFlags>CapitalizeNone</KeyboardFlags>
+                                                </x:Arguments>
+                                            </Keyboard>
+                                        </control:CustomEntry.Keyboard>
+                                    </control:CustomEntry>
+                                    <Grid>
+                                        <control:CustomEntry x:Name="EntryPassword" IsTextPredictionEnabled="false" Grid.Row="0" Placeholder="Mot de passe" PlaceholderColor="{StaticResource LightTextColor}" BackgroundColor="{StaticResource White}" FontSize="15" IsPassword="True" ReturnType="Done" ErrorText="{Binding User.Password.NotValidMessageError}"
+                                            Text="{Binding User.Password.Name}" Completed="BtnLogin_Clicked" IsBorderErrorVisible="{Binding User.Password.IsNotValid, Mode=TwoWay}">
+                                            <control:CustomEntry.Keyboard>
+                                                <Keyboard x:FactoryMethod="Create">
+                                                    <x:Arguments>
+                                                        <KeyboardFlags>CapitalizeNone</KeyboardFlags>
+                                                    </x:Arguments>
+                                                </Keyboard>
+                                            </control:CustomEntry.Keyboard>
+                                        </control:CustomEntry>
+                                    <control:CustomButton x:Name="btnShowPassword" CBImage="iconShowPasswordGray.png" CBHasShadow="false" CBPadding="10" CBBackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" CBImageWidthRequest="20" CBImageHeightRequest="20" StyleCorner="Default" Clicked="ShowPassword_Clicked" />
+                                    
+                                    </Grid>
+                                </StackLayout>
+                                     <StackLayout Spacing="5"  VerticalOptions="Start">
+                                    <control:CustomButton x:Name="BtnConnect" CBText="CONNEXION" CBTextColor="{StaticResource White}" CBBackgroundColor="{StaticResource Primary}" CBCornerRaduis="20" Clicked="BtnLogin_Clicked" />
+                              
+                                </StackLayout>
+                             <StackLayout Spacing="5">
+                                <StackLayout Orientation="Horizontal">
+                                    <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
+                                    <Label Text="OU" FontSize="15" TextColor="{StaticResource White}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                                    <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                                    <control:CustomButton x:Name="BtnFacebook" CBText="Connexion Via Facebook"  CBImage="info.png" CBImageWidthRequest="15" CBImageHeightRequest="15" ImageAlignment="Left" CBTextColor="{StaticResource DarkTextColor}" CBBackgroundColor="#3b5998" CBCornerRaduis="20" Clicked="BtnLogin_Clicked" />
+                                    <control:CustomButton x:Name="BtnGoogle" CBText="Connexion Via Google" CBTextColor="{StaticResource DarkTextColor}" CBBackgroundColor="#db3236" CBCornerRaduis="20" Clicked="BtnLogin_Clicked" />
+                        </StackLayout>
+                            </StackLayout>
+                         <Grid BackgroundColor="#50c9f658" VerticalOptions="EndAndExpand" Padding="5">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="Vous n'avez pas de compte?" FontSize="15" TextColor="{StaticResource White}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                                    <control:CustomButton CBPadding="0" CBFontSize="18"  CBText="S'inscrire." CBFontAttributes="Bold" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" CBHasShadow="false"  Clicked="Inscription_Clicked" />
+                                    
+                                    </StackLayout>
+                                    </Grid>
+                        </StackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </base:BasePage.Content>
+</base:BasePage>

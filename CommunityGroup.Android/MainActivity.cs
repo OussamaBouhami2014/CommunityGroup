@@ -21,7 +21,7 @@ namespace CommunityGroup.Droid
 
             base.OnCreate(savedInstanceState);
 
-            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            //Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             #region Initialize plugins
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
@@ -182,7 +182,6 @@ namespace CommunityGroup.Droid
                 .SetTitle("Crash Report")
                 .Show();
         }
-
 
         #endregion
 
