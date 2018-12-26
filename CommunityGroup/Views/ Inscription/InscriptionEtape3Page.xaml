@@ -3,14 +3,64 @@
              x:Class="CommunityGroup.Views.Inscription.InscriptionEtape3Page">
     <ContentView.Content>
          <ScrollView>
-         <StackLayout Spacing="5" Padding="20" >
-                                <StackLayout VerticalOptions="CenterAndExpand">
+         <StackLayout Spacing="5" Padding="20,150,20,50" >
+                <StackLayout Spacing="5" HorizontalOptions="Center"  VerticalOptions="CenterAndExpand">
+              
+                    <Frame x:Name="viewPhotoProfil" HeightRequest="100" WidthRequest="100" CornerRadius="50" HorizontalOptions="CenterAndExpand" OutlineColor="Gray" Padding="0" IsClippedToBounds="True" HasShadow="False" IsVisible="true">
+                    <Image  x:Name="imgPhotoProfil" Source="iconUserProfile.png" Aspect="AspectFill" HorizontalOptions="FillAndExpand" />
+                       
+                         </Frame>
+                                    <control:CustomButton x:Name="BtnCamera" CBText="Modifier" StyleCorner="Default"  CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBTextColor="{StaticResource Accent}" CBPadding="0" CBBackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="Galerie_Clicked" />
+                    </StackLayout>
+                                <StackLayout VerticalOptions="StartAndExpand">
     <control:CustomEntry x:Name="txtNom" Placeholder="Nom" NextView="{x:Reference txtPrenom}" Style="{StaticResource EntryStyle}" />
                         <control:CustomEntry x:Name="txtPrenom"  Placeholder="Prénom"  NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
                         <control:CustomEntry x:Name="txtEmail"  Placeholder="E-mail" Keyboard="Email" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
-                        <control:CustomEntry x:Name="txtPhone"  Placeholder="Téléphone" Keyboard="Telephone" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
-
-            </StackLayout>
+                        <control:CustomEntry x:Name="txtPhone"  Placeholder="Téléphone" Keyboard="Telephone" NextView="{x:Reference dateNaissance}" Style="{StaticResource EntryStyle}"/>
+                        <control:CustomDatePicker x:Name="dateNaissance" NextView="{x:Reference txtPhone}" Style="{StaticResource DatePickerStyle}"/>
+                          <control:CustomPicker x:Name="PickerRaison" Title="Raison de mobilité" TextColor="{StaticResource DarkTextColor}" RightImage="iconChecked" FontSize="12">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Personnel</x:String>
+                                    <x:String>Santé</x:String>
+                                    <x:String>à définir</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </control:CustomPicker>
+                       <control:CustomPicker x:Name="PickerSiteDestination" Title="Site Destination" TextColor="{StaticResource DarkTextColor}" RightImage="iconChecked" FontSize="12">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Jorf</x:String>
+                                    <x:String>Siège</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </control:CustomPicker>
+                    
+                         <control:CustomPicker x:Name="PickerEntiteDestination" Title="Entité Destination" TextColor="{StaticResource DarkTextColor}" RightImage="iconChecked" FontSize="12">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>OIJ/E</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </control:CustomPicker>
+                    <control:CustomEntry x:Name="txtPsone"  Placeholder="Niveau d'etude" Keyboard="Telephone" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
+                        <control:CustomEntry x:Name="txtPshone"  Placeholder="Diplome" Keyboard="Telephone" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
+                           <control:CustomPicker x:Name="PickerPermutant" Title="Permutant" TextColor="{StaticResource DarkTextColor}" RightImage="iconChecked" FontSize="12">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>MALAL Zakariae (7282)</x:String>
+                                    <x:String>RACHID Mohammed (09087)</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </control:CustomPicker>
+                     <control:CustomEntry x:Name="txtMotivation" FontSize="15" HeightRequest="100" TextColor="{StaticResource DarkTextColor}" HorizontalOptions="FillAndExpand" />
+             <StackLayout Spacing="20">
+                        <StackLayout Spacing="10">
+                            <Label Text="DIPLÔME" TextColor="{StaticResource DarkTextColor}" FontSize="12" FontAttributes="Bold" />
+                        </StackLayout>
+                        <control:CustomButton CBImage="iconAdd.png" CBHasShadow="false" StyleCorner="Default" CBBackgroundColor="Transparent" Clicked="AddDiplome_Clicked" />
+                    </StackLayout>
+                </StackLayout>
                         </StackLayout>
             </ScrollView>
     </ContentView.Content>

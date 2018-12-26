@@ -176,6 +176,9 @@
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
       <Version>2.6.3</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.0.1.5</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -279,6 +282,7 @@
     <BundleResource Include="Resources\iconGoogle.png" />
     <BundleResource Include="Resources\iconLinkedin.png" />
     <BundleResource Include="Resources\iconFacebook.png" />
+    <BundleResource Include="Resources\iconUserProfile.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
