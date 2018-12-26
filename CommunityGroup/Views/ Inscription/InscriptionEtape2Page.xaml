@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" BackgroundColor="{StaticResource LightBackgroundColor}" x:Class="CommunityGroup.Views.Inscription.InscriptionEtape2Page">
     <ContentView.Content>
-         <ScrollView>
-         <StackLayout Spacing="5" Padding="20" >
-                                <StackLayout VerticalOptions="CenterAndExpand">
-    <control:CustomEntry x:Name="txtNom" Placeholder="Nom" NextView="{x:Reference txtPrenom}" Style="{StaticResource EntryStyle}" />
-                        <control:CustomEntry x:Name="txtPrenom"  Placeholder="Prénom"  NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
-                        <control:CustomEntry x:Name="txtEmail"  Placeholder="E-mail" Keyboard="Email" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
-                        <control:CustomEntry x:Name="txtPhone"  Placeholder="Téléphone" Keyboard="Telephone" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
-
+                   <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" Padding="20">
+        <Label Text="Je suis..." FontSize="18" Style="{StaticResource TitleBoldStyle}" TextColor="{StaticResource DarkTextColor}" />    
+        <StackLayout Padding="20,10" >
+                                    <control:CustomButton x:Name="BtnStagiaire" CBText="Un stagiaire" CBHasShadow="false "  CBBorderColor="{StaticResource Accent}" CBTextColor="{StaticResource DarkTextColor}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
+                                    <control:CustomButton x:Name="BtnChercheur" CBText="Un chercheur" CBHasShadow="false "  CBBorderColor="{StaticResource Accent}" CBTextColor="{StaticResource DarkTextColor}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
+                                    <control:CustomButton x:Name="BtnPoste" CBText="En poste" CBHasShadow="false "  CBBorderColor="{StaticResource Accent}" CBTextColor="{StaticResource DarkTextColor}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
+                                    <control:CustomButton x:Name="BtnRechercheEmploi" CBText="En recherche d'emploi" CBHasShadow="false "  CBBorderColor="{StaticResource Accent}" CBTextColor="{StaticResource DarkTextColor}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
             </StackLayout>
-                        </StackLayout>
+    </StackLayout>
             </ScrollView>
-
     </ContentView.Content>
 </ContentView>

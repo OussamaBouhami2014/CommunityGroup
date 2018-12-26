@@ -12,10 +12,12 @@ namespace CommunityGroup.Views.Inscription
             InitializeComponent();
         }
 
-        private async void Inscription_Clicked(object sender, System.EventArgs e)
+        private void Inscription_Clicked(object sender, System.EventArgs e)
         {
-            //await Navigation.PushAsyncSingle(new Login.LoginPage(), true);
+            Application.Current.MainPage = new NavigationPage(new Tapped.TappedPagePrincipal());
         }
+
+       
 
     }
 }

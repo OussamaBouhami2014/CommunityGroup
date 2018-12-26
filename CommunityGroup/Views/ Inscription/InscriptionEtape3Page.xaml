@@ -2,16 +2,16 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="{StaticResource LightBackgroundColor}" xmlns:control="clr-namespace:CommunityGroup.Controls"
              x:Class="CommunityGroup.Views.Inscription.InscriptionEtape3Page">
     <ContentView.Content>
-           <ScrollView>
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
-        <Label Text="Je suis..." FontSize="18" Style="{StaticResource TitleBoldStyle}" />    
-        <StackLayout Padding="20,10" >
-                                    <control:CustomButton x:Name="BtnStagiaire" CBText="Un stagiaire" CBHasShadow="false "  CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
-                                    <control:CustomButton x:Name="BtnChercheur" CBText="Un chercheur" CBHasShadow="false "  CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
-                                    <control:CustomButton x:Name="BtnChoixTrois" CBText=".." CBHasShadow="false "  CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
-            </StackLayout>
-    </StackLayout>
-            </ScrollView>
+         <ScrollView>
+         <StackLayout Spacing="5" Padding="20" >
+                                <StackLayout VerticalOptions="CenterAndExpand">
+    <control:CustomEntry x:Name="txtNom" Placeholder="Nom" NextView="{x:Reference txtPrenom}" Style="{StaticResource EntryStyle}" />
+                        <control:CustomEntry x:Name="txtPrenom"  Placeholder="Prénom"  NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
+                        <control:CustomEntry x:Name="txtEmail"  Placeholder="E-mail" Keyboard="Email" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
+                        <control:CustomEntry x:Name="txtPhone"  Placeholder="Téléphone" Keyboard="Telephone" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
 
+            </StackLayout>
+                        </StackLayout>
+            </ScrollView>
     </ContentView.Content>
 </ContentView>
