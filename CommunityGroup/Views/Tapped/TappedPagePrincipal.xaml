@@ -2,6 +2,9 @@
 <control:BottomNavTabPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local_Accueil="clr-namespace:CommunityGroup.Views.Accueil"
+             xmlns:local_Story="clr-namespace:CommunityGroup.Views.Story"
+             xmlns:local_Chat="clr-namespace:CommunityGroup.Views.Chat"
+             xmlns:local_Actualite="clr-namespace:CommunityGroup.Views.Actualite"
              xmlns:local_Profile="clr-namespace:CommunityGroup.Views.Profile"
              xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
              x:Class="CommunityGroup.Views.Tapped.TappedPagePrincipal"
@@ -18,24 +21,24 @@
     </NavigationPage.TitleView>
 
     <TabbedPage.Children>
-        <NavigationPage x:Name="page1" Title="Accueil" Icon="iconAccueilActive.png">
+        <NavigationPage Title="Accueil" Icon="iconAccueilActive.png">
             <x:Arguments>
                 <local_Accueil:AccueilPage />
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Actualite" Icon="iconActualite.png">
             <x:Arguments>
-                     <local_Accueil:AccueilPage />
+                     <local_Actualite:ActualitePage />
             </x:Arguments>
         </NavigationPage>
            <NavigationPage Title="Story" Icon="iconStory.png">
             <x:Arguments>
-                    <local_Accueil:AccueilPage />
+                    <local_Story:StoryPage />
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Chat" Icon="iconChat.png" >
             <x:Arguments>
-                    <local_Accueil:AccueilPage />
+                    <local_Chat:ChatPage />
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Profile" Icon="iconProfile.png">

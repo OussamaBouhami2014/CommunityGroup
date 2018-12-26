@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace CommunityGroup.Views.Profile
+namespace CommunityGroup.Views.Chat
 {
-    public partial class ProfilePage : ContentPage
+    public partial class ChatPage : ContentPage
     {
-        public ProfilePage()
+        public ChatPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);

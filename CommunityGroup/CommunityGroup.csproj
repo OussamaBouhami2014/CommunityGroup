@@ -39,6 +39,9 @@
     <Folder Include="Controls\RadioButton\" />
     <Folder Include="Views\Profile\" />
     <Folder Include="ViewModels\Base\" />
+    <Folder Include="Views\Story\" />
+    <Folder Include="Views\Chat\" />
+    <Folder Include="Views\Actualite\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controls\CustomDatePicker.xml" />

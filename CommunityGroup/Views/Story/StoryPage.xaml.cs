@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace CommunityGroup.Views.Profile
+namespace CommunityGroup.Views.Story
 {
-    public partial class ProfilePage : ContentPage
+    public partial class StoryPage : ContentPage
     {
-        public ProfilePage()
+        public StoryPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);

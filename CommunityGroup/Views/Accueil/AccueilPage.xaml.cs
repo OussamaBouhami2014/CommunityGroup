@@ -9,6 +9,8 @@ namespace CommunityGroup.Views.Accueil
         public AccueilPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
     }
 }
