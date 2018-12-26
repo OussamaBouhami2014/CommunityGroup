@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CommunityGroup.Helpers;
@@ -234,7 +234,7 @@ namespace CommunityGroup.Views.Login
 
                 //Settings.IsLogOut = false;
 
-                //Application.Current.MainPage = new NavigationPage(new Tapped.A4CTappedPage());
+                Application.Current.MainPage = new NavigationPage(new Tapped.TappedPagePrincipal());
 
             }
             catch (Exception ex)
@@ -277,8 +277,8 @@ namespace CommunityGroup.Views.Login
 
         private async void Inscription_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsyncSingle(new Login.LoginPage(), true);
+            await Navigation.PushAsyncSingle(new Inscription.InscriptionPage(), true);
         }
-
+      
     }
 }   

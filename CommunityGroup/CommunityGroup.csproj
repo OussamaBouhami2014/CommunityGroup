@@ -37,6 +37,7 @@
     <Folder Include="Views\Accueil\" />
     <Folder Include="Controls\RadioButton\" />
     <Folder Include="Views\Profile\" />
+    <Folder Include="ViewModels\Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controls\CustomDatePicker.xml" />

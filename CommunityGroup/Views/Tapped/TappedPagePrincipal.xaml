@@ -6,10 +6,10 @@
              xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
              x:Class="CommunityGroup.Views.Tapped.TappedPagePrincipal"
              xmlns:control="clr-namespace:CommunityGroup.Controls" 
-             BarBackgroundColor="{StaticResource Primary}"
+             BarBackgroundColor="{StaticResource LightBackgroundColor}"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            android:TabbedPage.BarItemColor="{StaticResource White}"
+            android:TabbedPage.BarItemColor="{StaticResource Black}"
             android:TabbedPage.BarSelectedItemColor="{StaticResource Accent}">
   <!--  <NavigationPage.TitleView>
         <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
@@ -18,7 +18,7 @@
     </NavigationPage.TitleView>-->
 
     <TabbedPage.Children>
-        <NavigationPage Title="Accueil" Icon="profil.png">
+        <NavigationPage x:Name="page1" Title="Accueil" Icon="profil.png">
             <x:Arguments>
                 <local_Accueil:AccueilPage />
             </x:Arguments>

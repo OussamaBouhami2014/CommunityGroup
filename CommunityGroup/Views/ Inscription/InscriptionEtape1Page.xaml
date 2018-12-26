@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls"
+             x:Class="CommunityGroup.Views.Inscription.InscriptionEtape1Page">
+    <ContentPage.Content>
+          <ScrollView>
+         <StackLayout Spacing="5" Padding="20" >
+                                <StackLayout VerticalOptions="CenterAndExpand">
+    <control:CustomEntry x:Name="txtNom" Placeholder="Nom" NextView="{x:Reference txtPrenom}" Style="{StaticResource EntryStyle}" />
+                        <control:CustomEntry x:Name="txtPrenom"  Placeholder="Prénom"  NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
+                        <control:CustomEntry x:Name="txtEmail"  Placeholder="E-mail" Keyboard="Email" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
+                        <control:CustomEntry x:Name="txtPhone"  Placeholder="Téléphone" Keyboard="Telephone" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
+
+            </StackLayout>
+                                    <control:CustomButton x:Name="BtnInscription" CBHasShadow="false " CBText="M'INSCRIRE" CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
+                        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

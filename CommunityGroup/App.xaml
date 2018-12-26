@@ -2,11 +2,12 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" x:Class="CommunityGroup.App">
  <Application.Resources>
         
-            <Color x:Key="Primary">#c9f658</Color>
+<!--            <Color x:Key="Primary">#c9f658</Color>-->
+            <Color x:Key="Primary">#55968f</Color>
             <Color x:Key="PrimaryDark">#dbff3d</Color>
             <Color x:Key="PrimaryLight">#098EC6</Color>
         
-            <Color x:Key="Accent">#55968f</Color>
+            <Color x:Key="Accent">#c9f658</Color>
             <Color x:Key="AccentDark">#8acbbb</Color>
             <Color x:Key="AccentLight">#85C735</Color>
 
@@ -57,9 +58,9 @@
         
         
            <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource LightBackgroundColor}" />
-                <Setter Property="BarTextColor" Value="{StaticResource DarkTextColor}" />
-                <Setter Property="Tint" Value="{StaticResource DarkTextColor}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="{StaticResource White}" />
+                <Setter Property="Tint" Value="{StaticResource White}" />
             </Style>
         
         

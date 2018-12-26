@@ -8,7 +8,7 @@ namespace CommunityGroup
 {
     public partial class App : Application
     {
-        public static string PrimaryColor = "#c9f658";
+        public static string PrimaryColor = "#55968f";
         public static string PrimaryDarkColor = "#082b4b";
         public static string Accent = "#44b98c";
 
@@ -43,8 +43,7 @@ namespace CommunityGroup
 
             if (Settings.IsLogOut)
             {
-                MainPage = new NavigationPage(new Views.Login.RolePage());
-                //MainPage = new NavigationPage(new Views.Login.LoginPage());
+                MainPage = new NavigationPage(new Views.Login.LoginPage());
             }
             else
             {

@@ -28,7 +28,7 @@ namespace CommunityGroup.Views.Tapped
 
         private void OnCurrentPageChanged(object sender, EventArgs e)
         {
-
+            //page1.Icon = "info";
         }
 
         protected override void OnAppearing()
@@ -48,11 +48,9 @@ namespace CommunityGroup.Views.Tapped
         {
             base.OnDisappearing();
 
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(App.Accent);
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(App.PrimaryColor);
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex(App.WhiteColor);
-            //MessagingCenter.Send<A4CTappedPage, string>(this, MessageKeys.ChangeStatutBarColor, App.Accent);
-
+            MessagingService.Current.SendMessage(MessageKeys.ChangeStatutBarColor, App.PrimaryColor);
         }
-
     }
 }
