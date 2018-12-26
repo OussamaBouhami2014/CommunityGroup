@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-  
+  xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" 
              xmlns:control="clr-namespace:CommunityGroup.Controls"
              x:Class="CommunityGroup.Views.Inscription.InscriptionPage" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand" BackgroundColor="White">
-        <!--    <CarouselView:CarouselView Grid.Row="0" x:Name="MyCarouselView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ItemSelected="Carousel_ItemSelected" PositionSelected="MyCarouselView_PositionSelected" Position="{Binding Position, Mode=TwoWay}">
+            <CarouselView:CarouselView Grid.Row="0" x:Name="MyCarouselView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ItemSelected="Carousel_ItemSelected" PositionSelected="MyCarouselView_PositionSelected" Position="{Binding Position, Mode=TwoWay}">
                 <CarouselView:CarouselView.ItemTemplate>
-                    <control:CarouselViewConnexionTemplateSelector />
+                    <control:CarouselViewInscriptionTemplateSelector />
                 </CarouselView:CarouselView.ItemTemplate>
-            </CarouselView:CarouselView>-->
+            </CarouselView:CarouselView>
 
            <Grid Grid.Row="0"   Padding="{OnPlatform Android='20,20,20,0', iOS='20,40,20,0', Default='20'}" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
-                <Image Source="ic_action_navigation_close" HeightRequest="30" WidthRequest="30" Aspect="AspectFit" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Image Source="iconClose.png" HeightRequest="30" WidthRequest="30" Aspect="AspectFit" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                 <Grid.GestureRecognizers>
-<!--                    <TapGestureRecognizer Tapped="Close_Clicked"/>-->
+                    <TapGestureRecognizer Tapped="Close_Clicked"/>
                 </Grid.GestureRecognizers>
             </Grid>
             
             <Grid Grid.Row="0" VerticalOptions="End" HorizontalOptions="FillAndExpand">
-                <lottie:AnimationView Grid.Row="0" x:Name="animationView" Animation="animWaves.json" Loop="true" AutoPlay="true" />
+                <lottie:AnimationView Grid.Row="0" x:Name="animationView"  Animation="animWaves.json" Loop="true" AutoPlay="true"/>
                 <Grid Grid.Row="0" VerticalOptions="EndAndExpand" Padding="0,5">
-<!--                    <control:CustomButton Grid.Column="0" HorizontalOptions="Start" CBText="IGNORER" CBTextColor="{StaticResource White}" CBBackgroundColor="Transparent" CBHasShadow="false" CBCornerRaduis="20" Clicked="Close_Clicked" />-->
-<!--                    <carousel:CarouselIndicators x:Name="carouselIndicators" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" IndicatorHeight="12" IndicatorWidth="12" UnselectedIndicator="whiteCircle.png" SelectedIndicator="whiteCircle.png" Position="{Binding Position}" />-->
-<!--                    <control:CustomButton x:Name="txtSuivant" Grid.Column="2" HorizontalOptions="End"  CBText="SUIVANT" CBTextColor="{StaticResource White}" CBBackgroundColor="Transparent" CBHasShadow="false" CBCornerRaduis="20" Clicked="Suivant_Clicked" />-->
+                    <control:CustomButton Grid.Column="0" HorizontalOptions="Start" CBText="IGNORER" CBTextColor="{StaticResource White}" CBBackgroundColor="Transparent" CBHasShadow="false" CBCornerRaduis="20" Clicked="Close_Clicked" />
+                    <control:CarouselIndicators x:Name="carouselIndicators" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" IndicatorHeight="12" IndicatorWidth="12" UnselectedIndicator="whiteCircle.png" SelectedIndicator="whiteCircle.png" Position="{Binding Position}" />
+                    <control:CustomButton x:Name="txtSuivant" Grid.Column="2" HorizontalOptions="End"  CBText="SUIVANT" CBTextColor="{StaticResource White}" CBBackgroundColor="Transparent" CBHasShadow="false" CBCornerRaduis="20" Clicked="Suivant_Clicked" />
                 </Grid>
             </Grid>
         </Grid>

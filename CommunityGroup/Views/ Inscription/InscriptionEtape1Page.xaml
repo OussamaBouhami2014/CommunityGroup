@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls"
              x:Class="CommunityGroup.Views.Inscription.InscriptionEtape1Page">
-    <ContentPage.Content>
+    <ContentView.Content>
           <ScrollView>
          <StackLayout Spacing="5" Padding="20" >
                                 <StackLayout VerticalOptions="CenterAndExpand">
@@ -14,5 +14,5 @@
                                     <control:CustomButton x:Name="BtnInscription" CBHasShadow="false " CBText="M'INSCRIRE" CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
                         </StackLayout>
             </ScrollView>
-    </ContentPage.Content>
-</ContentPage>
+    </ContentView.Content>
+</ContentView>

@@ -26,6 +26,8 @@ namespace CommunityGroup.Droid
             #region Initialize plugins
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Acr.UserDialogs.UserDialogs.Init(this);
+            //Lottie.Forms.Droid.Renderers.AnimationViewRenderer.Init();
+
             //FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             //FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration
             //{
@@ -39,6 +41,8 @@ namespace CommunityGroup.Droid
             AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
             TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
             #endregion
+
+
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 

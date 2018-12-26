@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace CommunityGroup.Views.Inscription
 {
-    public partial class InscriptionEtape1Page : ContentPage
+    public partial class InscriptionEtape1Page : ContentView
     {
         public InscriptionEtape1Page()
         {

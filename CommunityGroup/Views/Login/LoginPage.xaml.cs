@@ -277,8 +277,7 @@ namespace CommunityGroup.Views.Login
 
         private async void Inscription_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsyncSingle(new Inscription.InscriptionPage(), true);
+            await Navigation.PushModalAsyncSingle(new Inscription.InscriptionPage(), true);
         }
-      
     }
 }   
