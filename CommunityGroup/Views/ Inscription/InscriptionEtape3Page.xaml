@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Inscription.InscriptionEtape3Page">
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls"
+             x:Class="CommunityGroup.Views.Inscription.InscriptionEtape3Page">
     <ContentView.Content>
+           <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+        <Label Text="Je suis..." FontSize="18" Style="{StaticResource TitleBoldStyle}" />    
+        <StackLayout Padding="20,10" >
+                                    <control:CustomButton x:Name="BtnStagiaire" CBText="Un stagiaire" CBHasShadow="false "  CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
+                                    <control:CustomButton x:Name="BtnChercheur" CBText="Un chercheur" CBHasShadow="false "  CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
+                                    <control:CustomButton x:Name="BtnChoixTrois" CBText=".." CBHasShadow="false "  CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
+            </StackLayout>
+    </StackLayout>
+            </ScrollView>
+
     </ContentView.Content>
 </ContentView>

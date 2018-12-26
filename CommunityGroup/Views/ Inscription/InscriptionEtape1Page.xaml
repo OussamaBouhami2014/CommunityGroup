@@ -11,7 +11,6 @@
                         <control:CustomEntry x:Name="txtPhone"  Placeholder="Téléphone" Keyboard="Telephone" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
 
             </StackLayout>
-                                    <control:CustomButton x:Name="BtnInscription" CBHasShadow="false " CBText="M'INSCRIRE" CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="Inscription_Clicked" />
                         </StackLayout>
             </ScrollView>
     </ContentView.Content>

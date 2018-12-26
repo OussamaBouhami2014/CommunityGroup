@@ -28,7 +28,33 @@ namespace CommunityGroup.Views.Tapped
 
         private void OnCurrentPageChanged(object sender, EventArgs e)
         {
-            //page1.Icon = "info";
+            try
+            {
+                var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
+
+                foreach (var item in this.Children)
+                {
+                    //if (string.IsNullOrWhiteSpace(item.Title))
+                    //{
+                    //    await Navigation.PushModalAsyncSingle(new Inscription.InscriptionPage(), true);
+                    //    return;
+                    //}
+
+                    if (item != currentPage)
+                    {
+                        item.Icon = "icon" + item.Title + ".png";
+                    }
+                    else
+                    {
+                        currentPage.Icon = "icon" + currentPage.Title + "Active" + ".png";
+                    }
+
+                }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
         }
 
         protected override void OnAppearing()

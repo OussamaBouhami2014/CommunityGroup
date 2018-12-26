@@ -10,36 +10,35 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.BarItemColor="{StaticResource Black}"
-            android:TabbedPage.BarSelectedItemColor="{StaticResource Accent}">
-  <!--  <NavigationPage.TitleView>
+            android:TabbedPage.BarSelectedItemColor="{StaticResource Black}">
+    <NavigationPage.TitleView>
         <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-            <FF:CachedImage x:Name="imgToolbarLogo"  Source="logoA4CWhite.png" Aspect="AspectFit" WidthRequest="{OnPlatform Android='90' iOS='90' Default='90'}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Image x:Name="imgToolbarLogo" Source="logo.png" Aspect="AspectFit" WidthRequest="{OnPlatform Android='90' iOS='90' Default='90'}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
         </Grid>
-    </NavigationPage.TitleView>-->
+    </NavigationPage.TitleView>
 
     <TabbedPage.Children>
-        <NavigationPage x:Name="page1" Title="Accueil" Icon="profil.png">
+        <NavigationPage x:Name="page1" Title="Accueil" Icon="iconAccueilActive.png">
             <x:Arguments>
                 <local_Accueil:AccueilPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="..." Icon="profil.png">
+        <NavigationPage Title="Actualite" Icon="iconActualite.png">
             <x:Arguments>
                      <local_Accueil:AccueilPage />
             </x:Arguments>
         </NavigationPage>
-
-        <NavigationPage Title="..." Icon="profil.png">
+           <NavigationPage Title="Story" Icon="iconStory.png">
             <x:Arguments>
                     <local_Accueil:AccueilPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="..." Icon="profil.png">
+        <NavigationPage Title="Chat" Icon="iconChat.png" >
             <x:Arguments>
-                     <local_Accueil:AccueilPage />
+                    <local_Accueil:AccueilPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Profil" Icon="profil.png">
+        <NavigationPage Title="Profile" Icon="iconProfile.png">
             <x:Arguments>
                 <local_Profile:ProfilePage />
             </x:Arguments>

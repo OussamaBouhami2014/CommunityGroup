@@ -55,14 +55,11 @@
                    <Color x:Key="CalendarTitleArrowTextColor">#c3cace</Color>
         
         
-        
-        
            <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="BarTextColor" Value="{StaticResource White}" />
-                <Setter Property="Tint" Value="{StaticResource White}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource Black}" />
+                <Setter Property="Tint" Value="{StaticResource Black}" />
             </Style>
-        
         
         
         <!--FrameDetailStyle-->
@@ -116,14 +113,14 @@
                <!--TitleBoldStyle-->
             <Style x:Key="TitleBoldStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="12" />
-                <Setter Property="TextColor" Value="{StaticResource DarkTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
               <!--SeparatorStyle-->
             <Style x:Key="SeparatorStyle" TargetType="BoxView">
                 <Setter Property="HeightRequest" Value="1" />
                 <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="BackgroundColor" Value="{StaticResource LightBorderColor}" />
+                <Setter Property="BackgroundColor" Value="#30000000" />
             </Style>
   
              <!--EntrySearcheStyle-->

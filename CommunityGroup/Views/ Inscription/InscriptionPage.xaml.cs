@@ -68,7 +68,7 @@ namespace CommunityGroup.Views.Inscription
             }
 
         }
-        private async void Suivant_Clicked(object sender, EventArgs e)
+        private void Suivant_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -78,7 +78,8 @@ namespace CommunityGroup.Views.Inscription
                 }
                 else
                 {
-                    await Navigation.PopModalAsync(true);
+                    Application.Current.MainPage = new NavigationPage(new Tapped.TappedPagePrincipal());
+
                 }
             }
             catch (Exception Ex)

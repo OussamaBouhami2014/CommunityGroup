@@ -38,7 +38,7 @@ namespace CommunityGroup.iOS
             LoadApplication(new App());
 
             //Change TabBar Color To PrimaryColor
-            UITabBar.Appearance.TintColor = new UIColor(red: 0.02f, green: 0.25f, blue: 0.40f, alpha: 1.0f);
+            UITabBar.Appearance.TintColor = new UIColor(red: 0.0f, green: 0.0f, blue: 0.0f, alpha: 1.0f);
 
             return base.FinishedLaunching(app, options);
         }

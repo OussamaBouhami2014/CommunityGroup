@@ -13,7 +13,7 @@ namespace CommunityGroup.Views.Login
 
         private async void Stagiaire_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsyncSingle(new Login.LoginPage(), true);
+            //await Navigation.PushAsyncSingle(new Login.LoginPage(), true);
         }
     }
 }

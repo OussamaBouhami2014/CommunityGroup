@@ -27,6 +27,7 @@ namespace CommunityGroup.Droid
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Acr.UserDialogs.UserDialogs.Init(this);
             //Lottie.Forms.Droid.Renderers.AnimationViewRenderer.Init();
+            //Lottie.Forms.AnimationView.
 
             //FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             //FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration

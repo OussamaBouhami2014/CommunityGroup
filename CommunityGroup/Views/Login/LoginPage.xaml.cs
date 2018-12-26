@@ -36,84 +36,84 @@ namespace CommunityGroup.Views.Login
 
             //viewMain.Opacity = 1;
 
-            if (newHeight > 0 && newWidth > 0)
-            {
-                if (this.AnimationIsRunning("LoginEnterAnimation") || this.AnimationIsRunning("LoginBackAnimation"))
-                    return;
+            //if (newHeight > 0 && newWidth > 0)
+            //{
+            //    if (this.AnimationIsRunning("LoginEnterAnimation") || this.AnimationIsRunning("LoginBackAnimation"))
+            //        return;
 
-                if (!App.isLoginAnimationDone)
-                {
-                    App.isLoginAnimationDone = true;
+            //    if (!App.isLoginAnimationDone)
+            //    {
+            //        App.isLoginAnimationDone = true;
 
-                    #region Parallel Animations
+            //        #region Parallel Animations
 
-                    /*Setups*/
-                    Animation ParallelAnimations = new Animation();
+            //        /*Setups*/
+            //        Animation ParallelAnimations = new Animation();
 
-                    //SetupLogo
-                    ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewLogo.TranslationY = f, viewLogo.TranslationY, (newHeight / 2) - (viewLogo.Height / 2)));
-                    ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewLogo.Opacity = f, 1, 0));
-                    ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewLogo.Scale = f, 1, 0));
+            //        //SetupLogo
+            //        ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewLogo.TranslationY = f, viewLogo.TranslationY, (newHeight / 2) - (viewLogo.Height / 2)));
+            //        ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewLogo.Opacity = f, 1, 0));
+            //        ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewLogo.Scale = f, 1, 0));
 
-                    //Setup background splash
-                    //ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewBackground.Scale = f, 1.0, 1.1));
+            //        //Setup background splash
+            //        //ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewBackground.Scale = f, 1.0, 1.1));
 
-                    //Setup Input Controls
-                    ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewInputs.Opacity = f, 1, 0));
+            //        //Setup Input Controls
+            //        ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewInputs.Opacity = f, 1, 0));
 
-                    //Animate Logo
-                    ParallelAnimations.Add(0.02, 0.1, new Animation(f => this.viewLogo.Opacity = f, 0, 1));
-                    ParallelAnimations.Add(0.02, 0.3, new Animation(f => this.viewLogo.Scale = f, 1, 1.2, Easing.CubicIn));
-                    ParallelAnimations.Add(0.3, 0.6, new Animation(f => this.viewLogo.Scale = f, 1.2, 1, Easing.BounceOut));
+            //        //Animate Logo
+            //        ParallelAnimations.Add(0.02, 0.1, new Animation(f => this.viewLogo.Opacity = f, 0, 1));
+            //        ParallelAnimations.Add(0.02, 0.3, new Animation(f => this.viewLogo.Scale = f, 1, 1.2, Easing.CubicIn));
+            //        ParallelAnimations.Add(0.3, 0.6, new Animation(f => this.viewLogo.Scale = f, 1.2, 1, Easing.BounceOut));
 
-                    ParallelAnimations.Add(0.6, 0.9, new Animation(f => this.viewLogo.TranslationY = f, (newHeight / 2) - (viewLogo.Height / 2) - (Device.RuntimePlatform == Device.Android ? 0 : 20), viewLogo.TranslationY, Easing.SpringIn));
+            //        ParallelAnimations.Add(0.6, 0.9, new Animation(f => this.viewLogo.TranslationY = f, (newHeight / 2) - (viewLogo.Height / 2) - (Device.RuntimePlatform == Device.Android ? 0 : 20), viewLogo.TranslationY, Easing.SpringIn));
 
-                    //animate splash
-                    //ParallelAnimations.Add(0.02, 1.0, new Animation(f => this.viewBackground.Scale = f, 1.1, 1.0, Easing.SinOut, null));
+            //        //animate splash
+            //        //ParallelAnimations.Add(0.02, 1.0, new Animation(f => this.viewBackground.Scale = f, 1.1, 1.0, Easing.SinOut, null));
 
-                    //animate input
-                    ParallelAnimations.Add(0.9, 1, new Animation(f => this.viewInputs.Opacity = f, 0, 1));
+            //        //animate input
+            //        ParallelAnimations.Add(0.9, 1, new Animation(f => this.viewInputs.Opacity = f, 0, 1));
 
-                    ParallelAnimations.Commit(
-                        owner: this,
-                        name: "LoginEnterAnimation",
-                           finished: (x, y) =>
-                           {
-                               MessagingService.Current.SendMessage(MessageKeys.Message_ExitFullScreen);
-                               viewPage.TranslationY = Device.RuntimePlatform == Device.Android ? -24 : 0; // Android status bar height: 24dp 
-                           },
-                        length: 5000
-                    );
+            //        ParallelAnimations.Commit(
+            //            owner: this,
+            //            name: "LoginEnterAnimation",
+            //               finished: (x, y) =>
+            //               {
+            //                   MessagingService.Current.SendMessage(MessageKeys.Message_ExitFullScreen);
+            //                   viewPage.TranslationY = Device.RuntimePlatform == Device.Android ? -24 : 0; // Android status bar height: 24dp 
+            //               },
+            //            length: 5000
+            //        );
 
-                    #endregion
-                }
-                else
-                {
-                    if (this.AnimationIsRunning("LoginBackAnimation"))
-                        return;
+            //        #endregion
+            //    }
+            //    else
+            //    {
+            //        if (this.AnimationIsRunning("LoginBackAnimation"))
+            //            return;
 
-                    MessagingService.Current.SendMessage(MessageKeys.Message_ExitFullScreen);
-                    /*Setups*/
-                    Animation ParallelAnimations = new Animation();
+            //        MessagingService.Current.SendMessage(MessageKeys.Message_ExitFullScreen);
+            //        /*Setups*/
+            //        Animation ParallelAnimations = new Animation();
 
-                    //SetupPage
-                    ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewMain.TranslationX = f, viewMain.TranslationX, newWidth));
-                    ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewMain.Scale = f, 1, 0.5));
+            //        //SetupPage
+            //        ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewMain.TranslationX = f, viewMain.TranslationX, newWidth));
+            //        ParallelAnimations.Add(0.0, 0.01, new Animation(f => this.viewMain.Scale = f, 1, 0.5));
 
 
-                    //animate page
-                    ParallelAnimations.Add(0.02, 0.5, new Animation(f => this.viewMain.Opacity = f, 0, 1));
-                    ParallelAnimations.Add(0.02, 1, new Animation(f => this.viewMain.Scale = f, 0.5, 1));
-                    ParallelAnimations.Add(0.02, 1, new Animation(f => this.viewMain.TranslationX = f, newWidth / 2, viewMain.TranslationX, Easing.SinInOut));
+            //        //animate page
+            //        ParallelAnimations.Add(0.02, 0.5, new Animation(f => this.viewMain.Opacity = f, 0, 1));
+            //        ParallelAnimations.Add(0.02, 1, new Animation(f => this.viewMain.Scale = f, 0.5, 1));
+            //        ParallelAnimations.Add(0.02, 1, new Animation(f => this.viewMain.TranslationX = f, newWidth / 2, viewMain.TranslationX, Easing.SinInOut));
 
-                    ParallelAnimations.Commit(
-                      owner: this,
-                      name: "LoginBackAnimation",
-                      length: 500
-                  );
+            //        ParallelAnimations.Commit(
+            //          owner: this,
+            //          name: "LoginBackAnimation",
+            //          length: 500
+            //      );
 
-                }
-            }
+            //    }
+            //}
         }
         #endregion
 
@@ -150,8 +150,8 @@ namespace CommunityGroup.Views.Login
 
             try
             {
-                EntryPassword.IsPassword = true;
-                btnShowPassword.CBImage = "iconShowPasswordGray.png";
+                //EntryPassword.IsPassword = true;
+                //btnShowPassword.CBImage = "iconShowPasswordGray.png";
 
                 //#region Web Service Call with activity indicator
                 //AppsHelper.LoadingShow();
@@ -251,28 +251,28 @@ namespace CommunityGroup.Views.Login
 
         private void ShowPassword_Clicked(object sender, EventArgs e)
         {
-            if (EntryPassword.IsPassword)
-            {
-                EntryPassword.IsPassword = false;
-                btnShowPassword.CBImage = "iconShowPassword.png";
-            }
-            else
-            {
-                EntryPassword.IsPassword = true;
-                btnShowPassword.CBImage = "iconShowPasswordGray.png";
-            }
+            //if (EntryPassword.IsPassword)
+            //{
+            //    EntryPassword.IsPassword = false;
+            //    btnShowPassword.CBImage = "iconShowPassword.png";
+            //}
+            //else
+            //{
+            //    EntryPassword.IsPassword = true;
+            //    btnShowPassword.CBImage = "iconShowPasswordGray.png";
+            //}
 
-            //Only for iOS
-            if (!string.IsNullOrEmpty(EntryPassword.Text))
-            {
-                EntryPassword.CursorPosition = EntryPassword.Text.Length;
-                EntryPassword.Focus();
-            }
+            ////Only for iOS
+            //if (!string.IsNullOrEmpty(EntryPassword.Text))
+            //{
+            //    EntryPassword.CursorPosition = EntryPassword.Text.Length;
+            //    EntryPassword.Focus();
+            //}
         }
 
         private void EntryUsername_Completed(object sender, EventArgs e)
         {
-            EntryPassword.Focus();
+            //EntryPassword.Focus();
         }
 
         private async void Inscription_Clicked(object sender, System.EventArgs e)
