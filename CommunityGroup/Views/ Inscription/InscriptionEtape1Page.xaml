@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" BackgroundColor="{StaticResource LightBackgroundColor}"
              x:Class="CommunityGroup.Views.Inscription.InscriptionEtape1Page">
     <ContentView.Content>
-          <ScrollView>
-         <StackLayout Spacing="5" Padding="20" >
-                                <StackLayout VerticalOptions="CenterAndExpand">
-    <control:CustomEntry x:Name="txtNom" Placeholder="Nom" NextView="{x:Reference txtPrenom}" Style="{StaticResource EntryStyle}" />
-                        <control:CustomEntry x:Name="txtPrenom"  Placeholder="Prénom"  NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
-                        <control:CustomEntry x:Name="txtEmail"  Placeholder="E-mail" Keyboard="Email" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
-                        <control:CustomEntry x:Name="txtPhone"  Placeholder="Téléphone" Keyboard="Telephone" NextView="{x:Reference txtPhone}" Style="{StaticResource EntryStyle}"/>
-
+              <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="15" Padding="20">
+        <Label Text="BIENVENUE" FontSize="21" Style="{StaticResource TitleBoldStyle}" TextColor="{StaticResource DarkTextColor}" />    
+        <Label Text="L'objectif de la plateforme OCP Talents Network est de créer un club digital pour les talents africains résidants à l'étranger afin de leur favoriser l'échange et le networking aini que la communication et le partage du savoir faire entre talents, et aussi avec le groupe OCP" FontSize="17" TextColor="{StaticResource DarkTextColor}"  />    
+        <StackLayout Padding="20,10" >
             </StackLayout>
-                        </StackLayout>
+    </StackLayout>
             </ScrollView>
     </ContentView.Content>
 </ContentView>

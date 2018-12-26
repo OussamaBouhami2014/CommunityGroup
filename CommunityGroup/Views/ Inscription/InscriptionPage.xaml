@@ -18,8 +18,12 @@
                 </Grid.GestureRecognizers>
             </Grid>
             
+            <Grid x:Name="viewLogo" Padding="10,50,10,0"  Grid.Row="0" HeightRequest="150"  WidthRequest="250" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" >
+                                <Image Source="logo.png"/>
+              </Grid>
+            
             <Grid Grid.Row="0" VerticalOptions="End" HorizontalOptions="FillAndExpand">
-                <lottie:AnimationView Grid.Row="0" x:Name="animationView"  Animation="animWaves.json" Speed=".5" Opacity=".5" Loop="true" AutoPlay="true"/>
+                <lottie:AnimationView Grid.Row="0" x:Name="animationView"  Animation="animWaves.json" Speed=".5" Loop="true" AutoPlay="true"/>
                 <Grid Grid.Row="0" VerticalOptions="EndAndExpand" Padding="0,5">
                     <control:CustomButton Grid.Column="0" HorizontalOptions="Start" CBText="IGNORER" CBTextColor="{StaticResource White}" CBBackgroundColor="Transparent" CBHasShadow="false" CBCornerRaduis="20" Clicked="Close_Clicked" />
                     <control:CarouselIndicators x:Name="carouselIndicators" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" IndicatorHeight="12" IndicatorWidth="12" UnselectedIndicator="whiteCircle.png" SelectedIndicator="whiteCircle.png" Position="{Binding Position}" />

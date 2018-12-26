@@ -279,5 +279,8 @@ namespace CommunityGroup.Views.Login
         {
             await Navigation.PushModalAsyncSingle(new Inscription.InscriptionPage(), true);
         }
+        private  void BtnFacebook_Clicked(object sender, System.EventArgs e)
+        {
+        }
     }
 }   

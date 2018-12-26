@@ -5,17 +5,22 @@
 <!--        <ScrollView>-->
             <Grid x:Name="viewPage">
                 <Grid x:Name="viewBackground" >
+<!--                                <Image Source="bgBlue.png" Aspect="AspectFill" Scale="0" Rotation="180" Margin="0,100,0,0"/>-->
                 </Grid>
                 <Grid x:Name="viewMain" Opacity="1">
                         <StackLayout Spacing="30" >
-                            <Grid x:Name="viewLogo" Padding="20,40,20,0"  Grid.Row="0" HeightRequest="100" WidthRequest="200" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" >
+                            <Grid x:Name="viewLogo" Padding="10,50,10,0"  Grid.Row="0" HeightRequest="150"  WidthRequest="250" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" >
                                 <Image Source="logo.png"/>
-                                <Image  x:Name="imageLogo" Source="logo.png" />
+                                <Image  x:Name="imageLogo" Source="logo.png"  />
                             </Grid>
                             
-                            <StackLayout x:Name="viewInputs" Padding="20,0"  VerticalOptions="CenterAndExpand"  Spacing="50">
-                               
-                                    <StackLayout Spacing="5" VerticalOptions="CenterAndExpand">
+                            <StackLayout x:Name="viewInputs" Padding="20,0"  VerticalOptions="CenterAndExpand"  Spacing="30">
+                                 <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                                    <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
+                                    <Label Text="CONNEXION" FontSize="15" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                                    <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                                    <StackLayout Spacing="5" VerticalOptions="StartAndExpand" >
                              
                                     <control:CustomEntry x:Name="EntryUsername" IsTextPredictionEnabled="false" Keyboard="Email" Placeholder="Nom d'utilisateur" PlaceholderColor="{StaticResource LightTextColor}" BackgroundColor="{StaticResource White}" FontSize="15" ErrorText="{Binding User.Email.NotValidMessageError}" Text="{Binding User.Email.Name}" ReturnType="Next"
                                         Completed="EntryUsername_Completed" IsBorderErrorVisible="{Binding User.Email.IsNotValid, Mode=TwoWay}">
@@ -27,7 +32,7 @@
                                             </Keyboard>
                                         </control:CustomEntry.Keyboard>
                                     </control:CustomEntry>
-                                    <Grid>
+                                    <Grid >
                                         <control:CustomEntry x:Name="EntryPassword" IsTextPredictionEnabled="false" Grid.Row="0" Placeholder="Mot de passe" PlaceholderColor="{StaticResource LightTextColor}" BackgroundColor="{StaticResource White}" FontSize="15" IsPassword="True" ReturnType="Done" ErrorText="{Binding User.Password.NotValidMessageError}"
                                             Text="{Binding User.Password.Name}" Completed="BtnLogin_Clicked" IsBorderErrorVisible="{Binding User.Password.IsNotValid, Mode=TwoWay}">
                                             <control:CustomEntry.Keyboard>
@@ -39,26 +44,32 @@
                                             </control:CustomEntry.Keyboard>
                                         </control:CustomEntry>
                                     <control:CustomButton x:Name="btnShowPassword" CBImage="iconShowPasswordGray.png" CBHasShadow="false" CBPadding="10" CBBackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" CBImageWidthRequest="20" CBImageHeightRequest="20" StyleCorner="Default" Clicked="ShowPassword_Clicked" />
-                                    
+                                    <control:CustomButton CBPadding="0"  Grid.Row="1" HorizontalOptions="EndAndExpand" CBFontSize="14"  CBText="Mot de passe oublié ?" CBFontAttributes="Bold" CBTextColor="{StaticResource Accent}" CBBackgroundColor="Transparent" CBHasShadow="false"  Clicked="Inscription_Clicked" />
+                             
                                     </Grid>
                                 </StackLayout>
-                                     <StackLayout Spacing="5"  VerticalOptions="Start">
-                                    <control:CustomButton x:Name="BtnConnect" CBHasShadow="false " CBText="CONNEXION" CBBorderColor="{StaticResource Primary}" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" Clicked="BtnLogin_Clicked" />
-                                </StackLayout>
+                            <control:CustomButton x:Name="BtnConnect" VerticalOptions="StartAndExpand" Margin="0,-20,0,0"  CBHasShadow="false" CBText="CONNEXION" CBTextColor="{StaticResource White}" CBBackgroundColor="{StaticResource Primary}" Clicked="BtnLogin_Clicked" />
+                        
                              <StackLayout Spacing="15">
                                 <StackLayout Orientation="Horizontal">
                                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
-                                    <Label Text="OU" FontSize="15" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                                    <Label Text="OU VIA" FontSize="15" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
                                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
                                 </StackLayout>
-                            <StackLayout>
-                                    <control:CustomButton x:Name="BtnFacebook" CBText="Connexion Via Facebook" CBTextColor="{StaticResource White}" CBImage="info_blanc.png" ImageAlignment="Left" CBImageWidthRequest="15" CBImageHeightRequest="15"  CBBackgroundColor="#3b5998" Clicked="BtnLogin_Clicked" />
-                                    <control:CustomButton x:Name="BtnGoogle" CBText="Connexion Via Google" CBTextColor="{StaticResource White}" CBImage="info_blanc.png" ImageAlignment="Left"  CBImageWidthRequest="15" CBImageHeightRequest="15" CBBackgroundColor="#db3236" Clicked="BtnLogin_Clicked" />
-                                </StackLayout>
-                      
+                            <Grid ColumnSpacing="10" HorizontalOptions="CenterAndExpand">
+                                    <control:CustomButton x:Name="BtnFacebook" Grid.Column="0" CBImage="iconFacebook.png" StyleCorner="Default" CBImageWidthRequest="50" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" CBBackgroundColor="Transparent" Clicked="BtnFacebook_Clicked" />
+                                    <control:CustomButton x:Name="BtnGoogle" Grid.Column="1" CBImage="iconGoogle.png" StyleCorner="Default"  CBImageWidthRequest="50" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" CBBackgroundColor="Transparent" Clicked="BtnFacebook_Clicked" />
+                                    <control:CustomButton x:Name="BtnLinkedin" Grid.Column="2" CBImage="iconLinkedin.png" StyleCorner="Default"  CBImageWidthRequest="50" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" CBBackgroundColor="Transparent" Clicked="BtnFacebook_Clicked" />
+                                    <control:CustomButton x:Name="BtnTwitter" Grid.Column="3" CBImage="iconTwitter.png" StyleCorner="Default"  CBImageWidthRequest="50" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" CBBackgroundColor="Transparent" Clicked="BtnFacebook_Clicked" />
+                                </Grid>
+                       <StackLayout Orientation="Horizontal" Padding="{OnPlatform Android='5,15,5,15' iOS='5,20,5,20'}" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="Vous n'avez pas de compte ?" FontSize="14" TextColor="{StaticResource BlueColor}" FontAttributes="Bold" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                                    <control:CustomButton CBPadding="0" CBFontSize="16"  CBText="S'inscrire" CBFontAttributes="Bold" CBTextColor="{StaticResource Accent}" CBBackgroundColor="Transparent" CBHasShadow="false"  Clicked="Inscription_Clicked" />
+                                    
+                                    </StackLayout>
                             </StackLayout>
                             </StackLayout>
-                         <Grid BackgroundColor="#20000000" VerticalOptions="EndAndExpand" >
+                   <!--      <Grid BackgroundColor="#20000000" VerticalOptions="EndAndExpand" >
                                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
                                
                         <StackLayout Orientation="Horizontal" Padding="{OnPlatform Android='5,15,5,15' iOS='5,20,5,20'}" HorizontalOptions="CenterAndExpand">
@@ -66,7 +77,7 @@
                                     <control:CustomButton CBPadding="0" CBFontSize="16"  CBText="S'inscrire." CBFontAttributes="Bold" CBTextColor="{StaticResource Primary}" CBBackgroundColor="Transparent" CBHasShadow="false"  Clicked="Inscription_Clicked" />
                                     
                                     </StackLayout>
-                                    </Grid>
+                                    </Grid>-->
                         </StackLayout>
                 </Grid>
             </Grid>

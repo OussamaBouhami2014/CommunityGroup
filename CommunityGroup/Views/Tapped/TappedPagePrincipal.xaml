@@ -15,14 +15,14 @@
             android:TabbedPage.BarItemColor="{StaticResource Black}"
             android:TabbedPage.BarSelectedItemColor="{StaticResource Black}">
     <NavigationPage.TitleView>
-        <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-            <Image x:Name="imgToolbarLogo" Grid.Row="0" Grid.RowSpan="2" Source="logo.png" Aspect="AspectFit" WidthRequest="90" HeightRequest="90"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            <StackLayout  Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand">
-<!--            <Image x:Name="imgToolbarLogout" Source="iconLogout.png" Aspect="AspectFit" BackgroundColor="Red" WidthRequest="20" HeightRequest="20"  VerticalOptions="CenterAndExpand"/>-->
-<!--            <Image x:Name="imgToolbarNotif" Source="iconNotif.png" Aspect="AspectFit" WidthRequest="20" HeightRequest="20"  />-->
+        <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,5">
+            <Image x:Name="imgToolbarLogo" Grid.Row="0"  Source="logoSansEcriture.png" Aspect="AspectFit" WidthRequest="90" HeightRequest="90"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+         <!--   <StackLayout  Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="End" VerticalOptions="FillAndExpand">
+            <Image x:Name="imgToolbarLogout" Source="iconLogout.png" Aspect="AspectFit" BackgroundColor="Red" WidthRequest="20" HeightRequest="20"  VerticalOptions="CenterAndExpand"/>
+            <Image x:Name="imgToolbarNotif" Source="iconNotif.png" Aspect="AspectFit" WidthRequest="20" HeightRequest="20"  />
                             <control:CustomButton x:Name="imgToolbarLogout" StyleCorner="Default" Margin="0" Padding="0" IsVisible="false" CBImage="iconLogout.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Logout_Clicked"/>
             <control:CustomButton x:Name="imgToolbarNotif" CBImage="iconNotif.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notifification_Clicked"/>
-       </StackLayout>
+       </StackLayout>-->
         </Grid>
     </NavigationPage.TitleView>
 

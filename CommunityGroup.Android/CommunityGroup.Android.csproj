@@ -145,6 +145,12 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\iconNotifActive.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\avatarWomen.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\avatarHome.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logoSansEcriture.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\bgBlue.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconTwitter.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconGoogle.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconLinkedin.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconFacebook.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

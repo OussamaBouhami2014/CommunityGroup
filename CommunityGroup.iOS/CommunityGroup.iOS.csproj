@@ -267,6 +267,18 @@
     <BundleResource Include="Resources\iconNotifActive.png" />
     <BundleResource Include="Resources\avatarWomen.png" />
     <BundleResource Include="Resources\avatarHome.png" />
+    <BundleResource Include="Resources\whiteCircle%403x.png" />
+    <BundleResource Include="Resources\whiteCircle%402x.png" />
+    <BundleResource Include="Resources\whiteCircle%401x.png" />
+    <BundleResource Include="Resources\animWaves.json" />
+    <BundleResource Include="Resources\logoSansEcriture%401x.png" />
+    <BundleResource Include="Resources\logoSansEcriture%402x.png" />
+    <BundleResource Include="Resources\logoSansEcriture%403x.png" />
+    <BundleResource Include="Resources\bgBlue.png" />
+    <BundleResource Include="Resources\iconTwitter.png" />
+    <BundleResource Include="Resources\iconGoogle.png" />
+    <BundleResource Include="Resources\iconLinkedin.png" />
+    <BundleResource Include="Resources\iconFacebook.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

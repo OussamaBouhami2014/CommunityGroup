@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="{StaticResource LightBackgroundColor}" xmlns:control="clr-namespace:CommunityGroup.Controls"
              x:Class="CommunityGroup.Views.Inscription.InscriptionEtape3Page">
     <ContentView.Content>
            <ScrollView>

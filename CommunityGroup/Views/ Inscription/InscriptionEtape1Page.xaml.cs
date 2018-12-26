@@ -11,9 +11,6 @@ namespace CommunityGroup.Views.Inscription
         {
             InitializeComponent();
         }
-        private void Inscription_Clicked(object sender, System.EventArgs e)
-        {
-            Application.Current.MainPage = new NavigationPage(new Tapped.TappedPagePrincipal());
-        }
+       
     }
 }

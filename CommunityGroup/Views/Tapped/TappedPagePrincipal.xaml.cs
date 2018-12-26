@@ -33,7 +33,7 @@ namespace CommunityGroup.Views.Tapped
             {
                 var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
 
-                imgToolbarLogout.IsVisible = currentPage.Title == "Profile" ? true : false;
+                //imgToolbarLogout.IsVisible = currentPage.Title == "Profile" ? true : false;
 
                 //imgToolbarLogout.IsVisible = currentPage.GetType() == typeof(Views.Profile.ProfilePage) ? true : false;
 

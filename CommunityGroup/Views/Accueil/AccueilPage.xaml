@@ -1,5 +1,32 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Accueil.AccueilPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" x:Class="CommunityGroup.Views.Accueil.AccueilPage">
     <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid>
+                    
+                     <CarouselView:CarouselView x:Name="carouselEvenment" HeightRequest="200" VerticalOptions="Start" ItemsSource="{Binding ActualiteList}"  PositionSelected="CarouselEvenment_PositionSelected" >
+                        <CarouselView:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                  <Grid  ColumnSpacing="10" VerticalOptions="Start" HeightRequest="200" >
+        
+        <Image Grid.Column="0" Source="{Binding ImageActualite}" Aspect="AspectFill"/>
+        <StackLayout Grid.Column="0" Orientation="Horizontal" VerticalOptions="EndAndExpand" Padding="10,15">
+          <Frame BackgroundColor="{StaticResource Primary}" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
+                            <Label Text="{Binding CodeUnivers}" TextColor="White" FontSize="14" />
+                        </Frame>
+            <Label Text="{Binding Title}" TextColor="{StaticResource White}"/>
+        </StackLayout>
+
+    </Grid>
+                            </DataTemplate>
+                        </CarouselView:CarouselView.ItemTemplate>
+                    </CarouselView:CarouselView>
+                    
+                    <control:CarouselIndicators x:Name="carouselIndicators" Padding="5" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" IndicatorHeight="12" IndicatorWidth="12" UnselectedIndicator="whiteCircle.png" SelectedIndicator="whiteCircle.png" Position="{Binding Position}" />
+                    </Grid>
+                   
+            </StackLayout>
+         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
