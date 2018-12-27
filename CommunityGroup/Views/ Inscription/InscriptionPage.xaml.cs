@@ -64,6 +64,7 @@ namespace CommunityGroup.Views.Inscription
                 currentPage = Item;
             }
         }
+
         private async void Close_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync(true);

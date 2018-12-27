@@ -32,6 +32,8 @@ namespace CommunityGroup.ViewModels
                     ImageActualite = "https://www.w3schools.com/w3images/fjords.jpg",
                     DateActualite = DateTime.Now.AddDays(-12),
                     DatePublication = DateTime.Now.AddDays(-12),
+                     NbrLike = 11,
+                    NbrComment = 23,
                     IsVue = false},
 
                 new DtoActualite() {
@@ -44,6 +46,8 @@ namespace CommunityGroup.ViewModels
                     DateActualite = DateTime.Now.AddDays(-2),
                     DatePublication = DateTime.Now.AddDays(-2),
                     ImageActualite = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQjGFsVEtFFO9egfEur4s3u6UV0TePbFyUFAICVvsaUa5kGoqtMw",
+                     NbrLike = 17,
+                    NbrComment = 13,
                     IsVue = false},
 
                  new DtoActualite() {
@@ -56,6 +60,8 @@ namespace CommunityGroup.ViewModels
                     ImageActualite = "https://www.w3schools.com/w3images/fjords.jpg",
                     DateActualite = DateTime.Now.AddDays(-12),
                     DatePublication = DateTime.Now.AddDays(-12),
+                     NbrLike = 22,
+                    NbrComment = 10,
                     IsVue = false},
 
                 new DtoActualite() {
@@ -78,6 +84,8 @@ namespace CommunityGroup.ViewModels
                     ImageActualite = "https://www.w3schools.com/w3images/fjords.jpg",
                     DateActualite = DateTime.Now.AddDays(-12),
                     DatePublication = DateTime.Now.AddDays(-12),
+                     NbrLike = 21,
+                    NbrComment = 7,
                     IsVue = false},
 
                 new DtoActualite() {
@@ -90,6 +98,8 @@ namespace CommunityGroup.ViewModels
                     DateActualite = DateTime.Now.AddDays(-2),
                     DatePublication = DateTime.Now.AddDays(-2),
                     ImageActualite = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQjGFsVEtFFO9egfEur4s3u6UV0TePbFyUFAICVvsaUa5kGoqtMw",
+                     NbrLike = 12,
+                    NbrComment = 23,
                     IsVue = false},
             };
         }

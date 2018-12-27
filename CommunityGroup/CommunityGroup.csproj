@@ -45,6 +45,7 @@
     <Folder Include="Views\Chat\" />
     <Folder Include="Views\Actualite\" />
     <Folder Include="Views\Notification\" />
+    <Folder Include="Models\Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controls\CustomDatePicker.xml" />

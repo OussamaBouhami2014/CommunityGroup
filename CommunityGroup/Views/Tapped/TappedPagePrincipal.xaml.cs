@@ -86,12 +86,10 @@ namespace CommunityGroup.Views.Tapped
         {
             base.OnAppearing();
 
-            MessagingService.Current.SendMessage(MessageKeys.Message_ExitFullScreen);
 
-            //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(App.PrimaryColor);
-            //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex(App.WhiteColor);
-
-            ////MessagingCenter.Send<A4CTappedPage, string>(this, MessageKeys.ChangeStatutBarColor, App.PrimaryDarkColor);
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(App.LightBackgroundColor);
+            MessagingService.Current.SendMessage(MessageKeys.Message_ChangeStatutBarColor, App.ColorStatutBar);
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
 
         }
 

@@ -9,6 +9,46 @@ namespace CommunityGroup.Views.Actualite
 {
     public partial class ActualitePage : BasePage
     {
+       private void Like_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                var view = sender as Controls.CustomButton;
+                view.CBImage = view.CBImage.Contains("Active") ? "iconLike" : "iconLikeActive";
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private async void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                var view = sender as View;
+                var item  = view?.BindingContext as DtoActualite;
+                await Application.Current.MainPage.Navigation.PushAsyncSingle(new Views.Actualite.ActualiteDetailPage(item));
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private void Comment_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                //var view = sender as Image;
+                //view.Source = (view.Source as FileImageSource).File.Contains("Active") ? "iconLike" : "iconLikeActive";
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
         private ActualiteViewModel Vm;
 
         public ActualitePage()

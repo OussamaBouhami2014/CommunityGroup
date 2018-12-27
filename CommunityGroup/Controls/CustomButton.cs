@@ -8,7 +8,7 @@ namespace CommunityGroup.Controls
     {
 
         public static readonly BindableProperty TextProperty =
-        BindableProperty.Create(nameof(CBText), typeof(string), typeof(CustomButton), string.Empty);
+        BindableProperty.Create(nameof(CBText), typeof(string), typeof(CustomButton), (object)null, BindingMode.TwoWay, (BindableProperty.ValidateValueDelegate)null, (BindableProperty.BindingPropertyChangedDelegate)OnTextChanged, (BindableProperty.BindingPropertyChangingDelegate)null, (BindableProperty.CoerceValueDelegate)null, (BindableProperty.CreateDefaultValueDelegate)null);
 
         public string CBText
         {
@@ -19,6 +19,13 @@ namespace CommunityGroup.Controls
                 if (stack != null && label != null)
                     stack.Children.Add(label);
             }
+        }
+        private static void OnTextChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (newValue == oldValue || oldValue == null || newValue == null)
+                return;
+
+            var view = (CustomEntry)bindable;
         }
 
         public static readonly BindableProperty TextColorProperty =

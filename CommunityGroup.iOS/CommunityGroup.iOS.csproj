@@ -269,6 +269,11 @@
     <BundleResource Include="Resources\iconAgendaActive%401x.png" />
     <BundleResource Include="Resources\iconAgendaActive%402x.png" />
     <BundleResource Include="Resources\iconAgendaActive%403x.png" />
+    <BundleResource Include="Resources\iconEdit.png" />
+    <BundleResource Include="Resources\logoSansEcritureBlack.png" />
+    <BundleResource Include="Resources\iconEditAccent.png" />
+    <BundleResource Include="Resources\iconLikeActive.png" />
+    <BundleResource Include="Resources\iconLike.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

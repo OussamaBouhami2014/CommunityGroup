@@ -9,9 +9,9 @@ namespace CommunityGroup
 {
     public partial class App : Application
     {
-        public static string PrimaryColor = "#55968f";
+        public static string PrimaryColor = "#59ab6a";
         public static string PrimaryDarkColor = "#082b4b";
-        public static string Accent = "#44b98c";
+        public static string Accent = "#f89700";
 
         public static string BlueColor = "#62acda";
         public static string YellowColor = "#F9B64C";
@@ -25,6 +25,7 @@ namespace CommunityGroup
         public static string VioletColor = "#3f51b5";
         public static string WhiteColor = "#ffffff";
         public static string DarkTextColor = "#696969";
+        public static string ColorStatutBar = "#696969";
         public static string LightBackgroundColor = "#f5f5f5";
 
         public static bool IsLogout = true;

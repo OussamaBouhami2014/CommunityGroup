@@ -159,6 +159,11 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\iconFacebook.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconAgenda.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconAgendaActive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconEdit.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logoSansEcritureBlack.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconEditAccent.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconLikeActive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconLike.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

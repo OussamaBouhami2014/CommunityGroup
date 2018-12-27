@@ -19,6 +19,8 @@ namespace CommunityGroup.Models
     public partial class DtoActualite : BindableObject
     {
         public string ColorUnivers { get; set; }
+        public int NbrLike { get; set; }
+        public int NbrComment { get; set; }
 
         private string imageActualite = "loading_placeholder.png";
         public string ImageActualite { get { return imageActualite; } set { imageActualite = value; OnPropertyChanged(); } }

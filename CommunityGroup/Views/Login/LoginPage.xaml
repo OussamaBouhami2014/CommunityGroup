@@ -2,7 +2,7 @@
 <base:BasePage xmlns:base="clr-namespace:CommunityGroup.Views" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Login.LoginPage" 
                xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" Title="Login" BackgroundColor="{StaticResource LightBackgroundColor}">
     <base:BasePage.Content>
-<!--        <ScrollView>-->
+        <ScrollView>
             <Grid x:Name="viewPage">
                 <Grid x:Name="viewBackground" >
 <!--                                <Image Source="bgBlue.png" Aspect="AspectFill" Scale="0" Rotation="180" Margin="0,100,0,0"/>-->
@@ -48,7 +48,7 @@
                              
                                     </Grid>
                                 </StackLayout>
-                            <control:CustomButton x:Name="BtnConnect" VerticalOptions="StartAndExpand" Margin="0,-20,0,0"  CBHasShadow="false" CBText="CONNEXION" CBTextColor="{StaticResource White}" CBBackgroundColor="{StaticResource Primary}" Clicked="BtnLogin_Clicked" />
+                            <control:CustomButton x:Name="BtnConnect" VerticalOptions="StartAndExpand" Margin="0,-20,0,0"  CBHasShadow="false" CBText="CONNEXION" HorizontalOptions="FillAndExpand" CBTextColor="{StaticResource White}" CBBackgroundColor="{StaticResource Primary}" Clicked="BtnLogin_Clicked" />
                         
                              <StackLayout Spacing="15">
                                 <StackLayout Orientation="Horizontal">
@@ -81,6 +81,6 @@
                         </StackLayout>
                 </Grid>
             </Grid>
-<!--        </ScrollView>-->
+        </ScrollView>
     </base:BasePage.Content>
 </base:BasePage>

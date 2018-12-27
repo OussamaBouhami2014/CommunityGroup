@@ -10,8 +10,7 @@ namespace CommunityGroup.Views.Story
         public StoryPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-
+            //NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

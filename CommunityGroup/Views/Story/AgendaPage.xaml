@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Story.AgendaPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:calendar="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar" x:Class="CommunityGroup.Views.Story.AgendaPage" BackgroundColor="{StaticResource LightBackgroundColor}">
     <ContentPage.Content>
+                <ScrollView>
+            <StackLayout Spacing="20" Padding="0,20" >
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="20" Padding="30,0">
+                      <StackLayout>
+                <Image Source="iconMentorWhite.png" WidthRequest="50" HeightRequest="50"/>
+                    <Label Text="Agenda"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                        
+                    </StackLayout>   
+                    <Label Text="Agenda"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="Lorem Ipsum!"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="25" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+               
+                 <Label Text="Lorem Ipsum est un texte d'espace réservé couramment utilisé dans les industries graphique, imprimée et éditoriale pour prévisualiser les mises en page et les maquettes visuelles." TextColor="{StaticResource Black}" FontSize="15"   HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+               
+            
+            </StackLayout>
+                    <ContentView Padding="15,0" >
+                <Frame Style="{StaticResource CardStyle}" BackgroundColor="{StaticResource White}" CornerRadius="5">
+              <StackLayout Padding="10,15" Spacing="10">
+                         
+                        <calendar:Calendar  
+            x:Name="calendar"
+            SelectedBorderWidth="1" 
+             BorderWidth="1"
+            DisabledBackgroundColor="{StaticResource CalendarDisabledBackgroundColor}"
+            DisabledTextColor="{StaticResource CalendarDisabledTextColor}"
+            SelectedBackgroundColor="{StaticResource White}"
+            SelectedTextColor="{StaticResource CalendarTextColor}"
+                                    TitleLeftArrowBorderColor="{StaticResource White}"
+                                    TitleRightArrowBorderColor="{StaticResource White}"
+            SelectedBorderColor="{StaticResource White}"       
+            DisabledBorderColor="{StaticResource White}"
+            BorderColor="{StaticResource White}"
+            MultiSelectDates="false"
+            DisableAllDates="false"
+                                    TitleLeftArrowFontSize="12"
+                                    TitleRightArrowFontSize="12"
+                                    WeekdaysFontSize="12"
+                                    
+            DatesFontAttributes="None"
+                                    TitleLabelFontSize="15"
+                                    DatesFontSize="12"
+            DatesTextColor="{StaticResource CalendarTextColor}"
+            WeekdaysShow="true"
+            ShowNumberOfWeek="false"
+                   BackgroundColor="{StaticResource White}"             
+            StartDay="Monday"
+            TitleLabelTextColor="{StaticResource CalendarTitleLabelTextColor}"
+            TitleLeftArrowTextColor="{StaticResource CalendarTitleArrowTextColor}"
+            TitleRightArrowTextColor="{StaticResource CalendarTitleArrowTextColor}"
+             SpecialDates="{Binding SelectedDatesList}"
+            DateClicked="Calendar_DateClicked" />
+                        <control:CustomButton CBText="Button" CBTextColor="{StaticResource Accent}" CBFontSize="20" CBHasShadow="false" Padding="10,5" StyleCorner="Default" Clicked="Submit_Clicked"/>
+                           </StackLayout>
+                    </Frame>
+                        </ContentView>
+                    </StackLayout>
+    </ScrollView>
     </ContentPage.Content>
 </ContentPage>

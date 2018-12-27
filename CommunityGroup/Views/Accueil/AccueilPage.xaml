@@ -31,34 +31,34 @@
           
                 <control:CustomTemplateButton WidthRequest="150" >
                     <StackLayout Spacing="15">
-                        <Image Source="info.png"/>
+                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80"/>
                         <Label Text="Espace 1" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                      <control:CustomTemplateButton WidthRequest="150">
                     <StackLayout Spacing="15">
-                        <Image Source="info.png"/>
+                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80"/>
                         <Label Text="Espace 1" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                         
                              <control:CustomTemplateButton WidthRequest="150">
                     <StackLayout Spacing="15">
-                        <Image Source="info.png"/>
+                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80"/>
                         <Label Text="Espace 1" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                         
                              <control:CustomTemplateButton WidthRequest="150">
                     <StackLayout Spacing="15">
-                        <Image Source="info.png"/>
+                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80"/>
                         <Label Text="Espace 1" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                         
                              <control:CustomTemplateButton WidthRequest="150">
                     <StackLayout Spacing="15">
-                        <Image Source="info.png" />
+                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80" />
                         <Label Text="Espace 1" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
