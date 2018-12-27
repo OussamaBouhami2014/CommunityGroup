@@ -154,6 +154,8 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\iconGoogle.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconLinkedin.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconFacebook.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconAgenda.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconAgendaActive.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

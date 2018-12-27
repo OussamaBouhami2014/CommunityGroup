@@ -37,7 +37,7 @@
                      <local_Actualite:ActualitePage />
             </x:Arguments>
         </NavigationPage>
-           <NavigationPage Title="Story" Icon="iconStory.png">
+           <NavigationPage Title="Agenda" Icon="iconAgenda.png">
             <x:Arguments>
                     <local_Story:StoryPage />
             </x:Arguments>

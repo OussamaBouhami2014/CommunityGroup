@@ -284,6 +284,12 @@
     <BundleResource Include="Resources\iconFacebook.png" />
     <BundleResource Include="Resources\iconUserProfile.png" />
     <BundleResource Include="Resources\animValideCheck.json" />
+    <BundleResource Include="Resources\iconAgenda%401x.png" />
+    <BundleResource Include="Resources\iconAgenda%402x.png" />
+    <BundleResource Include="Resources\iconAgenda%403x.png" />
+    <BundleResource Include="Resources\iconAgendaActive%401x.png" />
+    <BundleResource Include="Resources\iconAgendaActive%402x.png" />
+    <BundleResource Include="Resources\iconAgendaActive%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
