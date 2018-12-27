@@ -171,6 +171,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\EventTwo.jpg" />
     <AndroidResource Include="Resources\drawable-xxhdpi\EventTwo.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\EventFour.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ShadowImage.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

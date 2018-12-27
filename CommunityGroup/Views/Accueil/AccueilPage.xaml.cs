@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CommunityGroup.ViewModels;
 using Xamarin.Forms;
 
@@ -19,6 +20,33 @@ namespace CommunityGroup.Views.Accueil
             carouselEvenment.ItemsSource = Vm.ListEvent;
             carouselIndicators.ItemsSource = Vm.ListEvent;
 
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                try
+                {
+                        
+                }
+                catch (Exception Ex)
+                {
+                    AppsHelper.Snack(Ex.Message);
+                }
+                while (true)
+                {
+                    await Task.Delay(2000);
+
+                    Vm.Position++;
+                    if (Vm.Position == (Vm.ListEvent.Count))
+                    {
+                        Vm.Position = 0;
+                    }
+                }
+            });
         }
 
         private void Carousel_ItemSelected(object sender, SelectedItemChangedEventArgs e)

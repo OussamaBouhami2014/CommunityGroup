@@ -281,6 +281,7 @@
     <BundleResource Include="Resources\EventTwo.jpg" />
     <BundleResource Include="Resources\EventTwo.png" />
     <BundleResource Include="Resources\EventFour.png" />
+    <BundleResource Include="Resources\ShadowImage.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
