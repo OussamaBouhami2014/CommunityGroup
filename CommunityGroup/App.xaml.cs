@@ -1,5 +1,6 @@
 ﻿using System;
 using CommunityGroup.Helpers;
+using CommunityGroup.Popups;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -36,6 +37,9 @@ namespace CommunityGroup
 
         public static double StandardPageHeight;
         public static double StandardPageWidth;
+
+
+        public static LoadingPopup LoadingPopup = new LoadingPopup();
 
         public App()
         {

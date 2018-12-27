@@ -25,7 +25,7 @@ namespace CommunityGroup.Views.Actualite
 
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#F5F5F5");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#F5F5F5");
-            MessagingService.Current.SendMessage(MessageKeys.ChangeStatutBarColor, "#696969");
+            MessagingService.Current.SendMessage(MessageKeys.Message_ChangeStatutBarColor, "#696969");
         }
 
         private void ActualiteTachesListView(object sender, System.EventArgs e)

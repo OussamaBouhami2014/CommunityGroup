@@ -56,7 +56,7 @@ namespace CommunityGroup.Droid
 
             #region MessagingServices
             // Change staut bar color.
-            MessagingService.Current.Subscribe<string>(MessageKeys.ChangeStatutBarColor, (page, color) =>
+            MessagingService.Current.Subscribe<string>(MessageKeys.Message_ChangeStatutBarColor, (page, color) =>
             {
                 try
                 {

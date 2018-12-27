@@ -33,7 +33,7 @@ namespace CommunityGroup.Views.Tapped
             {
                 var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
 
-                //imgToolbarLogout.IsVisible = currentPage.Title == "Profile" ? true : false;
+                imgToolbarLogout.IsVisible = currentPage.Title == "Profile" ? true : false;
 
                 //imgToolbarLogout.IsVisible = currentPage.GetType() == typeof(Views.Profile.ProfilePage) ? true : false;
 
@@ -56,11 +56,11 @@ namespace CommunityGroup.Views.Tapped
             }
         }
 
-
         private async void Notifification_Clicked(object sender, System.EventArgs e)
         {
             try
             {
+                await Application.Current.MainPage.Navigation.PushAsyncSingle(new Notification.NotificationPage());
 
             }
             catch (Exception Ex)
@@ -101,7 +101,7 @@ namespace CommunityGroup.Views.Tapped
 
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(App.PrimaryColor);
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex(App.WhiteColor);
-            MessagingService.Current.SendMessage(MessageKeys.ChangeStatutBarColor, App.PrimaryColor);
+            MessagingService.Current.SendMessage(MessageKeys.Message_ChangeStatutBarColor, App.PrimaryColor);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using FormsToolkit;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
@@ -12,7 +12,41 @@ namespace CommunityGroup.Views.Inscription
         public InscriptionEtape3Page()
         {
             InitializeComponent();
-        }
+            PickerNiveauEtude.SelectedIndex = 0;
+            PickerDiplome.SelectedIndex = 0;
+
+          
+            MessagingService.Current.Subscribe<int>(MessageKeys.Message_InscriptionChangePage, async (page, index) =>
+            {
+                try
+                {
+                    if (index == 3)
+                    {
+                        this.Content.FadeTo(1, 1000);
+                        await this.Content.TranslateTo(0, 0, 1000);
+                    }
+                    else
+                    {
+                        this.Content.Opacity = 0;
+                        this.Content.TranslationY = this.Content.Height / 3;
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    AppsHelper.Snack(Ex.Message);
+                }
+            });
+       
+         }
+        //protected override void OnSizeAllocated(double width, double height)
+        //{
+        //    base.OnSizeAllocated(width, height);
+
+        //    if (height > -1 && this.Content.TranslationY == 0)
+        //    {
+        //        this.Content.TranslationY = this.Content.Height /2;
+        //    }
+        //}
 
         private async void AddDiplome_Clicked(object sender, EventArgs e)
         {
@@ -29,7 +63,6 @@ namespace CommunityGroup.Views.Inscription
             Application.Current.MainPage = new NavigationPage(new Tapped.TappedPagePrincipal());
         }
 
-
         private async void Galerie_Clicked(object sender, System.EventArgs e)
         {
             try
@@ -38,8 +71,7 @@ namespace CommunityGroup.Views.Inscription
 
                 if (action.Equals("Camera"))
                 {
-                    try
-                    {
+
                         await Plugin.Media.CrossMedia.Current.Initialize();
 
                         if (!Plugin.Media.CrossMedia.Current.IsCameraAvailable || !Plugin.Media.CrossMedia.Current.IsTakePhotoSupported)
@@ -62,14 +94,8 @@ namespace CommunityGroup.Views.Inscription
                         viewPhotoProfil.IsVisible = true;
 
                     }
-                    catch (Exception Ex)
-                    {
-                        AppsHelper.Snack(Ex.Message);
-                    }
-                }
                 else
                 {
-
                
                 await Plugin.Media.CrossMedia.Current.Initialize();
                 if (!Plugin.Media.CrossMedia.Current.IsPickPhotoSupported)
@@ -129,6 +155,5 @@ namespace CommunityGroup.Views.Inscription
               AppsHelper.Snack(Ex.Message);
             }
         }
-
     }
 }

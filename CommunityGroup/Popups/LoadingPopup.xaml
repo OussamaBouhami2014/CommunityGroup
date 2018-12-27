@@ -22,14 +22,16 @@
     Opacity=".1" IsVisible="{OnPlatform Android='false' iOS='true'}"/>
         
                        <lottie:AnimationView Grid.Row="0" 
+                                             Speed = "2"
     x:Name="animLoading" 
     Animation="animLoading.json" 
     Loop="true" 
+                                            
     AutoPlay="true"
     VerticalOptions="Center" 
-    HorizontalOptions="CenterAndExpand" HeightRequest="150" WidthRequest="150" />
+    HorizontalOptions="CenterAndExpand" HeightRequest="100" WidthRequest="100" />
         
-        <StackLayout Grid.Row="0" BackgroundColor="Aqua" x:Name="animSwipeView" IsVisible="true" VerticalOptions="EndAndExpand" Opacity=".5">
+        <StackLayout Grid.Row="0" x:Name="animSwipeView" IsVisible="true" VerticalOptions="EndAndExpand" Opacity=".5">
             <lottie:AnimationView 
     x:Name="animSwipe" 
     Animation="animSwipe.json" 

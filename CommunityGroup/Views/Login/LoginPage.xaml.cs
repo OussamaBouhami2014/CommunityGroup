@@ -122,7 +122,7 @@ namespace CommunityGroup.Views.Login
         {
             base.OnAppearing();
 
-            MessagingCenter.Send<LoginPage, string>(this, MessageKeys.ChangeStatutBarColor, App.LightBackgroundColor);
+            MessagingCenter.Send<LoginPage, string>(this, MessageKeys.Message_ChangeStatutBarColor, App.LightBackgroundColor);
         }
 
         private async void BtnLogin_Clicked(object sender, EventArgs e)

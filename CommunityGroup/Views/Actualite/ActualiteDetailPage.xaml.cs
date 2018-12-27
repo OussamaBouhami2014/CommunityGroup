@@ -27,7 +27,7 @@ namespace CommunityGroup.Views.Actualite
         public ActualiteDetailPage(DtoActualite _detailActualite)
         {
             InitializeComponent();
-            MessagingService.Current.SendMessage(MessageKeys.ChangeStatutBarColor, App.PrimaryColor);
+            MessagingService.Current.SendMessage(MessageKeys.Message_ChangeStatutBarColor, App.PrimaryColor);
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(App.PrimaryColor);
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
 

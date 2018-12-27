@@ -283,6 +283,7 @@
     <BundleResource Include="Resources\iconLinkedin.png" />
     <BundleResource Include="Resources\iconFacebook.png" />
     <BundleResource Include="Resources\iconUserProfile.png" />
+    <BundleResource Include="Resources\animValideCheck.json" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

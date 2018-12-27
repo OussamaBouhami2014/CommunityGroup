@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using FormsToolkit;
+using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
 namespace CommunityGroup.Views.Inscription
 {
     public partial class InscriptionPage : ContentPage
     {
+        private InscriptionCompletePopup InscriptionCompletePopup;
 
         public CarouselViewPageModel currentPage;
 
@@ -26,6 +29,17 @@ namespace CommunityGroup.Views.Inscription
             CarouselCount = List.Count;
             BindingContext = this;
 
+            MessagingService.Current.Subscribe<string>(MessageKeys.Message_CarouselNextPage, (page, choix) =>
+            {
+                try
+                {
+                    Position++;
+                }
+                catch (Exception Ex)
+                {
+                    AppsHelper.Snack(Ex.Message);
+                }
+            });
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -34,10 +48,13 @@ namespace CommunityGroup.Views.Inscription
 
             if (!isAnimationViewHeightChanged)
             {
+                //MessagingService.Current.SendMessage(MessageKeys.Message_InscriptionChangePage, (Position + 1));
+
                 animationView.HeightRequest = Width / 3;
                 isAnimationViewHeightChanged = true;
             }
         }
+
 
         private void Carousel_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -52,23 +69,26 @@ namespace CommunityGroup.Views.Inscription
             await Navigation.PopModalAsync(true);
         }
 
-        private void MyCarouselView_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        private async void MyCarouselView_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
         {
+            MessagingService.Current.SendMessage(MessageKeys.Message_InscriptionChangePage,(Position+1));
 
             if (Position < (CarouselCount - 1))
             {
                 if (txtSuivant.CBText != "SUIVANT")
                 {
                     txtSuivant.CBText = "SUIVANT";
+                    viewLogo.TranslateTo(0, 0, 1000, Easing.SpringOut);
                 }
             }
             else if (Position == (CarouselCount - 1))
             {
                 txtSuivant.CBText = "TERMINER";
+                viewLogo.TranslateTo(0, -viewLogo.HeightRequest * 2, 1000,Easing.SpringIn);
             }
 
         }
-        private void Suivant_Clicked(object sender, EventArgs e)
+        private async void Suivant_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -78,7 +98,16 @@ namespace CommunityGroup.Views.Inscription
                 }
                 else
                 {
-                    Application.Current.MainPage = new NavigationPage(new Tapped.TappedPagePrincipal());
+                    AppsHelper.LoadingShow();
+                    await System.Threading.Tasks.Task.Delay(5000);
+                    AppsHelper.LoadingHide();
+
+                    if (InscriptionCompletePopup == null)
+                    {
+                        InscriptionCompletePopup = new InscriptionCompletePopup();
+                    }
+
+                    await PopupNavigation.Instance.PushPopupAsyncSingle(InscriptionCompletePopup, true);
 
                 }
             }
@@ -86,8 +115,6 @@ namespace CommunityGroup.Views.Inscription
             {
                 AppsHelper.Snack(Ex.Message);
             }
-
         }
-
     }
 }

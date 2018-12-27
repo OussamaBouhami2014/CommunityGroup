@@ -151,7 +151,7 @@ namespace CommunityGroup
         {
             try
             {
-                //await PopupNavigation.Instance.PushPopupAsyncSingle(App.LoadingPopup);
+                await PopupNavigation.Instance.PushPopupAsyncSingle(App.LoadingPopup);
             }
             catch (Exception Ex)
             {
@@ -165,11 +165,11 @@ namespace CommunityGroup
             {
                 foreach (var item in PopupNavigation.Instance.PopupStack)
                 {
-                    //if (item.GetType() == typeof(LoadingPopup) && PopupNavigation.Instance.PopupStack.Count > 0)
-                    //{
-                    //    await Task.Delay(250);
-                    //    await Task.WhenAll(PopupNavigation.Instance.RemovePageAsync(item));
-                    //}
+                    if (item.GetType() == typeof(LoadingPopup) && PopupNavigation.Instance.PopupStack.Count > 0)
+                    {
+                        await Task.Delay(250);
+                        await Task.WhenAll(PopupNavigation.Instance.RemovePageAsync(item));
+                    }
                 }
             }
             catch (Exception Ex)
