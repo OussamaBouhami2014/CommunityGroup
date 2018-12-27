@@ -7,17 +7,17 @@ namespace CommunityGroup.Views.Accueil
 {
     public partial class AccueilPage : ContentPage
     {
-        private ActualiteViewModel Vm;
+        private EventViewModel Vm;
 
         public AccueilPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            Vm = new ActualiteViewModel();
+            Vm = new EventViewModel();
             this.BindingContext = Vm;
 
-            carouselEvenment.ItemsSource = Vm.ListActualite;
-            carouselIndicators.ItemsSource = Vm.ListActualite;
+            carouselEvenment.ItemsSource = Vm.ListEvent;
+            carouselIndicators.ItemsSource = Vm.ListEvent;
 
         }
 

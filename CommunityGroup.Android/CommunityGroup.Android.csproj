@@ -164,6 +164,13 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\iconEditAccent.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconLikeActive.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconLike.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EventThree.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EventFour.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EventFive.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EventOne.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EventTwo.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EventTwo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EventFour.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

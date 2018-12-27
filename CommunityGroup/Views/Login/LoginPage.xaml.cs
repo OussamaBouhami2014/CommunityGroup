@@ -25,7 +25,7 @@ namespace CommunityGroup.Views.Login
             if (!isPageAnimationFinished)
             {
                 isPageAnimationFinished = true;
-                StartAnimation();
+                //StartAnimation();
             }
         }
 

@@ -3,11 +3,11 @@
  <Application.Resources>
         
 <!--            <Color x:Key="Primary">#c9f658</Color>-->
-            <Color x:Key="Primary">#59ab6a</Color>
+            <Color x:Key="Primary">#00adb5</Color>
             <Color x:Key="PrimaryDark">#dbff3d</Color>
             <Color x:Key="PrimaryLight">#098EC6</Color>
         
-            <Color x:Key="Accent">#f89700</Color>
+            <Color x:Key="Accent">#3b5998</Color>
             <Color x:Key="AccentDark">#8acbbb</Color>
             <Color x:Key="AccentLight">#85C735</Color>
 
@@ -18,7 +18,7 @@
             <Color x:Key="MediumBackgroundColor">#f6f6f6</Color>
             <Color x:Key="LightBackgroundColor">#f5f5f5</Color>
 
-            <Color x:Key="BlueColor">#3b5998</Color>
+            <Color x:Key="BlueColor">#393e46</Color>
             <Color x:Key="GreenColor">#F9B64C</Color>
             <Color x:Key="RedColor">#d75a4a</Color>
             <Color x:Key="DarkBlueColor">#f76262</Color>

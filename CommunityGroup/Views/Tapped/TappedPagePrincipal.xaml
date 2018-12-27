@@ -16,7 +16,7 @@
             android:TabbedPage.BarSelectedItemColor="{StaticResource Black}">
     <NavigationPage.TitleView>
         <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,5">
-            <Image x:Name="imgToolbarLogo" Grid.Row="0"  Source="logoSansEcritureBlack.png" Aspect="AspectFit" WidthRequest="80" HeightRequest="80"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Image x:Name="imgToolbarLogo" Grid.Row="0" Source="logoSansEcriture.png" Aspect="AspectFit" WidthRequest="80" HeightRequest="80"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             <StackLayout  Grid.Row="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="End" VerticalOptions="FillAndExpand">
 <!--            <Image x:Name="imgToolbarLogout" Source="iconLogout.png" Aspect="AspectFit" BackgroundColor="Red" WidthRequest="20" HeightRequest="20"  VerticalOptions="CenterAndExpand"/>-->
 <!--            <Image x:Name="imgToolbarNotif" Source="iconNotif.png" Aspect="AspectFit" WidthRequest="20" HeightRequest="20"  />-->

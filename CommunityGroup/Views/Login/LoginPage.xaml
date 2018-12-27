@@ -63,7 +63,7 @@
                                     <control:CustomButton x:Name="BtnTwitter" Grid.Column="3" CBImage="iconTwitter.png" StyleCorner="Default"  CBImageWidthRequest="50" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" CBBackgroundColor="Transparent" Clicked="BtnFacebook_Clicked" />
                                 </Grid>
                        <StackLayout Orientation="Horizontal" Padding="{OnPlatform Android='5,15,5,15' iOS='5,20,5,20'}" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="Vous n'avez pas de compte ?" FontSize="14" TextColor="{StaticResource BlueColor}" FontAttributes="Bold" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                                    <Label Text="Vous n'avez pas de compte ?" FontSize="14" TextColor="{StaticResource BlueColor}" FontAttributes="None" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
                                     <control:CustomButton CBPadding="0" CBFontSize="16"  CBText="S'inscrire" CBFontAttributes="Bold" CBTextColor="{StaticResource Accent}" CBBackgroundColor="Transparent" CBHasShadow="false"  Clicked="Inscription_Clicked" />
                                     
                                     </StackLayout>

@@ -25,7 +25,6 @@ namespace CommunityGroup.Controls
             if (newValue == oldValue || oldValue == null || newValue == null)
                 return;
 
-            var view = (CustomEntry)bindable;
         }
 
         public static readonly BindableProperty TextColorProperty =

@@ -274,6 +274,13 @@
     <BundleResource Include="Resources\iconEditAccent.png" />
     <BundleResource Include="Resources\iconLikeActive.png" />
     <BundleResource Include="Resources\iconLike.png" />
+    <BundleResource Include="Resources\EventThree.png" />
+    <BundleResource Include="Resources\EventFour.jpg" />
+    <BundleResource Include="Resources\EventFive.jpg" />
+    <BundleResource Include="Resources\EventOne.png" />
+    <BundleResource Include="Resources\EventTwo.jpg" />
+    <BundleResource Include="Resources\EventTwo.png" />
+    <BundleResource Include="Resources\EventFour.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
