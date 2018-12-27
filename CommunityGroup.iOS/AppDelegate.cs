@@ -26,7 +26,8 @@ namespace CommunityGroup.iOS
             Lottie.Forms.iOS.Renderers.AnimationViewRenderer.Init();
 
             global::Xamarin.Forms.Forms.Init();
-            //XamForms.Controls.iOS.Calendar.Init();
+            XamForms.Controls.iOS.Calendar.Init();
+
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             //FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration
             //{

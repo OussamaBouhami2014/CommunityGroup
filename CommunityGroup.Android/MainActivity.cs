@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace CommunityGroup.Droid
 {
-    [Activity(Label = "CommunityGroup", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "OTN", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Android.OS.Bundle savedInstanceState)
@@ -46,6 +46,8 @@ namespace CommunityGroup.Droid
 
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            XamForms.Controls.Droid.Calendar.Init();
 
             #region Log Exceptions: Display Crash Report
             DisplayCrashReport();
