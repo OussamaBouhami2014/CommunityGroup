@@ -36,16 +36,19 @@
 
                         <Label  x:Name="txtMessage" IsVisible="false" FontSize="10" TextColor="#e74c3c" HorizontalTextAlignment="Center"  Margin="0,10"/>
                             <BoxView HeightRequest="1" VerticalOptions="Center" BackgroundColor="{StaticResource LightBorderColor}" Margin="10,0" />
-                            <control:CustomButton  HorizontalOptions="FillAndExpand" CBText="AJOUTER" CBTextColor="{StaticResource White}" CBBackgroundColor="{StaticResource BlueColor}" CBCornerRaduis="20" Clicked="Ajouter_Clicked"/>
+                            <control:CustomButton  HorizontalOptions="FillAndExpand" CBText="AJOUTER" CBTextColor="{StaticResource White}" CBBackgroundColor="{StaticResource Primary}" CBCornerRaduis="20" Clicked="Ajouter_Clicked"/>
                     </StackLayout>
                     </StackLayout>
                 </ScrollView>
             </Frame>
         </Grid>
-
-        <Frame Margin="0,0,0,-40" HasShadow="False" BackgroundColor="White" Padding="4" CornerRadius="44" HeightRequest="80" WidthRequest="80" HorizontalOptions="Center">
-            <Image Source="add_demande.png" Aspect="AspectFit" />
-        </Frame>
-
+        
+        
+           <Frame Margin="0,0,0,-40" HasShadow="False" BackgroundColor="{StaticResource White}" Padding="4" CornerRadius="44" HeightRequest="80" WidthRequest="80" HorizontalOptions="Center">
+             <Frame HasShadow="False" BackgroundColor="{StaticResource Primary}" CornerRadius="40" HeightRequest="80" WidthRequest="80" Padding="0" >
+            <Image Source="iconAddWhite.png" Aspect="AspectFit"  Margin="20"/>
+       </Frame>
+       </Frame>
+            
     </Grid>
 </pages:PopupPage>

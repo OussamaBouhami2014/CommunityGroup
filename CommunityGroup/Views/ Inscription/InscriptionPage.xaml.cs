@@ -88,6 +88,7 @@ namespace CommunityGroup.Views.Inscription
             }
 
         }
+
         private async void Suivant_Clicked(object sender, EventArgs e)
         {
             try
@@ -99,7 +100,7 @@ namespace CommunityGroup.Views.Inscription
                 else
                 {
                     AppsHelper.LoadingShow();
-                    await System.Threading.Tasks.Task.Delay(5000);
+                    await System.Threading.Tasks.Task.Delay(3000);
                     AppsHelper.LoadingHide();
 
                     if (InscriptionCompletePopup == null)

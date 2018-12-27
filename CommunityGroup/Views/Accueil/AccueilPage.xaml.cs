@@ -14,8 +14,7 @@ namespace CommunityGroup.Views.Accueil
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             Vm = new ActualiteViewModel();
-            this.BindingContext = this;
-
+            this.BindingContext = Vm;
 
             carouselEvenment.ItemsSource = Vm.ListActualite;
             carouselIndicators.ItemsSource = Vm.ListActualite;

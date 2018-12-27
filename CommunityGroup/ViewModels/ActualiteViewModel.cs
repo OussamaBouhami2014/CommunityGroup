@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using CommunityGroup.Models;
-using CommunityGroup.ViewModels;
 
 namespace CommunityGroup.ViewModels
 {
@@ -12,7 +12,6 @@ namespace CommunityGroup.ViewModels
 
         private List<DtoActualite> _listActualite;
         public List<DtoActualite> ListActualite { get { return _listActualite; } set { _listActualite = value; OnPropertyChanged(); } }
-
 
         private int _position = 0;
         public int Position { get { return _position; } set { _position = value; OnPropertyChanged(); } }

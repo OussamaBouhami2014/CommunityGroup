@@ -13,6 +13,7 @@ namespace CommunityGroup.ViewModels
             get { return _myCarouselViewPageList; }
             set { _myCarouselViewPageList = value; OnPropertyChanged(); }
         }
+
         public CarouselViewPageViewModel()
         {
             MyCarouselViewPageList = new ObservableCollection<CarouselViewPageModel>()

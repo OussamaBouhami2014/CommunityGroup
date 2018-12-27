@@ -5,7 +5,7 @@
             <StackLayout>
                 <Grid>
                     
-                     <CarouselView:CarouselView x:Name="carouselEvenment" HeightRequest="200" VerticalOptions="Start" ItemsSource="{Binding ActualiteList}"  PositionSelected="CarouselEvenment_PositionSelected" >
+                     <CarouselView:CarouselView x:Name="carouselEvenment" HeightRequest="200" VerticalOptions="Start" ItemsSource="{Binding ActualiteList}"  PositionSelected="CarouselEvenment_PositionSelected" Position="{Binding Position, Mode=TwoWay}">
                         <CarouselView:CarouselView.ItemTemplate>
                             <DataTemplate>
                                   <Grid  ColumnSpacing="10" VerticalOptions="Start" HeightRequest="200" >
