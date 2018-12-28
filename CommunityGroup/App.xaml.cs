@@ -46,6 +46,9 @@ namespace CommunityGroup
         {
             InitializeComponent();
 
+            MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
+            return;
+
             if (Settings.IsLogOut)
             {
                 MainPage = new NavigationPage(new Views.Login.LoginPage());
