@@ -20,33 +20,35 @@ namespace CommunityGroup.Views.Accueil
             carouselEvenment.ItemsSource = Vm.ListEvent;
             carouselIndicators.ItemsSource = Vm.ListEvent;
 
+
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                try
+                {
+                    while (true)
+                    {
+                        await Task.Delay(2000);
+
+                        Vm.Position++;
+                        if (Vm.Position == (Vm.ListEvent.Count))
+                        {
+                            Vm.Position = 0;
+                        }
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    AppsHelper.Snack(Ex.Message);
+                }
+           
+            });
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                try
-                {
-                        
-                }
-                catch (Exception Ex)
-                {
-                    AppsHelper.Snack(Ex.Message);
-                }
-                while (true)
-                {
-                    await Task.Delay(2000);
-
-                    Vm.Position++;
-                    if (Vm.Position == (Vm.ListEvent.Count))
-                    {
-                        Vm.Position = 0;
-                    }
-                }
-            });
         }
 
         private void Carousel_ItemSelected(object sender, SelectedItemChangedEventArgs e)
