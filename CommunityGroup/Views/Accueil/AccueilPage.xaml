@@ -123,6 +123,72 @@
                                     <Label Text="PUBLICATIONS" FontSize="15" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
                                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
                                 </StackLayout>
+                
+                <ContentView>
+                    <StackLayout Spacing="10" BackgroundColor="{StaticResource LightBackgroundColor}">
+                             <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="200"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                     <!--             <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>-->
+                        
+                              <StackLayout Grid.Row="0" Padding="15,5" >
+                          <StackLayout Spacing="15" Orientation="Horizontal">
+                                <Image Source="avatarHome.png"  HeightRequest="50" WidthRequest="50" HorizontalOptions="Start"/>
+                            <Label Text="Amal Karafi"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource Black}" FontAttributes="Bold"/>
+                                                <control:CustomButton CBImage="iconMore.png"  CBImageWidthRequest="20" CBImageHeightRequest="20"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Opacity=".5" Clicked="More_Clicked"  />
+                            </StackLayout>
+                                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
+                        </StackLayout>
+                
+                        <Grid Grid.Row="1">
+                            <Image Source="EventFour.png" Aspect="AspectFill" />
+                            </Grid>
+                          <StackLayout Grid.Row="2" Padding="10,10" Spacing="0" Orientation="Horizontal">
+                                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="50" CBImageHeightRequest="50"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked"  />
+                                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="50" CBImageHeightRequest="50"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked"  />
+                                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="50" CBImageHeightRequest="50"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked"  />
+                        </StackLayout>
+                    </Grid>
+                        
+                        <Grid RowSpacing="0"  BackgroundColor="{StaticResource White}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="200"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                     <!--             <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>-->
+                        
+                        <StackLayout Grid.Row="0" Padding="15,5" >
+                          <StackLayout Spacing="15" Orientation="Horizontal">
+                                <Image Source="avatarWomen.png"  HeightRequest="50" WidthRequest="50" HorizontalOptions="Start"/>
+                            <Label Text="Amal Karafi"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource Black}" FontAttributes="Bold"/>
+                                                <control:CustomButton CBImage="iconMore.png"  CBImageWidthRequest="20" CBImageHeightRequest="20"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Opacity=".5" Clicked="More_Clicked"  />
+                            </StackLayout>
+                                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
+                        </StackLayout>
+                        <Grid Grid.Row="1">
+                            <Image Source="EventOne.png" Aspect="AspectFill" />
+                            </Grid>
+                          <StackLayout Grid.Row="2" Padding="10,10" Spacing="0" Orientation="Horizontal">
+                                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="50" CBImageHeightRequest="50"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked"  />
+                                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="50" CBImageHeightRequest="50"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
+                                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="50" CBImageHeightRequest="50"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked"  />
+                                                <control:CustomButton CBImage="iconStar.png" CBImageWidthRequest="50" CBImageHeightRequest="50"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Clicked="Share_Clicked"  />
+                       
+                            </StackLayout>
+                    </Grid>
+                        </StackLayout>
+               
+                </ContentView>
             </StackLayout>
       
          </ScrollView>

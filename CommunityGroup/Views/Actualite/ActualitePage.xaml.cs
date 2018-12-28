@@ -12,7 +12,6 @@ namespace CommunityGroup.Views.Actualite
     {
         private CommentPopup CommentPopup;
 
-      
         private ActualiteViewModel Vm;
 
         public ActualitePage()
@@ -45,6 +44,27 @@ namespace CommunityGroup.Views.Actualite
             }
         }
 
+        private async void Comment_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                var view = sender as View;
+                var item = view?.BindingContext as DtoActualite;
+
+                if (CommentPopup == null)
+                {
+                    CommentPopup = new CommentPopup(1, new List<CommentDTO>());
+                    //CommentPopup.ParamsCommentAcquired += CommentPopup_ParamsCommentAcquired;
+                }
+                await Rg.Plugins.Popup.Services.PopupNavigation.Instance.PushPopupAsyncSingle(CommentPopup, true);
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+       
         private async void Handle_Clicked(object sender, System.EventArgs e)
         {
             try
@@ -59,25 +79,6 @@ namespace CommunityGroup.Views.Actualite
             }
         }
 
-        private async void Comment_Clicked(object sender, System.EventArgs e)
-        {
-            try
-            {
-                var view = sender as View;
-                var item = view?.BindingContext as DtoActualite;
-
-                if (CommentPopup == null)
-                {
-                    CommentPopup = new CommentPopup(item.ActualiteId, new List<CommentDTO>());
-                    //CommentPopup.ParamsCommentAcquired += CommentPopup_ParamsCommentAcquired;
-                }
-                await Rg.Plugins.Popup.Services.PopupNavigation.Instance.PushPopupAsyncSingle(CommentPopup, true);
-            }
-            catch (Exception Ex)
-            {
-                AppsHelper.Snack(Ex.Message);
-            }
-        }
 
 
         private void ActualiteTachesListView(object sender, System.EventArgs e)

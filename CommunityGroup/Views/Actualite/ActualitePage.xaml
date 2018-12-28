@@ -7,17 +7,17 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <control:CustomTemplateButton  Padding="5,10" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource LightBackgroundColor}" Clicked="Handle_Clicked">
+                            <control:CustomTemplateButton  Padding="5" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource LightBackgroundColor}" Clicked="Handle_Clicked">
                                 <Frame Style="{StaticResource CardStyle}" Padding="0">
                                     <StackLayout Spacing="5">
                                         <Grid HeightRequest="150">
-                                            <Image Source="{Binding ImageActualite}" Aspect="Fill" />
-                                             <Frame HeightRequest="80" BackgroundColor="{StaticResource White}" WidthRequest="80" CornerRadius="40" Padding="0" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Margin="0,0,20,0" HasShadow="false" >
-                                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="0">
-                                          <Label Text="..." TextColor="{StaticResource Accent}" FontSize="20" Style="{StaticResource CellDetailStyle}" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
-<!--                                            <Label Text="days" Style="{StaticResource CellDetailStyle}" VerticalOptions="StartAndExpand"  HorizontalOptions="CenterAndExpand"/>-->
-                                        </StackLayout>
-                                    </Frame>
+                                            <Image Grid.Row="0"  Source="{Binding ImageActualite}" Aspect="Fill" />
+                               
+                                            <Grid Grid.Row="0"  VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Margin="0,25" HeightRequest="30">
+                                <BoxView BackgroundColor="{StaticResource Accent}" CornerRadius="{OnPlatform Android='30,0,30,0', iOS='15,0,15,0', Default='0,15,0,15'}" HorizontalOptions="FillAndExpand" />
+                                <Label Text="{Binding Title}" TextColor="White" FontSize="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="15,0,10,0" />
+                            </Grid>
+                                  
                                         </Grid>
                                         <Grid Padding="10,0,0,10" >
                                             <Grid.ColumnDefinitions>
