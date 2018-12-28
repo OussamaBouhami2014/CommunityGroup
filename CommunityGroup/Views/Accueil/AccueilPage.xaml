@@ -51,7 +51,7 @@
                     <StackLayout Spacing="15">
                                 <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
                                     
-                        <Image Source="immersive.png" Margin="20" />
+                        <Image Source="futuristic.png" Margin="20" />
                                 </Frame>
                         <Label Text="INNOVATION" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
@@ -72,7 +72,7 @@
                                     
                         <Image Source="hologram.png" Margin="20" />
                                 </Frame>
-                        <Label Text="AFRIQUE" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
+                        <Label Text="AFRIQUE/INTERNATIONAL" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                         
@@ -80,7 +80,7 @@
                     <StackLayout Spacing="15">
                                    <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
                                     
-                                <Image Source="medical-research.png" Margin="20" />
+                                <Image Source="synthetic-ecology.png" Margin="20" />
                                 </Frame>
                         <Label Text="FERMIER" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>

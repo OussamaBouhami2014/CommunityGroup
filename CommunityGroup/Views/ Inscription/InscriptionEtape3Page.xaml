@@ -56,7 +56,7 @@
                 </StackLayout>
                 <StackLayout Spacing="5" Padding="0,10">
                     <Label Text="Ajouter expériences :" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" />
-                    <control:CustomButton CBImage="iconAdd.png" CBHasShadow="false" StyleCorner="Default" CBPadding="0"  CBBackgroundColor="Transparent" Clicked="AddDiplome_Clicked" />
+                    <control:CustomButton CBImage="iconAdd.png" CBHasShadow="false" StyleCorner="Default" CBPadding="0"  CBBackgroundColor="Transparent" Clicked="AddExperience_Clicked" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>

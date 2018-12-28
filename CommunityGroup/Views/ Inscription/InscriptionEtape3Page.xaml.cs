@@ -8,6 +8,7 @@ namespace CommunityGroup.Views.Inscription
     public partial class InscriptionEtape3Page : ContentView
     {
         private AjouterDiplomePopup AjouterDiplomePopup;
+        private AjouterExperiencePopup AjouterExperiencePopup;
 
         public InscriptionEtape3Page()
         {
@@ -56,6 +57,16 @@ namespace CommunityGroup.Views.Inscription
             }
 
             await PopupNavigation.Instance.PushPopupAsyncSingle(AjouterDiplomePopup, true);
+        }
+
+        private async void AddExperience_Clicked(object sender, EventArgs e)
+        {
+            if (AjouterExperiencePopup == null)
+            {
+                AjouterExperiencePopup = new AjouterExperiencePopup();
+            }
+
+            await PopupNavigation.Instance.PushPopupAsyncSingle(AjouterExperiencePopup, true);
         }
 
         private void Inscription_Clicked(object sender, System.EventArgs e)

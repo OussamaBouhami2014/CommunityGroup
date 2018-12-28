@@ -48,6 +48,7 @@
     <Folder Include="Models\Base\" />
     <Folder Include="UI\" />
     <Folder Include="UI\Chat\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controls\CustomDatePicker.xml" />
