@@ -295,6 +295,15 @@
     <BundleResource Include="Resources\futuristic.png" />
     <BundleResource Include="Resources\iconShare.png" />
     <BundleResource Include="Resources\iconStar.png" />
+    <BundleResource Include="Resources\PhotoDerrij.jpg" />
+    <BundleResource Include="Resources\photoMalal.png" />
+    <BundleResource Include="Resources\photoDerrij.png" />
+    <BundleResource Include="Resources\photoTahiri.png" />
+    <BundleResource Include="Resources\economie_circulaire.png" />
+    <BundleResource Include="Resources\participation_addis_abeba.jpg" />
+    <BundleResource Include="Resources\uiux-01.png" />
+    <BundleResource Include="Resources\um6p.png" />
+    <BundleResource Include="Resources\photoMehdi.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

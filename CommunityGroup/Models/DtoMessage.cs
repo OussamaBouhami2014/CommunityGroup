@@ -10,6 +10,10 @@ namespace CommunityGroup.Models
 
         public string MessageText { get; set; }
 
+        public string UserPhoto { get; set; }
+        public string UserName { get; set; }
+        public string Date { get; set; }
+
         public DateTime DateEnvoyer { get; set; }
 
         public DateTime DateReception { get; set; }

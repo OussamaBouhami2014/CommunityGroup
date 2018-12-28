@@ -15,7 +15,7 @@ namespace CommunityGroup
 
         public static string BlueColor = "#62acda";
         public static string YellowColor = "#F9B64C";
-        public static string RedColor = "#3fc1c9";
+        public static string RedColor = "#e41b76";
         public static string OrangeColor = "#e6811f";
         public static string DarkOrangeColor = "#f76262";
         public static string GreenColor = "#F9B64C";

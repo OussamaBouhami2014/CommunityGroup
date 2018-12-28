@@ -14,11 +14,13 @@ namespace CommunityGroup.Models
         public DateTime DateActualite { get; set; }
         public DateTime DatePublication { get; set; }
         public bool IsVue { get; set; }
+        public bool IsVue2 { get; set; }
     }
 
     public partial class DtoActualite : BindableObject
     {
         public string ColorUnivers { get; set; }
+        public string ColorDetail { get; set; }
         public int NbrLike { get; set; }
         public int NbrComment { get; set; }
 

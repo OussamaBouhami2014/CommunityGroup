@@ -8,7 +8,7 @@ namespace CommunityGroup.Views.Chat
 {
     public partial class MessagesPage : ContentPage
     {
-        private ActualiteViewModel Vm;
+        private ChatMessageViewModel Vm;
 
 
         public MessagesPage()
@@ -16,7 +16,7 @@ namespace CommunityGroup.Views.Chat
             InitializeComponent();
 
             NavigationPage.SetHasNavigationBar(this, false);
-            Vm = new ActualiteViewModel();
+            Vm = new ChatMessageViewModel();
             this.BindingContext = Vm;
         }
 
@@ -31,7 +31,7 @@ namespace CommunityGroup.Views.Chat
             if (item == null)
                 return;
 
-            await Application.Current.MainPage.Navigation.PushAsyncSingle(new Chat.ChatPage());
+            //await Application.Current.MainPage.Navigation.PushAsyncSingle(new Chat.ChatPage());
 
             ((ListView)sender).SelectedItem = null;
         }

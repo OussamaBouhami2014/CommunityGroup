@@ -13,8 +13,8 @@
                                         <Grid HeightRequest="150">
                                             <Image Grid.Row="0"  Source="{Binding ImageActualite}" Aspect="AspectFill" />
                                             <Grid Grid.Row="0"  VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Margin="0,25" HeightRequest="30">
-                                <BoxView BackgroundColor="{StaticResource Accent}" CornerRadius="{OnPlatform Android='30,0,30,0', iOS='15,0,15,0', Default='0,15,0,15'}" HorizontalOptions="FillAndExpand" />
-                                <Label Text="{Binding Title}" TextColor="White" FontSize="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="15,0,10,0" />
+                                <BoxView BackgroundColor="{Binding ColorUnivers}" CornerRadius="{OnPlatform Android='30,0,30,0', iOS='15,0,15,0', Default='0,15,0,15'}" HorizontalOptions="FillAndExpand" />
+                                <Label Text="{Binding CodeUnivers}" TextColor="White" FontSize="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="15,0,10,0" />
                             </Grid>
                                   
                                         </Grid>
@@ -25,14 +25,31 @@
                                             </Grid.ColumnDefinitions>
                                            <StackLayout Grid.Column="0" Spacing="5">
                                             <Label Text="{Binding Title}" TextColor="{StaticResource BlackTextColor}" FontAttributes="Bold" />
-                                            <Frame BackgroundColor="{Binding ColorUnivers}" VerticalOptions="Start" HorizontalOptions="Start" Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
-                                                <Label Text="{Binding CodeUnivers}" TextColor="White" FontSize="14" />
+                                            <Frame BackgroundColor="{Binding ColorDetail}" VerticalOptions="Start" HorizontalOptions="Start" Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
+                                                <Label Text="{Binding Details}" TextColor="White" FontSize="14" />
                                             </Frame>
                                             </StackLayout>
                                             <Label Grid.Column="1" Margin="10,0" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Text="{Binding DateActualite , StringFormat='{0:dd MMM}'}" TextColor="{StaticResource Accent}" />
                                         </Grid>
-                                        
-                                        <Grid Grid.Row="2"  BackgroundColor="{StaticResource White}">
+                                          <Grid Grid.Row="2" ColumnSpacing="0" BackgroundColor="{StaticResource White}" VerticalOptions="Start" IsVisible="{Binding IsVue}">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="1" />
+                                                    <ColumnDefinition Width="*" />
+                                                     <ColumnDefinition Width="1" />
+                                                </Grid.ColumnDefinitions>
+                                                  <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+                                                <BoxView Opacity=".5" HeightRequest="1" Grid.ColumnSpan="4" VerticalOptions="Start" Style="{StaticResource SeparatorStyle}" />
+                                                <control:CustomButton Grid.Column="0"   CBText="13 Like" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconLike.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="10" StyleCorner="Default" Clicked="Like_Clicked"  />
+                                                <BoxView Opacity=".5" Grid.Column="1" WidthRequest="1" VerticalOptions="FillAndExpand" Style="{StaticResource SeparatorStyle}" />
+                                                <control:CustomButton Grid.Column="2"  CBText="10 Commentaire" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconChat.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="10" StyleCorner="Default" Clicked="Like_Clicked"  />
+                                                <BoxView Opacity=".5" Grid.Column="3" WidthRequest="1" VerticalOptions="FillAndExpand" Style="{StaticResource SeparatorStyle}" />
+                                               
+                                            <control:CustomButton Grid.Column="4" CBText="19 Intéressé" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconStar.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false"  CBPadding="10" StyleCorner="Default"  Clicked="Comment_Clicked" />
+                                            </Grid>
+                                        <Grid Grid.Row="2" ColumnSpacing="0"  BackgroundColor="{StaticResource White}" VerticalOptions="Start" IsVisible="{Binding IsVue2}">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
                                                     <ColumnDefinition Width="1" />
@@ -44,7 +61,7 @@
                                                 <BoxView Opacity=".5" HeightRequest="1" Grid.ColumnSpan="3" VerticalOptions="Start" Style="{StaticResource SeparatorStyle}" />
                                                 <control:CustomButton Grid.Column="0"  CBText="11 Like" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconLike.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="10" StyleCorner="Default" Clicked="Like_Clicked"  />
                                                 <BoxView Opacity=".5" Grid.Column="1" WidthRequest="1" VerticalOptions="FillAndExpand" Style="{StaticResource SeparatorStyle}" />
-                                                <control:CustomButton Grid.Column="2"  CBText="23 Commenter" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconChat.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false"  CBPadding="10" StyleCorner="Default"  Clicked="Comment_Clicked" />
+                                                <control:CustomButton Grid.Column="2"  CBText="23 Commentaire" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconChat.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false"  CBPadding="10" StyleCorner="Default"  Clicked="Comment_Clicked" />
                                             </Grid>
                                     </StackLayout>
                                 </Frame>

@@ -172,6 +172,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\iconMore.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconShare.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconStar.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\photoMalal.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\photoDerrij.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\photoTahiri.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
