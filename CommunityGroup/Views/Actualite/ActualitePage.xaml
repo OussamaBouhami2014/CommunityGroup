@@ -19,13 +19,20 @@
                                         </StackLayout>
                                     </Frame>
                                         </Grid>
-                                        <StackLayout Padding="10,0,0,10" Spacing="5">
+                                        <Grid Padding="10,0,0,10" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                           <StackLayout Grid.Column="0" Spacing="5">
                                             <Label Text="{Binding Title}" TextColor="{StaticResource BlackTextColor}" FontAttributes="Bold" />
                                             <Frame BackgroundColor="{Binding ColorUnivers}" VerticalOptions="Start" HorizontalOptions="Start" Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
                                                 <Label Text="{Binding CodeUnivers}" TextColor="White" FontSize="14" />
                                             </Frame>
-                                            <Label Text="{Binding DateActualite , StringFormat='{0:dd MMM yyyy}'}" TextColor="{StaticResource DarkTextColor}" />
-                                        </StackLayout>
+                                            </StackLayout>
+                                            <Label Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Text="{Binding DateActualite , StringFormat='{0:dd MMM yyyy}'}" TextColor="{StaticResource DarkTextColor}" />
+                                        </Grid>
+                                        
                                         <Grid Grid.Row="2"  BackgroundColor="{StaticResource White}">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*" />
