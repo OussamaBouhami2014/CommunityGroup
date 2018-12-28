@@ -282,6 +282,16 @@
     <BundleResource Include="Resources\EventTwo.png" />
     <BundleResource Include="Resources\EventFour.png" />
     <BundleResource Include="Resources\ShadowImage.png" />
+    <BundleResource Include="Resources\simulation.png" />
+    <BundleResource Include="Resources\immersive.png" />
+    <BundleResource Include="Resources\hologram.png" />
+    <BundleResource Include="Resources\synthetic-ecology.png" />
+    <BundleResource Include="Resources\weather.png" />
+    <BundleResource Include="Resources\transparent.png" />
+    <BundleResource Include="Resources\medical-research.png" />
+    <BundleResource Include="Resources\smart-house.png" />
+    <BundleResource Include="Resources\iconMore.png" />
+    <BundleResource Include="Resources\brain.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

@@ -11,7 +11,7 @@
     </pages:PopupPage.Animation>
     <!--You can use any elements here which are extended from Xamarin.Forms.View-->
 
-    <Frame Style="{StaticResource CardStyle}" VerticalOptions="Fill"  Margin="10,50,10,5">
+    <Frame Style="{StaticResource CardStyle}" VerticalOptions="Fill"  Margin="10,80,10,50">
         <!--<ScrollView VerticalOptions="FillAndExpand">-->
         <!--<Grid VerticalOptions="End">-->
 

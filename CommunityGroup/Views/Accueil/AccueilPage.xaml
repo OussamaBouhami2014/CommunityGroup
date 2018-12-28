@@ -37,55 +37,88 @@
                                     </Frame>
                 </Grid>
                 
-                   <StackLayout Orientation="Horizontal">
+                   <StackLayout Orientation="Horizontal" Padding="40,0">
                                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
                                     <Label Text="THEMATIQUES" FontSize="15" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
                                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
                                 </StackLayout>
                 
                       <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Orientation="Horizontal" >
-                <StackLayout Orientation="Horizontal" Spacing="10">
+                <StackLayout Orientation="Horizontal" Spacing="10" Padding="10">
                     
           
                 <control:CustomTemplateButton WidthRequest="150" >
                     <StackLayout Spacing="15">
-                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80"/>
+                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
+                                    
+                        <Image Source="immersive.png" Margin="20" />
+                                </Frame>
                         <Label Text="INNOVATION" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                      <control:CustomTemplateButton WidthRequest="150">
                     <StackLayout Spacing="15">
-                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80"/>
+                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
+                                    
+                        <Image Source="transparent.png" Margin="20" />
+                                </Frame>
                         <Label Text="DIGITAL" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                         
                              <control:CustomTemplateButton WidthRequest="150">
                     <StackLayout Spacing="15">
-                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80"/>
+                                 <Frame HeightRequest="100" WidthRequest="100" CornerRadius="45" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
+                                    
+                        <Image Source="hologram.png" Margin="20" />
+                                </Frame>
                         <Label Text="AFRIQUE" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                         
                              <control:CustomTemplateButton WidthRequest="150">
                     <StackLayout Spacing="15">
-                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80"/>
+                                   <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
+                                    
+                                <Image Source="medical-research.png" Margin="20" />
+                                </Frame>
                         <Label Text="FERMIER" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                         
                              <control:CustomTemplateButton WidthRequest="150">
                     <StackLayout Spacing="15">
-                        <Image Source="logoSansEcritureBlack.png" HeightRequest="80" WidthRequest="80" />
+                                     <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
+                        <Image Source="smart-house.png" Margin="20" />
+                                </Frame>
                         <Label Text="ECO-SYSTEME" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
                     </StackLayout>
                 </control:CustomTemplateButton>
                     
+                           <control:CustomTemplateButton WidthRequest="150">
+                    <StackLayout Spacing="15">
+                                     <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
+                        <Image Source="brain.png" Margin="20" />
+                                </Frame>
+                        <Label Text="INDUSTRIEL" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
+                    </StackLayout>
+                </control:CustomTemplateButton>
+                        
+                           <control:CustomTemplateButton WidthRequest="150">
+                    <StackLayout Spacing="15">
+                                      <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start"  HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}" >
+                        <Image Source="iconMore.png" Margin="30" Opacity=".5" />
+                                </Frame>
+                                
+                        <Label Text="AUTRE" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="15" TextColor="{StaticResource Black}"/>
+                    </StackLayout>
+                </control:CustomTemplateButton>
+                        
                           </StackLayout>
                 </ScrollView>
                 
                 
-                   <StackLayout Orientation="Horizontal">
+                   <StackLayout Orientation="Horizontal" Padding="40,0">
                                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>
                                     <Label Text="PUBLICATIONS" FontSize="15" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
                                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand"/>

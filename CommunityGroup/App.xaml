@@ -24,7 +24,7 @@
             <Color x:Key="DarkBlueColor">#f76262</Color>
             <Color x:Key="OrangeColor">#e6811F</Color>
             <Color x:Key="YellowColor">#F9B64C</Color>
-            <Color x:Key="LightGrayColor">#e4e4e4</Color>
+            <Color x:Key="LightGrayColor">#F8F8F8</Color>
 
             <Color x:Key="BlackTextColor">#080808</Color>
             <Color x:Key="DarkTextColor">#4a4a4a</Color>
