@@ -13,7 +13,7 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.BarItemColor="{StaticResource Black}"
-            android:TabbedPage.BarSelectedItemColor="{StaticResource Black}">
+            android:TabbedPage.BarSelectedItemColor="{StaticResource Primary}">
     <NavigationPage.TitleView>
         <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,5">
             <Image x:Name="imgToolbarLogo" Grid.Row="0" Source="logoSansEcriture.png" Aspect="AspectFit" WidthRequest="80" HeightRequest="80"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>

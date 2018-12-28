@@ -46,8 +46,8 @@ namespace CommunityGroup
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
-            return;
+            //MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
+            //return;
 
             if (Settings.IsLogOut)
             {

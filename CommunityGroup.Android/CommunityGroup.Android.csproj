@@ -175,6 +175,20 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\photoMalal.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\photoDerrij.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\photoTahiri.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\photoMehdi.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\um6p.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\participation_addis_abeba.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\economie_circulaire.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\futuristic.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\brain.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\hologram.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\synthetic_ecology.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\weather.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\transparent.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\medical_research.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\smart_house.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\immersive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\uiux_01.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
