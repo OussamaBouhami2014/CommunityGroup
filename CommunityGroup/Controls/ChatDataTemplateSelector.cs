@@ -31,16 +31,18 @@ namespace CommunityGroup.Controls
                     case "ReceivedText":
                         return toTemplateMsgText;
 
-                    //case "SentImage":
-                    //    return fromTemplateMsgImage;
+                    default:
+                        return fromTemplateMsgText;
+                        //case "SentImage":
+                        //    return fromTemplateMsgImage;
 
-                    //case "ReceivedImage":
-                    //    return toTemplateMsgImage;
+                        //case "ReceivedImage":
+                        //    return toTemplateMsgImage;
 
-                    //case "SentVideo":
-                    //    return fromTemplateMsgVideo;
+                        //case "SentVideo":
+                        //    return fromTemplateMsgVideo;
 
-                    //case "ReceivedVideo":
+                        //case "ReceivedVideo":
                         //return toTemplateMsgVideo;
                 }
 

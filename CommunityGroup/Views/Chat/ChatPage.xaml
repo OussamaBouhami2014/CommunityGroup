@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CommunityGroup.Views.Chat.ChatPage"
+             xmlns:control="clr-namespace:CommunityGroup.Controls">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <control:ChatDataTemplateSelector x:Key="ChatDataTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Spacing="0" Grid.Row="0">
+
+                <ListView x:Name="ChatMessagesListView" HasUnevenRows="True"  SeparatorVisibility="None" 
+        ItemsSource="{Binding ChatList}" VerticalOptions="FillAndExpand" ItemSelected="ChatMessagesListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <control:ChatDataTemplateSelector />
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+            <ContentView Grid.RowSpan="2" x:Name="contentAdd"  IsVisible="False"  BackgroundColor="#50808080">
+                <Frame  x:Name="frameAdd" HeightRequest="300" BackgroundColor="#f3f3f7" CornerRadius="10" VerticalOptions="End" HasShadow="False">
+
+                </Frame>
+            </ContentView>
+
+            <StackLayout Grid.Row="1" VerticalOptions="End" Spacing="0">
+                <BoxView HeightRequest="1" BackgroundColor="#4095a5a6" VerticalOptions="Start"/>
+
+                <StackLayout BackgroundColor="#f3f3f7" HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Padding="15,10" Spacing="10">
+
+
+                    <StackLayout x:Name="gridCameraAudio" Orientation="Horizontal" Spacing="10"> 
+                        <Image x:Name="imgCamera" Source="iconCamera" HorizontalOptions="End" WidthRequest="25">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnCamera_Clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+
+                        <Image x:Name="btnImage" Source="iconImage" HorizontalOptions="End" WidthRequest="25">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnImage_Clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image x:Name="imgAudio" Source="iconMicrophone" HorizontalOptions="End" WidthRequest="25">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnAudio_Clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+
+                    </StackLayout>
+
+                    <control:CustomEntry x:Name="entryMessage" HorizontalOptions="FillAndExpand" Placeholder="Message.." PlaceholderColor="{StaticResource LightBackgroundColor}" TextChanged="entryMessage_TextChanged" Unfocused="entryMessage_Unfocused" Keyboard="Chat" Completed="entryMessage_Completed"/>
+
+                    <StackLayout x:Name="gridFichierSend" Orientation="Horizontal">
+                        <Image x:Name="btnSend" Source="iconAdd" HorizontalOptions="End" WidthRequest="25" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="btnSend_Clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+
+
+
+                </StackLayout>
+
+            </StackLayout>
+            
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

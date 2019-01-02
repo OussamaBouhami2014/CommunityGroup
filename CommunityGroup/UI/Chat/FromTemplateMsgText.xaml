@@ -35,10 +35,10 @@
             <Grid Grid.Row="0" Grid.Column="1" ColumnSpacing="0" Padding="0">
 
                 
-                <Image Grid.Column="0" Source="gris" HeightRequest="30" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0"/>
+                <Image Grid.Column="0" Source="chatLightFlesh.png" HeightRequest="30" VerticalOptions="End" HorizontalOptions="Start" Margin="0,0,0,0"/>
 
-                <Frame  Grid.Column="0" OutlineColor="Transparent" HorizontalOptions="Start" HasShadow="False" BackgroundColor="#a8a8a8" CornerRadius="20">
-                    <Label TextColor="White" Text="{Binding MessageText}" />
+                <Frame  Grid.Column="0" OutlineColor="Transparent" HorizontalOptions="Start" HasShadow="False" BackgroundColor="{StaticResource LightBackgroundColor}" CornerRadius="20" Padding="20,5">
+                    <Label TextColor="{StaticResource DarkTextColor}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Text="{Binding MessageText}" />
                 </Frame>
 
             </Grid>

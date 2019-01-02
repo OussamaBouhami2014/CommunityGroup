@@ -27,11 +27,11 @@ namespace CommunityGroup.Views.Chat
 
         private async void MessagesListView_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            var item = ((ListView)sender).SelectedItem as DtoActualite;
+            var item = ((ListView)sender).SelectedItem as DtoMessage;
             if (item == null)
                 return;
 
-            //await Application.Current.MainPage.Navigation.PushAsyncSingle(new Chat.ChatPage());
+            await Application.Current.MainPage.Navigation.PushAsyncSingle(new Chat.ChatPage());
 
             ((ListView)sender).SelectedItem = null;
         }
@@ -40,12 +40,12 @@ namespace CommunityGroup.Views.Chat
             if (viewDetailFloating.IsVisible)
             {
                 viewDetailFloating.IsVisible = false;
-                btnFloating.RotateTo(90, 500);
+                btnFloating.RotateTo(0, 500);
             }
             else
             {
                 viewDetailFloating.IsVisible = true;
-                btnFloating.RotateTo(0, 500);
+                btnFloating.RotateTo(45, 500);
             }
         }
     }

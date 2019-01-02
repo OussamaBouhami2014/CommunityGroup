@@ -200,6 +200,8 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\iconCalendarWhite.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconVideoCameraWhite.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconCallWhite.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\chatLightFlesh.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\chatPrimaryFlesh.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

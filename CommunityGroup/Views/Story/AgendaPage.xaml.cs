@@ -92,12 +92,12 @@ namespace CommunityGroup.Views.Story
             if (viewDetailFloating.IsVisible)
             {
                 viewDetailFloating.IsVisible = false;
-                btnFloating.RotateTo(90, 500);
+                btnFloating.RotateTo(0, 500);
             }
             else
             {
                 viewDetailFloating.IsVisible = true;
-                btnFloating.RotateTo(0, 500);
+                btnFloating.RotateTo(45, 500);
             }
         }
 
