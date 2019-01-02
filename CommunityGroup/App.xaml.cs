@@ -11,7 +11,7 @@ namespace CommunityGroup
     {
         public static string PrimaryColor = "#59ab6a";
         public static string PrimaryDarkColor = "#082b4b";
-        public static string Accent = "#f89700";
+        public static string Accent = "#3b5998";
 
         public static string BlueColor = "#62acda";
         public static string YellowColor = "#F9B64C";

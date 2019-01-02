@@ -303,6 +303,14 @@
     <BundleResource Include="Resources\participation_addis_abeba.png" />
     <BundleResource Include="Resources\iconFilter.png" />
     <BundleResource Include="Resources\iconFilterWhite.png" />
+    <BundleResource Include="Resources\AgendaFour.png" />
+    <BundleResource Include="Resources\AgendaOne.png" />
+    <BundleResource Include="Resources\AgendaThree.png" />
+    <BundleResource Include="Resources\AgendaTwo.png" />
+    <BundleResource Include="Resources\iconChatWhite.png" />
+    <BundleResource Include="Resources\iconCalendarWhite.png" />
+    <BundleResource Include="Resources\iconVideoCameraWhite.png" />
+    <BundleResource Include="Resources\iconCallWhite.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

@@ -35,6 +35,18 @@ namespace CommunityGroup.Views.Chat
 
             ((ListView)sender).SelectedItem = null;
         }
-
+        private void FloatingButton_Clicked(object sender, System.EventArgs e)
+        {
+            if (viewDetailFloating.IsVisible)
+            {
+                viewDetailFloating.IsVisible = false;
+                btnFloating.RotateTo(90, 500);
+            }
+            else
+            {
+                viewDetailFloating.IsVisible = true;
+                btnFloating.RotateTo(0, 500);
+            }
+        }
     }
 }

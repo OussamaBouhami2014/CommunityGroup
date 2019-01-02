@@ -192,6 +192,14 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\iconStarActive.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconFilter.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconFilterWhite.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AgendaFour.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AgendaOne.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AgendaThree.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AgendaTwo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconChatWhite.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconCalendarWhite.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconVideoCameraWhite.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconCallWhite.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

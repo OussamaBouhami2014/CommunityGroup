@@ -66,7 +66,6 @@ namespace CommunityGroup.Views.Accueil
             }
         }
 
-
         private void Star_Clicked(object sender, System.EventArgs e)
         {
             try
@@ -112,7 +111,6 @@ namespace CommunityGroup.Views.Accueil
                 AppsHelper.Snack(Ex.Message);
             }
         }
-
       
         private async void Share_Clicked(object sender, System.EventArgs e)
         {
@@ -134,8 +132,6 @@ namespace CommunityGroup.Views.Accueil
                 AppsHelper.Snack(Ex.Message);
             }
         }
-
-
 
         private void Carousel_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {

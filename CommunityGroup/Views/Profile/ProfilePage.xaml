@@ -22,7 +22,7 @@
                             <BoxView Grid.Row="2" Grid.Column="3" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource Black}" Opacity=".5" WidthRequest="1" />
                             <BoxView Grid.Row="3" Grid.ColumnSpan="5" BackgroundColor="{StaticResource Black}" Opacity=".5" HeightRequest="1" />
                             <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Padding="10,0">
-                      <Image x:Name="imgProfil" Source="avatarHome.png" Aspect="AspectFit" WidthRequest="80"/>
+                      <Image x:Name="imgProfil" Source="photoMalal.png" Aspect="AspectFit" WidthRequest="80"/>
                          <!--  <FF:CachedImage x:Name="imgProfil" Source="avatarProfil.png" Aspect="AspectFit" WidthRequest="80">
                                     <FF:CachedImage.Transformations>
                                         <FFTransformations:CircleTransformation />
@@ -30,25 +30,25 @@
                                 </FF:CachedImage>-->
                             </StackLayout>
                             <StackLayout x:Name="viewNameJob" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand">
-                                <Label x:Name="txtName" Text="Hicham Mahmoud" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
-                                <Label x:Name="txtRole" Text="Ingénieur" TextColor="{StaticResource Black}" FontSize="10" FontAttributes="Bold" />
+                                <Label x:Name="txtName" Text="MALAL Zakariae" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
+                                <Label x:Name="txtRole" Text="HR Digital Manager" TextColor="{StaticResource Black}" FontSize="10" FontAttributes="Bold" />
                             </StackLayout>
                             <control:CustomButton Grid.Row="0" Grid.Column="4" CBText="edit" ImageAlignment="Top" CBImage="iconEditAccent.png" StyleCorner="Default" CBTextColor="{StaticResource Black}" CBHasShadow="false" CBImageHeightRequest="15" CBImageWidthRequest="15"
                                 HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" CBPadding="5" Clicked="Edit_Clicked" />
                             <StackLayout Grid.Row="2" Grid.Column="0" Spacing="0">
                                 <Image Source="logoSansEcriture.png" HeightRequest="30" WidthRequest="30" Margin="5" />
                                 <Label x:Name="titleFollowers" Text="20" TextColor="{StaticResource Black}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="18" />
-                                <Label Text="Followers" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="10" FontAttributes="Bold" />
+                                <Label Text="Comments" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="10" FontAttributes="Bold" />
                             </StackLayout>
                             <StackLayout Grid.Row="2" Grid.Column="2" Spacing="0">
                                 <Image Source="logoSansEcriture.png" HeightRequest="30" WidthRequest="30" Margin="5" />
                                 <Label x:Name="titleMissions" Text="05" TextColor="{StaticResource Black}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="18" />
-                                <Label Text="Missions" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="10" FontAttributes="Bold" />
+                                <Label Text="Meeting" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="10" FontAttributes="Bold" />
                             </StackLayout>
                             <StackLayout Grid.Row="2" Grid.Column="4" Spacing="0">
                                 <Image Source="logoSansEcriture.png" HeightRequest="30" WidthRequest="30" Margin="5" />
                                 <Label x:Name="titleStories" Text="10"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="18" />
-                                <Label Text="Stories" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="10" FontAttributes="Bold" />
+                                <Label Text="Lives / Stories" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="10" FontAttributes="Bold" />
                             </StackLayout>
                         </Grid>
                     </Grid>
@@ -72,18 +72,18 @@
                             <Label Grid.Column="0" TextColor="{StaticResource Black}" FontAttributes="Bold">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="20" FontSize="40" />
-                                        <Span Text="hrs" />
-                                        <Span Text="&#xA;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore" FontSize="15" />
+                                        <Span Text="Ingénieur" FontSize="30" />
+                                        <Span Text=" EMI - 2010" FontSize="13" />
+                                        <Span Text="&#xA;&#xA;Diplômé de l'Ecole Mohammadia d'ingénieur, Option système d'information et qualité logiciel" FontSize="15" TextColor="#50000000"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
                             <Label Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" TextColor="{StaticResource Black}" FontAttributes="Bold">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="12" FontSize="40" />
-                                        <Span Text="jours" />
-                                        <Span Text="&#xA;Lorem Ipsum est un texte d'espace réserv " FontSize="15" />
+                                        <Span Text="UX/UI" FontSize="30" />
+                                        <Span Text=" OCP SA - depuis 2013" FontSize="13" />
+                                        <Span Text="&#xA;&#xA;Pilotage de déploiement de solutions digitales innovantes " FontSize="15" TextColor="#50000000"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>

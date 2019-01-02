@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using CommunityGroup.Models;
+using CommunityGroup.ViewModels;
 using Xamarin.Forms;
 using XamForms.Controls;
 
@@ -45,21 +47,72 @@ namespace CommunityGroup.Views.Story
         private DateTime FirstDate = DateTime.Now.AddDays(1);
         private DateTime LastDate = DateTime.Now.AddDays(5);
 
+        private EventViewModel Vm;
 
         public AgendaPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            this.BindingContext = this;
+            Vm = new EventViewModel();
+            this.BindingContext = Vm;
+
 
             SelectedDatesList = new ObservableCollection<SpecialDate>();
-            FirstDate = DateTime.Now;
             FirstDate = DateTime.Now.AddDays(3);
+            LastDate = DateTime.Now.AddDays(11);
 
+            carouselEvenment.ItemsSource = Vm.ListEventAgenda;
+            carouselIndicators.ItemsSource = Vm.ListEventAgenda;
+
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                try
+                {
+                    while (true)
+                    {
+                        await Task.Delay(2000);
+
+                        Vm.Position++;
+                        if (Vm.Position == (Vm.ListEvent.Count))
+                        {
+                            Vm.Position = 0;
+                        }
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    AppsHelper.Snack(Ex.Message);
+                }
+
+            });
+        }
+        private void FloatingButton_Clicked(object sender, System.EventArgs e)
+        {
+            if (viewDetailFloating.IsVisible)
+            {
+                viewDetailFloating.IsVisible = false;
+                btnFloating.RotateTo(90, 500);
+            }
+            else
+            {
+                viewDetailFloating.IsVisible = true;
+                btnFloating.RotateTo(0, 500);
+            }
         }
 
+        private void Carousel_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var Item = e.SelectedItem as CarouselViewPageModel;
+            if (Item != null)
+            {
+                //currentPage = Item;
+            }
+        }
 
+        private void CarouselEvenment_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
+        {
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();

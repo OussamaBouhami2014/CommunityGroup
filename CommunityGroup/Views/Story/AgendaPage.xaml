@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:calendar="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar" x:Class="CommunityGroup.Views.Story.AgendaPage" BackgroundColor="{StaticResource LightBackgroundColor}">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls"
+             xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" 
+             xmlns:calendar="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar" x:Class="CommunityGroup.Views.Story.AgendaPage" BackgroundColor="{StaticResource LightBackgroundColor}">
     <ContentPage.Content>
+                <Grid>
                 <ScrollView>
-            <StackLayout Spacing="20" Padding="0,20" >
+    
+            <StackLayout Grid.Row="0" Spacing="20" Padding="0,0,0,20" >
+                   <Grid>
+                    <CarouselView:CarouselView x:Name="carouselEvenment" HeightRequest="200" VerticalOptions="Start" ItemsSource="{Binding ActualiteList}" PositionSelected="CarouselEvenment_PositionSelected" Position="{Binding Position, Mode=TwoWay}">
+                        <CarouselView:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnSpacing="10" VerticalOptions="Start" HeightRequest="200">
+                                    <Image Grid.Column="0" Source="{Binding ImageEvent}" Aspect="AspectFill" />
+                                    <Image Grid.Column="0" Source="ShadowImage.png" Aspect="AspectFill" />
+                                    <Grid Grid.Column="0" VerticalOptions="EndAndExpand" Padding="10,25">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Frame Grid.Column="0" BackgroundColor="{StaticResource Primary}" VerticalOptions="FillAndExpand" HorizontalOptions="Start" Padding="5" HasShadow="false" IsClippedToBounds="true" CornerRadius="8">
+                                            <Label Text="{Binding CodeUnivers}" FontAttributes="Bold" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="14" />
+                                        </Frame>
+                                        <Label Grid.Column="1" Text="{Binding Title}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="{StaticResource White}" />
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView:CarouselView.ItemTemplate>
+                    </CarouselView:CarouselView>
+                    <control:CarouselIndicators x:Name="carouselIndicators" Padding="5" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" IndicatorHeight="8" IndicatorWidth="8" UnselectedIndicator="whiteCircle.png" SelectedIndicator="whiteCircle.png" Position="{Binding Position}" />
+               <!--     <Frame VerticalOptions="Start" Margin="0,30,-20,0" HasShadow="false" HorizontalOptions="EndAndExpand" WidthRequest="100" Padding="5,5,20,5" CornerRadius="15" BackgroundColor="{StaticResource LightBackgroundColor}">
+                        <Label Text="À LA UNE" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource Accent}" />
+                    </Frame>-->
+                </Grid>
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="20" Padding="30,0">
-                      <StackLayout>
-                <Image Source="iconMentorWhite.png" WidthRequest="50" HeightRequest="50"/>
-                    <Label Text="Agenda"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
-                        
-                    </StackLayout>   
-                    <Label Text="Agenda"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                       
                     <Label Text="Mon Agenda"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="25" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
                
-                 <Label Text="L'agenda vous permet de visualiser les évennements programmé par votre club, vos collègues, ainsi que vos propres meeting et programmes de rencontre (physique ou virtuel). Pour programmer une rencontre, merci de cliquer sur (+) en bas de votre écran." TextColor="{StaticResource Black}" FontSize="15"   HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                 <Label Text="L'agenda vous permet de visualiser les évennements programmé par votre club, vos collègues, ainsi que vos propres meeting et programmes de rencontre (physique ou virtuel)." TextColor="{StaticResource Black}" FontSize="15"   HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
                
             
             </StackLayout>
@@ -57,6 +82,39 @@
                     </Frame>
                         </ContentView>
                     </StackLayout>
+        
     </ScrollView>
+                    <Grid Grid.Row="0" >
+                <StackLayout Margin="30" Spacing="5" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" >
+                  <StackLayout x:Name="viewDetailFloating" IsVisible="false" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+              
+                        <control:CustomTemplateButton VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Clicked="FloatingButton_Clicked">
+                <Frame  Style="{StaticResource CardStyle}" HeightRequest="40" WidthRequest="40" CornerRadius="20" BackgroundColor="#4a4a4a" Padding="0" >
+                    <Image Source="iconCalendarWhite.png" Aspect="AspectFit" Margin="10" />
+                </Frame>
+                    
+                    </control:CustomTemplateButton>
+                         <control:CustomTemplateButton VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Clicked="FloatingButton_Clicked">
+                <Frame  Style="{StaticResource CardStyle}" HeightRequest="40" WidthRequest="40" CornerRadius="20" BackgroundColor="#4a4a4a" Padding="0" >
+                    <Image Source="iconChatWhite.png" Aspect="AspectFit" Margin="10" />
+                </Frame>
+                    
+                    </control:CustomTemplateButton>
+                         <control:CustomTemplateButton VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Clicked="FloatingButton_Clicked">
+                <Frame  Style="{StaticResource CardStyle}" HeightRequest="40" WidthRequest="40" CornerRadius="20" BackgroundColor="#4a4a4a" Padding="0" >
+                    <Image Source="iconVideoCameraWhite.png" Aspect="AspectFit" Margin="10" />
+                </Frame>
+                    
+                    </control:CustomTemplateButton>
+                    </StackLayout>
+                <control:CustomTemplateButton x:Name="btnFloating" VerticalOptions="End" HorizontalOptions="EndAndExpand" Clicked="FloatingButton_Clicked">
+                <Frame  Style="{StaticResource CardStyle}" HeightRequest="60" WidthRequest="60" CornerRadius="30" BackgroundColor="{StaticResource Primary}" Padding="0" >
+                    <Image Source="iconAddWhite.png" Aspect="AspectFit" Margin="20" />
+                </Frame>
+                    
+                    </control:CustomTemplateButton>
+                        </StackLayout>
+                      </Grid>
+                     </Grid>
     </ContentPage.Content>
 </ContentPage>
