@@ -31,7 +31,7 @@ namespace CommunityGroup.Views.Chat
             if (item == null)
                 return;
 
-            await Application.Current.MainPage.Navigation.PushAsyncSingle(new Chat.ChatPage());
+            await Application.Current.MainPage.Navigation.PushAsyncSingle(new Chat.ChatPage(item));
 
             ((ListView)sender).SelectedItem = null;
         }

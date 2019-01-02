@@ -313,6 +313,9 @@
     <BundleResource Include="Resources\iconCallWhite.png" />
     <BundleResource Include="Resources\chatLightFlesh.png" />
     <BundleResource Include="Resources\chatPrimaryFlesh.png" />
+    <BundleResource Include="Resources\iconCamera.png" />
+    <BundleResource Include="Resources\iconGallery.png" />
+    <BundleResource Include="Resources\iconSend.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

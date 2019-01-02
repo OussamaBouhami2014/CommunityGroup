@@ -22,12 +22,16 @@ namespace CommunityGroup.Views.Chat
         bool BackPressed = false;
         ChatMessageViewModel Vm;
 
-        public ChatPage()
+        public ChatPage(DtoMessage data)
         {
             InitializeComponent();
+            NavigationPage.SetBackButtonTitle(this, "");
+
             //this.Title = GroupeName;
             Vm = new ChatMessageViewModel();
             this.BindingContext = Vm;
+            imgUser.Source = data.UserPhoto;
+            txtUserName.Text = data.UserName;
         }
 
         protected override void OnAppearing()
@@ -46,7 +50,7 @@ namespace CommunityGroup.Views.Chat
         }
 
         #region Chat Button Event
-        private async void btnCamera_Clicked(object sender, EventArgs e)
+        private async void Camera_Clicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
 
@@ -122,7 +126,7 @@ namespace CommunityGroup.Views.Chat
 
         }
 
-        private async void btnAudio_Clicked(object sender, EventArgs e)
+        private async void Audio_Clicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakeVideoSupported)
@@ -195,7 +199,7 @@ namespace CommunityGroup.Views.Chat
             //});
         }
 
-        private async void btnImage_Clicked(object sender, EventArgs e)
+        private async void Image_Clicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
             if (!CrossMedia.Current.IsPickPhotoSupported)
@@ -264,21 +268,32 @@ namespace CommunityGroup.Views.Chat
 
         }
 
-        private async void btnSend_Clicked(object sender, EventArgs e)
+        private async void Send_Clicked(object sender, EventArgs e)
+        {
+            await SendMessage();
+        }
+        private async void Call_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private async Task SendMessage()
         {
             if (!string.IsNullOrEmpty(entryMessage.Text) && !contentAdd.IsVisible)
             {
                 string message = entryMessage.Text;
 
-                var btn = sender as Button;
-                var messageChat = btn?.BindingContext as DtoMessage;
-                Vm = BindingContext as ChatMessageViewModel;
+                //var btn = sender as Button;
+                //var messageChat = btn?.BindingContext as DtoMessage;
+                //Vm = BindingContext as ChatMessageViewModel;
 
                 //await chatHubproxy.invoke("sendmessage", new object[] { myusername, message });
 
+                var messageChat = entryMessage.Text;
+
                 Device.BeginInvokeOnMainThread(async () =>
                 {
-
+                        
                     if (boole)
                     {
                         Vm.SendMsgText = message;
@@ -325,7 +340,6 @@ namespace CommunityGroup.Views.Chat
 
             }
         }
-
         #endregion
 
         private void ChatMessagesListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -340,22 +354,15 @@ namespace CommunityGroup.Views.Chat
 
         private async void entryMessage_TextChanged(object sender, TextChangedEventArgs e)
         {
-
-
             if (!string.IsNullOrEmpty(entryMessage.Text))
             {
-
-
-
-                btnSend.Source = "iconSend";
+                btnSend.Source = "iconSend.png";
                 gridCameraAudio.TranslateTo(-gridCameraAudio.Height * 2, 0, 250, Easing.CubicInOut);
                 gridCameraAudio.IsVisible = false;
-
-
             }
             else
             {
-                btnSend.Source = "iconAdd";
+                btnSend.Source = "iconAdd.png";
                 gridCameraAudio.IsVisible = true;
                 await gridCameraAudio.TranslateTo(0, 0, 250, Easing.CubicInOut);
             }
@@ -365,9 +372,11 @@ namespace CommunityGroup.Views.Chat
         {
         }
 
-        private void entryMessage_Completed(object sender, EventArgs e)
+        private async void entryMessage_Completed(object sender, EventArgs e)
         {
-            entryMessage.Focus();
+            await SendMessage();
+
+        
         }
 
         private string ImageNameFromResource(string u)

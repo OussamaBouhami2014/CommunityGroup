@@ -202,6 +202,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\iconCallWhite.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\chatLightFlesh.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\chatPrimaryFlesh.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconSend.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

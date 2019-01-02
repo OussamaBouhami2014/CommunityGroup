@@ -9,7 +9,25 @@
             <control:ChatDataTemplateSelector x:Key="ChatDataTemplateSelector"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-
+        <NavigationPage.TitleView>
+        <Grid x:Name="ChatToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0">
+           <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Start">
+        <Frame HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+        <Image x:Name="imgUser" Grid.Column="0" Source="photoMalal" Aspect="AspectFill"/>
+        </Frame>
+        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Spacing="2">
+            <Label x:Name="txtUserName" TextColor="{StaticResource White}" FontSize="15"/>
+            <Label x:Name="txtStatut" Text="Online" TextColor="{StaticResource White}" FontSize="12"/>
+        </StackLayout>
+                 <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Spacing="2">
+            <control:CustomButton x:Name="imgToolbarCall" StyleCorner="Default" CBImage="iconCallWhite.png" CBImageWidthRequest="20" CBImageHeightRequest="20"  CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Call_Clicked"/>
+            <control:CustomButton x:Name="imgToolbarChat" StyleCorner="Default" CBImage="iconChatWhite.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Call_Clicked"/>
+            <control:CustomButton x:Name="imgToolbarCalendar" StyleCorner="Default" CBImage="iconCalendarWhite.png" CBImageWidthRequest="20" CBImageHeightRequest="20"  CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Call_Clicked"/>
+        </StackLayout>
+   
+    </StackLayout>
+        </Grid>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
 
         <Grid>
@@ -40,41 +58,36 @@
 
                 <StackLayout BackgroundColor="#f3f3f7" HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Padding="15,10" Spacing="10">
 
-
                     <StackLayout x:Name="gridCameraAudio" Orientation="Horizontal" Spacing="10"> 
-                        <Image x:Name="imgCamera" Source="iconCamera" HorizontalOptions="End" WidthRequest="25">
+                        <Image x:Name="imgCamera" Source="iconCamera.png" HorizontalOptions="End" WidthRequest="25">
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="btnCamera_Clicked"/>
+                                <TapGestureRecognizer Tapped="Camera_Clicked"/>
                             </Image.GestureRecognizers>
                         </Image>
 
-
-                        <Image x:Name="btnImage" Source="iconImage" HorizontalOptions="End" WidthRequest="25">
+                        <Image x:Name="btnImage" Source="iconGallery.png" HorizontalOptions="End" WidthRequest="25">
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="btnImage_Clicked"/>
+                                <TapGestureRecognizer Tapped="Image_Clicked"/>
                             </Image.GestureRecognizers>
                         </Image>
 
-                        <Image x:Name="imgAudio" Source="iconMicrophone" HorizontalOptions="End" WidthRequest="25">
+                       <!-- <Image x:Name="imgAudio" Source="iconMicrophone" HorizontalOptions="End" WidthRequest="25">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="btnAudio_Clicked"/>
                             </Image.GestureRecognizers>
-                        </Image>
-
+                        </Image>-->
 
                     </StackLayout>
 
                     <control:CustomEntry x:Name="entryMessage" HorizontalOptions="FillAndExpand" Placeholder="Message.." PlaceholderColor="{StaticResource LightBackgroundColor}" TextChanged="entryMessage_TextChanged" Unfocused="entryMessage_Unfocused" Keyboard="Chat" Completed="entryMessage_Completed"/>
 
                     <StackLayout x:Name="gridFichierSend" Orientation="Horizontal">
-                        <Image x:Name="btnSend" Source="iconAdd" HorizontalOptions="End" WidthRequest="25" >
+                        <Image x:Name="btnSend" Source="iconAdd.png" HorizontalOptions="End" WidthRequest="25" >
                             <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="btnSend_Clicked"/>
+                                <TapGestureRecognizer Tapped="Send_Clicked"/>
                             </Image.GestureRecognizers>
                         </Image>
                     </StackLayout>
-
-
 
                 </StackLayout>
 

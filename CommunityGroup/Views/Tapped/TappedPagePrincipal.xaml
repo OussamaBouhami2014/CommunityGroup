@@ -22,7 +22,7 @@
 <!--            <Image x:Name="imgToolbarNotif" Source="iconNotif.png" Aspect="AspectFit" WidthRequest="20" HeightRequest="20"  />-->
             <control:CustomButton x:Name="imgToolbarLogout" StyleCorner="Default" Margin="0" Padding="0" IsVisible="false" CBImage="iconLogout.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Logout_Clicked"/>
             <control:CustomButton x:Name="imgToolbarFilter" StyleCorner="Default" CBImage="iconFilter.png" CBImageWidthRequest="20" CBImageHeightRequest="20" IsVisible="false" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Filter_Clicked"/>
-            <control:CustomButton x:Name="imgToolbarNotif" CBImage="iconNotif.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notifification_Clicked"/>
+            <control:CustomButton x:Name="imgToolbarNotif" StyleCorner="Default" CBImage="iconNotif.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notifification_Clicked"/>
        </StackLayout>
         </Grid>
     </NavigationPage.TitleView>

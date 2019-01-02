@@ -9,7 +9,7 @@ namespace CommunityGroup
 {
     public partial class App : Application
     {
-        public static string PrimaryColor = "#59ab6a";
+        public static string PrimaryColor = "#00adb5";
         public static string PrimaryDarkColor = "#082b4b";
         public static string Accent = "#3b5998";
 
@@ -46,8 +46,8 @@ namespace CommunityGroup
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Views.Chat.ChatPage());
-            return;
+            //MainPage = new NavigationPage(new Views.Chat.ChatPage());
+            //return;
 
             if (Settings.IsLogOut)
             {

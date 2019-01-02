@@ -2,15 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CommunityGroup"
              xmlns:control="clr-namespace:CommunityGroup.Controls"
              x:Class="CommunityGroup.MainPage">
-   <Grid  ColumnSpacing="10" VerticalOptions="Start" HeightRequest="200" >
-        
-        <Image Grid.Column="0" Source="{Binding ImageEvent}" Aspect="AspectFill"/>
-        <StackLayout Grid.Column="0" Orientation="Horizontal" VerticalOptions="EndAndExpand" Padding="10,25">
-          <Frame BackgroundColor="{StaticResource Primary}" WidthRequest="100" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
-                            <Label Text="text" TextColor="White" FontSize="14" />
-                        </Frame>
-            <Label Text="{Binding Title}" TextColor="{StaticResource White}"/>
+   <StackLayout  Spacing="10" VerticalOptions="Start">
+        <Frame HeightRequest="60" WidthRequest="60" CornerRadius="30" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+        <Image  Source="photoMalal" Aspect="AspectFill"/>
+        </Frame>
+        <StackLayout>
+            <Label Text="YU" TextColor="{StaticResource White}" FontSize="15"/>
+            <Label Text="Online" TextColor="{StaticResource White}" FontSize="12"/>
         </StackLayout>
-
-    </Grid>
+   
+    </StackLayout>
 </ContentPage>
