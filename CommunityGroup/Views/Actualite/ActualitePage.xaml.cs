@@ -5,6 +5,7 @@ using CommunityGroup.ViewModels;
 using Xamarin.Forms;
 using CommunityGroup.Models;
 using CommunityGroup.Popups;
+using Rg.Plugins.Popup.Services;
 
 namespace CommunityGroup.Views.Actualite
 {
@@ -64,7 +65,23 @@ namespace CommunityGroup.Views.Actualite
             }
         }
 
+
+        private void Star_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                var view = sender as Controls.CustomButton;
+                view.CBImage = view.CBImage.Contains("Active") ? "iconStar" : "iconStarActive";
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
        
+
+
         private async void Handle_Clicked(object sender, System.EventArgs e)
         {
             try

@@ -10,9 +10,9 @@
                         
                     </StackLayout>   
                     <Label Text="Agenda"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
-                    <Label Text="Lorem Ipsum!"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="25" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="Mon Agenda"  TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="25" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
                
-                 <Label Text="Lorem Ipsum est un texte d'espace réservé couramment utilisé dans les industries graphique, imprimée et éditoriale pour prévisualiser les mises en page et les maquettes visuelles." TextColor="{StaticResource Black}" FontSize="15"   HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                 <Label Text="L'agenda vous permet de visualiser les évennements programmé par votre club, vos collègues, ainsi que vos propres meeting et programmes de rencontre (physique ou virtuel). Pour programmer une rencontre, merci de cliquer sur (+) en bas de votre écran." TextColor="{StaticResource Black}" FontSize="15"   HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
                
             
             </StackLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<base:BasePage xmlns:base="clr-namespace:CommunityGroup.Views" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Actualite.ActualitePage" xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:control="clr-namespace:CommunityGroup.Controls" BackgroundColor="{StaticResource LightBackgroundColor}">
+<base:BasePage xmlns:base="clr-namespace:CommunityGroup.Views" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Actualite.ActualitePage" xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:control="clr-namespace:CommunityGroup.Controls" BackgroundColor="{StaticResource LightBackgroundColor}" Title="Actualite">
     <base:BasePage.Content>
         <StackLayout Spacing="10" VerticalOptions="FillAndExpand">
             <ListView x:Name="ActualiteListView" BackgroundColor="{StaticResource LightBackgroundColor}" ItemsSource="{Binding ListActualite}" IsPullToRefreshEnabled="True" Refreshing="ActualiteTachesListView" HasUnevenRows="True" ItemSelected="ActualiteListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="None"
@@ -41,13 +41,13 @@
                                                   <Grid.RowDefinitions>
                                                     <RowDefinition Height="Auto" />
                                                 </Grid.RowDefinitions>
-                                                <BoxView Opacity=".5" HeightRequest="1" Grid.ColumnSpan="4" VerticalOptions="Start" Style="{StaticResource SeparatorStyle}" />
+                                                <BoxView Opacity=".5" HeightRequest="1" Grid.ColumnSpan="5" VerticalOptions="Start" Style="{StaticResource SeparatorStyle}" />
                                                 <control:CustomButton Grid.Column="0"   CBText="13 Like" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconLike.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="10" StyleCorner="Default" Clicked="Like_Clicked"  />
                                                 <BoxView Opacity=".5" Grid.Column="1" WidthRequest="1" VerticalOptions="FillAndExpand" Style="{StaticResource SeparatorStyle}" />
                                                 <control:CustomButton Grid.Column="2"  CBText="10 Commentaire" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconChat.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="10" StyleCorner="Default" Clicked="Like_Clicked"  />
                                                 <BoxView Opacity=".5" Grid.Column="3" WidthRequest="1" VerticalOptions="FillAndExpand" Style="{StaticResource SeparatorStyle}" />
                                                
-                                            <control:CustomButton Grid.Column="4" CBText="19 Intéressé" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconStar.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false"  CBPadding="10" StyleCorner="Default"  Clicked="Comment_Clicked" />
+                                            <control:CustomButton Grid.Column="4" CBText="19 Intéressé" CBTextColor="{StaticResource DarkTextColor}" CBImage="iconStar.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false"  CBPadding="10" StyleCorner="Default"  Clicked="Star_Clicked" />
                                             </Grid>
                                         <Grid Grid.Row="2" ColumnSpacing="0"  BackgroundColor="{StaticResource White}" VerticalOptions="Start" IsVisible="{Binding IsVue2}">
                                                 <Grid.ColumnDefinitions>

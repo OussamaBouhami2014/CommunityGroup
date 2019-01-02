@@ -24,7 +24,7 @@
                             </DataTemplate>
                         </CarouselView:CarouselView.ItemTemplate>
                     </CarouselView:CarouselView>
-                    <control:CarouselIndicators x:Name="carouselIndicators" Padding="5" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" IndicatorHeight="12" IndicatorWidth="12" UnselectedIndicator="whiteCircle.png" SelectedIndicator="whiteCircle.png" Position="{Binding Position}" />
+                    <control:CarouselIndicators x:Name="carouselIndicators" Padding="5" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" IndicatorHeight="8" IndicatorWidth="8" UnselectedIndicator="whiteCircle.png" SelectedIndicator="whiteCircle.png" Position="{Binding Position}" />
                     <Frame VerticalOptions="Start" Margin="0,30,-20,0" HasShadow="false" HorizontalOptions="EndAndExpand" WidthRequest="100" Padding="5,5,20,5" CornerRadius="15" BackgroundColor="{StaticResource LightBackgroundColor}">
                         <Label Text="À LA UNE" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource Accent}" />
                     </Frame>
@@ -96,13 +96,7 @@
                         </control:CustomTemplateButton>
                     </StackLayout>
                 </ScrollView>
-                <StackLayout IsVisible="false" Orientation="Horizontal" Padding="40,10" BackgroundColor="Red">
-                    <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand" />
-                    <Label Text="PUBLICATIONS" FontSize="13" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
-                    <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand" />
-                </StackLayout>
-<!--                    <BoxView Style="{StaticResource SeparatorStyle}" HeightRequest="10" BackgroundColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" />-->
-                
+
                 <ContentView BackgroundColor="{StaticResource LightBackgroundColor}" Padding="0,10">
                     <StackLayout Spacing="10" BackgroundColor="{StaticResource LightBackgroundColor}">
                         <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
@@ -111,7 +105,7 @@
                                 <RowDefinition Height="200" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <StackLayout Grid.Row="0" Padding="15,5">
+                            <StackLayout Grid.Row="0" Padding="10,5">
                                 <StackLayout Spacing="15" Orientation="Horizontal">
                                     <Image Source="photoMalal.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start" />
                                     <Label Text="MALAL Zakariae" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource Black}" FontAttributes="Bold" />
@@ -133,7 +127,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <StackLayout Grid.Row="0" Padding="15,5">
+                            <StackLayout Grid.Row="0" Padding="10,5">
                                 <StackLayout Spacing="15" Orientation="Horizontal">
                                     <Image Source="photoTahiri.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start" />
                                     <Label Text="TAHIRI Meriem" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource Black}" FontAttributes="Bold" />
@@ -145,7 +139,7 @@
                                 <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
                                 <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
                                 <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
-                                <control:CustomButton CBImage="iconStar.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Clicked="Share_Clicked" />
+                                <control:CustomButton CBImage="iconStar.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Clicked="Star_Clicked" />
                             </StackLayout>
                         </Grid>
                         <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
@@ -154,7 +148,7 @@
                                 <RowDefinition Height="200" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <StackLayout Grid.Row="0" Padding="15,5">
+                            <StackLayout Grid.Row="0" Padding="10,5">
                                 <StackLayout Spacing="15" Orientation="Horizontal">
                                     <Image Source="photoDerrij.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start" />
                                     <Label Text="DERRIJ Faris" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource Black}" FontAttributes="Bold" />

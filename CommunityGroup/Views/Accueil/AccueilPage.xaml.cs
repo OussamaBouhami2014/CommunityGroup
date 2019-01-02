@@ -55,12 +55,24 @@ namespace CommunityGroup.Views.Accueil
 
         }
 
-      
-
-       private void More_Clicked(object sender, System.EventArgs e)
+        private void More_Clicked(object sender, System.EventArgs e)
         {
             try
             {
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+
+        private void Star_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                var view = sender as Controls.CustomButton;
+                view.CBImage = view.CBImage.Contains("Active") ? "iconStar" : "iconStarActive";
             }
             catch (Exception Ex)
             {

@@ -189,6 +189,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\smart_house.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\immersive.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\uiux_01.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconStarActive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconFilter.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconFilterWhite.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

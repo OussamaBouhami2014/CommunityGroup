@@ -49,7 +49,7 @@ namespace CommunityGroup.ViewModels
                     ColorDetail = App.GreenColor,
                     DateActualite = DateTime.Now.AddDays(-2),
                     DatePublication = DateTime.Now.AddDays(-2),
-                    ImageActualite = "participation_addis_abeba.jpg",
+                    ImageActualite = "participation_addis_abeba.png",
                      NbrLike = 17,
                     NbrComment = 13,
                     IsVue = false,

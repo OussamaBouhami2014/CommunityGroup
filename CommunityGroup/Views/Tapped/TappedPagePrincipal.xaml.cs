@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using CommunityGroup.Helpers;
+using CommunityGroup.Views.Actualite;
 using FormsToolkit;
+using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
 namespace CommunityGroup.Views.Tapped
 {
     public partial class TappedPagePrincipal : Controls.BottomNavTabPage
     {
+        private ActualiteFilterPopup ActualiteFilterPopup;
+
         public TappedPagePrincipal()
         {
             InitializeComponent();
@@ -34,6 +38,8 @@ namespace CommunityGroup.Views.Tapped
                 var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
 
                 imgToolbarLogout.IsVisible = currentPage.Title == "Profile" ? true : false;
+                imgToolbarFilter.IsVisible = currentPage.Title == "Actualite" ? true : false;
+
 
                 //imgToolbarLogout.IsVisible = currentPage.GetType() == typeof(Views.Profile.ProfilePage) ? true : false;
 
@@ -56,6 +62,24 @@ namespace CommunityGroup.Views.Tapped
             }
         }
 
+
+        private async void Filter_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (ActualiteFilterPopup == null)
+                {
+                    ActualiteFilterPopup = new ActualiteFilterPopup();
+                }
+
+                await PopupNavigation.Instance.PushPopupAsyncSingle(ActualiteFilterPopup, true);
+
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
         private async void Notifification_Clicked(object sender, System.EventArgs e)
         {
             try

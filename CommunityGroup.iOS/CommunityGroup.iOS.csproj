@@ -299,6 +299,10 @@
     <BundleResource Include="Resources\uiux_01.png" />
     <BundleResource Include="Resources\um6p.png" />
     <BundleResource Include="Resources\photoMehdi.png" />
+    <BundleResource Include="Resources\iconStarActive.png" />
+    <BundleResource Include="Resources\participation_addis_abeba.png" />
+    <BundleResource Include="Resources\iconFilter.png" />
+    <BundleResource Include="Resources\iconFilterWhite.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
