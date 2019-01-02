@@ -49,6 +49,7 @@
     <Folder Include="UI\" />
     <Folder Include="UI\Chat\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\Network\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controls\CustomDatePicker.xml" />

@@ -19,7 +19,7 @@
                                                 <Frame HeightRequest="40" WidthRequest="40" OutlineColor="#20000000" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
         <Image  Source="{Binding UserPhoto}" Aspect="AspectFill"/>
         </Frame>
-        <Frame HeightRequest="10" WidthRequest="10" Margin="-10,10,0,0" OutlineColor="#FFFFFF" CornerRadius="5" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="Green">
+        <Frame HeightRequest="10" WidthRequest="10" Margin="30,5,5,0" OutlineColor="#FFFFFF" CornerRadius="5" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="Green">
         </Frame>           
                                         </Grid>
       

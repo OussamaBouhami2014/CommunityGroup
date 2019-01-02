@@ -2,7 +2,10 @@
 <base:BasePage xmlns:base="clr-namespace:CommunityGroup.Views" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Actualite.ActualitePage" xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:control="clr-namespace:CommunityGroup.Controls" BackgroundColor="{StaticResource LightBackgroundColor}" Title="Actualite">
     <base:BasePage.Content>
         <StackLayout Spacing="10" VerticalOptions="FillAndExpand">
-            <ListView x:Name="ActualiteListView" BackgroundColor="{StaticResource LightBackgroundColor}" ItemsSource="{Binding ListActualite}" IsPullToRefreshEnabled="True" Refreshing="ActualiteTachesListView" HasUnevenRows="True" ItemSelected="ActualiteListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="None"
+           <StackLayout Padding="15,15,15,15">
+           <control:CustomSwitch CSTextDark="ALL" CSTextLight="OFFRES" CSDarkColor="{StaticResource Primary}" CSLightColor="{StaticResource LightBorderColor}" ClickedSwitchOne="GestureSwitchOne" ClickedSwitchTwo="GestureSwitchTwo"  />
+            </StackLayout> 
+            <ListView x:Name="ActualiteListView" BackgroundColor="{StaticResource LightBackgroundColor}"  IsPullToRefreshEnabled="True" Refreshing="ActualiteTachesListView" HasUnevenRows="True" ItemSelected="ActualiteListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="None"
                 SeparatorColor="{StaticResource BorderColor}" Footer="">
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Network.NetworkPage" BackgroundColor="{StaticResource White}" Title="Network">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15,20" Spacing="20">
+                <Grid>
+                    <Image Grid.Row="0" Source="DemiCircle.png" Grid.ColumnSpan="3" Margin="-15,-40,-15,0" Aspect="AspectFill"/>
+                    <StackLayout Grid.Column="0">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
+                            <Frame OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="photoDerrij" Aspect="AspectFill" />
+                            </Frame>
+                            <Frame Margin="-10,0,0,0" OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true"
+                                BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="photoTahiri" Aspect="AspectFill" />
+                            </Frame>
+                            <Frame Margin="-10,0,0,0" OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true"
+                                BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="photoMehdi" Aspect="AspectFill" />
+                            </Frame>
+                        </StackLayout>
+                        <Label Text="58" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        <Label Text="Collègues" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+            
+                        <StackLayout Grid.Column="1" Margin="0,30,0,0">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
+                            <Frame OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="EntrepriseOne.png" Aspect="AspectFill" />
+                            </Frame>
+                            <Frame Margin="-10,0,0,0" OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true"
+                                BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="EntrepriseTwo.png" Aspect="AspectFill" />
+                            </Frame>
+                            <Frame Margin="-10,0,0,0" OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true"
+                                BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="EntrepriseThree.png" Aspect="AspectFill" />
+                            </Frame>
+                        </StackLayout>
+                        <Label Text="27" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        <Label Text="Entreprises" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+            
+                        <StackLayout Grid.Column="2">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
+                            <Frame OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="EcoleOne.png" Aspect="AspectFill" />
+                            </Frame>
+                            <Frame Margin="-10,0,0,0" OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true"
+                                BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="EcoleTwo.png" Aspect="AspectFill" />
+                            </Frame>
+                            <Frame Margin="-10,0,0,0" OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true"
+                                BackgroundColor="{StaticResource LightBackgroundColor}">
+                                <Image Grid.Column="0" Source="EcoleThree.png" Aspect="AspectFill" />
+                            </Frame>
+                        </StackLayout>
+                        <Label Text="35" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        <Label Text="Ecoles" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    
+                   
+                </Grid>
+                
+                      <ListView x:Name="MessagesListView" BackgroundColor="Transparent" ItemsSource="{Binding ListNetwork}" IsPullToRefreshEnabled="True" Refreshing="MessagesListView_Refreshing" HasUnevenRows="True" CachingStrategy="RecycleElementAndDataTemplate" ItemSelected="MessagesListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="Default" SeparatorColor="{StaticResource BorderColor}" Footer="" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                             <ContentView Padding="10,15" >
+            <Grid  ColumnSpacing="10" VerticalOptions="Start">
+       <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>  
+                                        
+                                        <Grid Grid.Row="0" RowSpacing="0" ColumnSpacing="0">
+                                                <Frame  HeightRequest="40" WidthRequest="40" OutlineColor="#20000000" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+        <Image  Source="{Binding UserPhoto}" Aspect="AspectFill"/>
+        </Frame>
+                 
+                                        </Grid>
+      
+        
+                                        <StackLayout Grid.Column="1" >
+            <Label Text="{Binding UserName}" Style="{StaticResource CellTitleStyle}"/>
+            <Label Text="{Binding Post}" Style="{StaticResource CellDetailStyle}"/>
+        </StackLayout>
+        
+         <StackLayout Grid.Column="2" >
+            <Label Text="{Binding Company}" Style="{StaticResource CellTitleStyle}" HorizontalTextAlignment="End"/>
+            <Label Text="{Binding Localite}" Style="{StaticResource CellTitleStyle}" FontAttributes="None" HorizontalTextAlignment="End"/>
+        </StackLayout>
+    </Grid>
+        </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -203,6 +203,16 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\chatLightFlesh.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\chatPrimaryFlesh.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconSend.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconNetworkActive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconNetwork.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EcoleOne.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EcoleThree.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EcoleTwo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EntrepriseOne.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EntrepriseThree.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\EntrepriseTwo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\DemiCircle.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconSearch.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -10,7 +10,7 @@ namespace CommunityGroup.Views.Profile
         public ProfilePage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private void Edit_Clicked(object sender, EventArgs e)

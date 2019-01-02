@@ -4,6 +4,7 @@
              xmlns:local_Accueil="clr-namespace:CommunityGroup.Views.Accueil"
              xmlns:local_Story="clr-namespace:CommunityGroup.Views.Story"
              xmlns:local_Chat="clr-namespace:CommunityGroup.Views.Chat"
+             xmlns:local_Network="clr-namespace:CommunityGroup.Views.Network"
              xmlns:local_Actualite="clr-namespace:CommunityGroup.Views.Actualite"
              xmlns:local_Profile="clr-namespace:CommunityGroup.Views.Profile"
              xmlns:FF="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
@@ -15,14 +16,22 @@
             android:TabbedPage.BarItemColor="{StaticResource Black}"
             android:TabbedPage.BarSelectedItemColor="{StaticResource Primary}">
     <NavigationPage.TitleView>
-        <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,5">
-            <Image x:Name="imgToolbarLogo" Grid.Row="0" Source="logoSansEcriture.png" Aspect="AspectFit" WidthRequest="80" HeightRequest="80"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            <StackLayout  Grid.Row="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="End" VerticalOptions="FillAndExpand">
+        <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0">
+            <control:CustomTemplateButton HorizontalOptions="Start" VerticalOptions="CenterAndExpand"  Clicked="Profil_Clicked" >
+              <Frame Grid.Row="0" OutlineColor="#20000000" HeightRequest="30" WidthRequest="30" CornerRadius="15" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+        <Image x:Name="imgUser" Grid.Column="0" Source="photoMalal" Aspect="AspectFill"/>
+        </Frame>
+                </control:CustomTemplateButton>
+            
+            <Image x:Name="imgToolbarLogo" Grid.Row="0" Margin="0,5" Source="logoSansEcriture.png" Aspect="AspectFit" WidthRequest="80" HeightRequest="80"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <StackLayout  Grid.Row="0" Padding="0,5" Orientation="Horizontal" Spacing="10" HorizontalOptions="End" VerticalOptions="FillAndExpand">
 <!--            <Image x:Name="imgToolbarLogout" Source="iconLogout.png" Aspect="AspectFit" BackgroundColor="Red" WidthRequest="20" HeightRequest="20"  VerticalOptions="CenterAndExpand"/>-->
 <!--            <Image x:Name="imgToolbarNotif" Source="iconNotif.png" Aspect="AspectFit" WidthRequest="20" HeightRequest="20"  />-->
             <control:CustomButton x:Name="imgToolbarLogout" StyleCorner="Default" Margin="0" Padding="0" IsVisible="false" CBImage="iconLogout.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Logout_Clicked"/>
             <control:CustomButton x:Name="imgToolbarFilter" StyleCorner="Default" CBImage="iconFilter.png" CBImageWidthRequest="20" CBImageHeightRequest="20" IsVisible="false" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Filter_Clicked"/>
-            <control:CustomButton x:Name="imgToolbarNotif" StyleCorner="Default" CBImage="iconNotif.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notifification_Clicked"/>
+                        <control:CustomButton x:Name="imgToolbarRecherche" StyleCorner="Default" IsVisible="false" CBImage="iconSearch.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notification_Clicked"/>
+
+                <control:CustomButton x:Name="imgToolbarNotif" StyleCorner="Default" CBImage="iconNotif.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notification_Clicked"/>
        </StackLayout>
         </Grid>
     </NavigationPage.TitleView>
@@ -38,6 +47,11 @@
                      <local_Actualite:ActualitePage />
             </x:Arguments>
         </NavigationPage>
+         <NavigationPage Title="Network" Icon="iconNetwork.png">
+            <x:Arguments>
+                     <local_Network:NetworkPage />
+            </x:Arguments>
+        </NavigationPage>
            <NavigationPage Title="Agenda" Icon="iconAgenda.png">
             <x:Arguments>
                     <local_Story:AgendaPage />
@@ -48,10 +62,10 @@
                     <local_Chat:MessagesPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Profile" Icon="iconProfile.png">
+   <!--     <NavigationPage Title="Profile" Icon="iconProfile.png">
             <x:Arguments>
                 <local_Profile:ProfilePage />
             </x:Arguments>
-        </NavigationPage>
+        </NavigationPage>-->
     </TabbedPage.Children>
 </control:BottomNavTabPage>

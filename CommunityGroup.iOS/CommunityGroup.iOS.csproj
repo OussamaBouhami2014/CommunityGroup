@@ -316,6 +316,20 @@
     <BundleResource Include="Resources\iconCamera.png" />
     <BundleResource Include="Resources\iconGallery.png" />
     <BundleResource Include="Resources\iconSend.png" />
+    <BundleResource Include="Resources\iconNetwork%401x.png" />
+    <BundleResource Include="Resources\iconNetwork%402x.png" />
+    <BundleResource Include="Resources\iconNetwork%403x.png" />
+    <BundleResource Include="Resources\iconNetworkActive%401x.png" />
+    <BundleResource Include="Resources\iconNetworkActive%402x.png" />
+    <BundleResource Include="Resources\iconNetworkActive%403x.png" />
+    <BundleResource Include="Resources\EcoleOne.png" />
+    <BundleResource Include="Resources\EcoleThree.png" />
+    <BundleResource Include="Resources\EcoleTwo.png" />
+    <BundleResource Include="Resources\EntrepriseOne.png" />
+    <BundleResource Include="Resources\EntrepriseThree.png" />
+    <BundleResource Include="Resources\EntrepriseTwo.png" />
+    <BundleResource Include="Resources\DemiCircle.png" />
+    <BundleResource Include="Resources\iconSearch.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

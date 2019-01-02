@@ -5,6 +5,7 @@ using CommunityGroup.ViewModels;
 using Xamarin.Forms;
 using CommunityGroup.Models;
 using CommunityGroup.Popups;
+using System.Linq;
 using Rg.Plugins.Popup.Services;
 
 namespace CommunityGroup.Views.Actualite
@@ -20,7 +21,9 @@ namespace CommunityGroup.Views.Actualite
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
             Vm = new ActualiteViewModel();
+
             this.BindingContext = Vm;
+            ActualiteListView.ItemsSource = Vm.ListActualite;
         }
 
         protected override void OnAppearing()
@@ -30,6 +33,18 @@ namespace CommunityGroup.Views.Actualite
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#F5F5F5");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#F5F5F5");
             MessagingService.Current.SendMessage(MessageKeys.Message_ChangeStatutBarColor, "#696969");
+        }
+
+        private  void GestureSwitchOne(object sender, EventArgs e)
+        {
+            ActualiteListView.ItemsSource = null;
+            ActualiteListView.ItemsSource = Vm.ListActualite;
+        }
+
+        private  void GestureSwitchTwo(object sender, EventArgs e)
+        {
+            ActualiteListView.ItemsSource = null;
+            ActualiteListView.ItemsSource = Vm.ListActualite.Where(x=>x.CodeUnivers.Equals("OFFRE")).ToList();
         }
 
         private void Like_Clicked(object sender, System.EventArgs e)

@@ -39,6 +39,9 @@ namespace CommunityGroup.Views.Tapped
 
                 imgToolbarLogout.IsVisible = currentPage.Title == "Profile" ? true : false;
                 imgToolbarFilter.IsVisible = currentPage.Title == "Actualite" ? true : false;
+                imgToolbarRecherche.IsVisible = currentPage.Title == "Network" ? true : false;
+
+
 
 
                 //imgToolbarLogout.IsVisible = currentPage.GetType() == typeof(Views.Profile.ProfilePage) ? true : false;
@@ -80,7 +83,7 @@ namespace CommunityGroup.Views.Tapped
                 AppsHelper.Snack(Ex.Message);
             }
         }
-        private async void Notifification_Clicked(object sender, System.EventArgs e)
+        private async void Notification_Clicked  (object sender, System.EventArgs e)
         {
             try
             {
@@ -92,6 +95,18 @@ namespace CommunityGroup.Views.Tapped
                 AppsHelper.Snack(Ex.Message);
             }
         }
+        private async void Profil_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                await Application.Current.MainPage.Navigation.PushAsyncSingle(new Profile.ProfilePage());
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
 
         private void Logout_Clicked(object sender, System.EventArgs e)
         {

@@ -4,19 +4,19 @@ using CommunityGroup.Models;
 using CommunityGroup.ViewModels;
 using Xamarin.Forms;
 
-namespace CommunityGroup.Views.Chat
+namespace CommunityGroup.Views.Network
 {
-    public partial class MessagesPage : ContentPage
+    public partial class NetworkPage : ContentPage
     {
-        private ChatMessageViewModel Vm;
+        private NetworkViewModel Vm;
 
-        public MessagesPage()
+        public NetworkPage()
         {
             InitializeComponent();
-
             NavigationPage.SetHasNavigationBar(this, false);
-            Vm = new ChatMessageViewModel();
+            Vm = new NetworkViewModel();
             this.BindingContext = Vm;
+
         }
 
         private void MessagesListView_Refreshing(object sender, System.EventArgs e)
@@ -34,20 +34,7 @@ namespace CommunityGroup.Views.Chat
 
             ((ListView)sender).SelectedItem = null;
         }
-     
-           private void FloatingButton_Clicked(object sender, System.EventArgs e)
-        {
-            if (viewDetailFloating.IsVisible)
-            {
-                viewDetailFloating.IsVisible = false;
-                btnFloating.RotateTo(0, 500);
-            }
-            else
-            {
-                viewDetailFloating.IsVisible = true;
-                btnFloating.RotateTo(45, 500);
-            }
-        }
-   
-     }
+
+
+    }
 }
