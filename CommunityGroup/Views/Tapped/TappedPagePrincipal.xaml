@@ -18,12 +18,13 @@
     <NavigationPage.TitleView>
         <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0">
             <control:CustomTemplateButton HorizontalOptions="Start" VerticalOptions="CenterAndExpand"  Clicked="Profil_Clicked" >
-              <Frame Grid.Row="0" OutlineColor="#20000000" HeightRequest="30" WidthRequest="30" CornerRadius="15" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+              <Frame Grid.Row="0"  OutlineColor="#20000000" HeightRequest="30" WidthRequest="30" CornerRadius="16" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
         <Image x:Name="imgUser" Grid.Column="0" Source="photoMalal" Aspect="AspectFill"/>
         </Frame>
                 </control:CustomTemplateButton>
             
-            <Image x:Name="imgToolbarLogo" Grid.Row="0" Margin="0,5" Source="logoSansEcriture.png" Aspect="AspectFit" WidthRequest="80" HeightRequest="80"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Image x:Name="imgToolbarLogo" Grid.Row="0" Source="logoSansEcriture.png" Margin="0,5" Aspect="AspectFit"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        
             <StackLayout  Grid.Row="0" Padding="0,5" Orientation="Horizontal" Spacing="10" HorizontalOptions="End" VerticalOptions="FillAndExpand">
                 <control:CustomButton x:Name="imgToolbarFilter" StyleCorner="Default" CBImage="iconFilter.png" CBImageWidthRequest="20" CBImageHeightRequest="20" IsVisible="false" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Filter_Clicked"/>
                         <control:CustomButton x:Name="imgToolbarRecherche" StyleCorner="Default" IsVisible="false" CBImage="iconSearch.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notification_Clicked"/>
@@ -33,27 +34,27 @@
     </NavigationPage.TitleView>
 
     <TabbedPage.Children>
-        <NavigationPage Title="Accueil" Icon="iconAccueilActive.png">
+        <NavigationPage Title="Accueil" Icon="iconAccueilActive">
             <x:Arguments>
                 <local_Accueil:AccueilPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Actualités" ClassId="sd" Icon="iconActualite.png">
+        <NavigationPage Title="Actualités"  Icon="iconActualite">
             <x:Arguments>
                      <local_Actualite:ActualitePage />
             </x:Arguments>
         </NavigationPage>
-         <NavigationPage Title="Network" Icon="iconNetwork.png">
+         <NavigationPage Title="Network" Icon="iconNetwork">
             <x:Arguments>
                      <local_Network:NetworkPage />
             </x:Arguments>
         </NavigationPage>
-           <NavigationPage Title="Agenda" Icon="iconAgenda.png">
+           <NavigationPage Title="Agenda" Icon="iconAgenda">
             <x:Arguments>
                     <local_Story:AgendaPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Chat" Icon="iconChat.png" >
+        <NavigationPage Title="Chat" Icon="iconChat" >
             <x:Arguments>
                     <local_Chat:MessagesPage />
             </x:Arguments>

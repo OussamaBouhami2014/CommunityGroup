@@ -46,7 +46,7 @@ namespace CommunityGroup
         {
             InitializeComponent();
 
-            //MainPage = new NavigationPage(new Views.Chat.ChatPage());
+            //MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
             //return;
 
             if (Settings.IsLogOut)
@@ -57,7 +57,7 @@ namespace CommunityGroup
             {
                 MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
             }
-                //MainPage = new NavigationPage(new MainPage());
+              
         }
 
         protected override void OnStart()

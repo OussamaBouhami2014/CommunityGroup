@@ -77,7 +77,7 @@
             TitleRightArrowTextColor="{StaticResource CalendarTitleArrowTextColor}"
              SpecialDates="{Binding SelectedDatesList}"
             DateClicked="Calendar_DateClicked" />
-                        <control:CustomButton CBText="Button" CBTextColor="{StaticResource Accent}" CBFontSize="20" CBHasShadow="false" Padding="10,5" StyleCorner="Default" Clicked="Submit_Clicked"/>
+<!--                        <control:CustomButton CBText="Button" CBTextColor="{StaticResource Accent}" CBFontSize="20" CBHasShadow="false" Padding="10,5" StyleCorner="Default" Clicked="Submit_Clicked"/>-->
                            </StackLayout>
                     </Frame>
                         </ContentView>

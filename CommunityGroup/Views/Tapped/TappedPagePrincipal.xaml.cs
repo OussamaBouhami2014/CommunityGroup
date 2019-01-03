@@ -40,22 +40,16 @@ namespace CommunityGroup.Views.Tapped
                 imgToolbarFilter.IsVisible = currentPage.Title == "Actualités" ? true : false;
                 imgToolbarRecherche.IsVisible = currentPage.Title == "Network" ? true : false;
 
-
-
-
-                //imgToolbarLogout.IsVisible = currentPage.GetType() == typeof(Views.Profile.ProfilePage) ? true : false;
-
                 foreach (var item in this.Children)
                 {
                     if (item != currentPage)
                     {
-                        item.Icon = "icon" + item.Title + ".png";
+                        item.Icon = item.Icon.File.Replace("Active","");
                     }
                     else
                     {
-                        currentPage.Icon = "icon" + currentPage.Title + "Active" + ".png";
+                        currentPage.Icon = currentPage.Icon.File + "Active";
                     }
-
                 }
             }
             catch (Exception Ex)
