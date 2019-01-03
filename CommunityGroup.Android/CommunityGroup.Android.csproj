@@ -97,6 +97,7 @@
     <Compile Include="Effects\EntryMoveNextEffect.cs" />
     <Compile Include="Renderers\CustomTimePickerRenderer.cs" />
     <Compile Include="Renderers\BottomNavTabPageRenderer.cs" />
+    <Compile Include="Renderers\CustomEditorRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

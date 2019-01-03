@@ -3,19 +3,19 @@ using Xamarin.Forms;
 
 namespace CommunityGroup.Controls
 {
-    public class ExtendedEditorControl : Editor
+    public class CustomEditor : Editor
     {
         public static BindableProperty PlaceholderProperty
-          = BindableProperty.Create(nameof(Placeholder), typeof(string), typeof(ExtendedEditorControl));
+          = BindableProperty.Create(nameof(Placeholder), typeof(string), typeof(CustomEditor));
 
         public static BindableProperty PlaceholderColorProperty
-           = BindableProperty.Create(nameof(PlaceholderColor), typeof(Color), typeof(ExtendedEditorControl), Color.LightGray);
+           = BindableProperty.Create(nameof(PlaceholderColor), typeof(Color), typeof(CustomEditor), Color.LightGray);
 
         public static BindableProperty HasRoundedCornerProperty
-        = BindableProperty.Create(nameof(HasRoundedCorner), typeof(bool), typeof(ExtendedEditorControl), false);
+        = BindableProperty.Create(nameof(HasRoundedCorner), typeof(bool), typeof(CustomEditor), false);
 
         public static BindableProperty IsExpandableProperty
-        = BindableProperty.Create(nameof(IsExpandable), typeof(bool), typeof(ExtendedEditorControl), false);
+        = BindableProperty.Create(nameof(IsExpandable), typeof(bool), typeof(CustomEditor), false);
 
         public bool IsExpandable
         {
@@ -40,12 +40,12 @@ namespace CommunityGroup.Controls
             set { SetValue(PlaceholderColorProperty, value); }
         }
 
-        public ExtendedEditorControl()
+        public CustomEditor()
         {
             TextChanged += OnTextChanged;
         }
 
-        ~ExtendedEditorControl()
+        ~CustomEditor()
         {
             TextChanged -= OnTextChanged;
         }
