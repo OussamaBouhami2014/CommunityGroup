@@ -37,8 +37,7 @@ namespace CommunityGroup.Views.Tapped
             {
                 var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
 
-                imgToolbarLogout.IsVisible = currentPage.Title == "Profile" ? true : false;
-                imgToolbarFilter.IsVisible = currentPage.Title == "Actualite" ? true : false;
+                imgToolbarFilter.IsVisible = currentPage.Title == "Actualités" ? true : false;
                 imgToolbarRecherche.IsVisible = currentPage.Title == "Network" ? true : false;
 
 
@@ -108,19 +107,7 @@ namespace CommunityGroup.Views.Tapped
         }
 
 
-        private void Logout_Clicked(object sender, System.EventArgs e)
-        {
-            try
-            {
-                Settings.ClearSettings();
-                Application.Current.MainPage = new NavigationPage(new Views.Login.LoginPage());
-            }
-            catch (Exception Ex)
-            {
-                AppsHelper.Snack(Ex.Message);
-            }
-        }
-
+       
         protected override void OnAppearing()
         {
             base.OnAppearing();

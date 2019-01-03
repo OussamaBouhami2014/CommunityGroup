@@ -330,6 +330,9 @@
     <BundleResource Include="Resources\EntrepriseTwo.png" />
     <BundleResource Include="Resources\DemiCircle.png" />
     <BundleResource Include="Resources\iconSearch.png" />
+    <BundleResource Include="Resources\iconLogoutWhite%401x.png" />
+    <BundleResource Include="Resources\iconLogoutWhite%402x.png" />
+    <BundleResource Include="Resources\iconLogoutWhite%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

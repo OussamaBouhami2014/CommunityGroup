@@ -36,28 +36,20 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <StackLayout Spacing="0" Grid.Row="0">
-
-                <ListView x:Name="ChatMessagesListView" HasUnevenRows="True"  SeparatorVisibility="None" 
-        ItemsSource="{Binding ChatList}" VerticalOptions="FillAndExpand" ItemSelected="ChatMessagesListView_ItemSelected">
-                    <ListView.ItemTemplate>
-                        <control:ChatDataTemplateSelector />
-                    </ListView.ItemTemplate>
-                </ListView>
-
-            </StackLayout>
-
+                <ListView x:Name="ChatMessagesListView" Grid.Row="0" HasUnevenRows="True"  SeparatorVisibility="None" 
+        ItemsSource="{Binding ChatList}" ItemTemplate="{StaticResource ChatDataTemplateSelector}"  VerticalOptions="FillAndExpand" ItemSelected="ChatMessagesListView_ItemSelected"/>
+        
+           
             <ContentView Grid.RowSpan="2" x:Name="contentAdd"  IsVisible="False"  BackgroundColor="#50808080">
                 <Frame  x:Name="frameAdd" HeightRequest="300" BackgroundColor="#f3f3f7" CornerRadius="10" VerticalOptions="End" HasShadow="False">
 
                 </Frame>
             </ContentView>
-
-            <StackLayout Grid.Row="1" VerticalOptions="End" Spacing="0">
-                <BoxView HeightRequest="1" BackgroundColor="#4095a5a6" VerticalOptions="Start"/>
-
-                <StackLayout BackgroundColor="#f3f3f7" HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Padding="15,10" Spacing="10">
-
+            
+       
+                <StackLayout Grid.Row="1" BackgroundColor="#f3f3f7" HorizontalOptions="FillAndExpand"  Orientation="Horizontal" Padding="15,10" Spacing="10">
+                <BoxView  HeightRequest="1" BackgroundColor="#4095a5a6"/>
+                
                     <StackLayout x:Name="gridCameraAudio" Orientation="Horizontal" Spacing="10"> 
                         <Image x:Name="imgCamera" Source="iconCamera.png" HorizontalOptions="End" WidthRequest="25">
                             <Image.GestureRecognizers>
@@ -79,7 +71,8 @@
 
                     </StackLayout>
 
-                    <control:CustomEntry x:Name="entryMessage" HorizontalOptions="FillAndExpand" Placeholder="Message.." PlaceholderColor="{StaticResource LightBackgroundColor}" TextChanged="entryMessage_TextChanged" Unfocused="entryMessage_Unfocused" Keyboard="Chat" Completed="entryMessage_Completed"/>
+                    <control:CustomEntry x:Name="entryMessage"  
+              HorizontalOptions="FillAndExpand" Placeholder="Message.."  PlaceholderColor="{StaticResource LightBackgroundColor}" TextChanged="entryMessage_TextChanged" Unfocused="entryMessage_Unfocused" Keyboard="Chat" Completed="entryMessage_Completed"/>
 
                     <StackLayout x:Name="gridFichierSend" Orientation="Horizontal">
                         <Image x:Name="btnSend" Source="iconAdd.png" HorizontalOptions="End" WidthRequest="25" >
@@ -91,7 +84,6 @@
 
                 </StackLayout>
 
-            </StackLayout>
             
         </Grid>
 

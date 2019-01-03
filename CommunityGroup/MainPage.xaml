@@ -2,14 +2,5 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:CommunityGroup"
              xmlns:control="clr-namespace:CommunityGroup.Controls"
              x:Class="CommunityGroup.MainPage">
-   <StackLayout  Spacing="10" VerticalOptions="Start">
-        <Frame HeightRequest="60" WidthRequest="60" CornerRadius="30" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
-        <Image  Source="photoMalal" Aspect="AspectFill"/>
-        </Frame>
-        <StackLayout>
-            <Label Text="YU" TextColor="{StaticResource White}" FontSize="15"/>
-            <Label Text="Online" TextColor="{StaticResource White}" FontSize="12"/>
-        </StackLayout>
-   
-    </StackLayout>
+ 
 </ContentPage>

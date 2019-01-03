@@ -25,12 +25,8 @@
             
             <Image x:Name="imgToolbarLogo" Grid.Row="0" Margin="0,5" Source="logoSansEcriture.png" Aspect="AspectFit" WidthRequest="80" HeightRequest="80"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             <StackLayout  Grid.Row="0" Padding="0,5" Orientation="Horizontal" Spacing="10" HorizontalOptions="End" VerticalOptions="FillAndExpand">
-<!--            <Image x:Name="imgToolbarLogout" Source="iconLogout.png" Aspect="AspectFit" BackgroundColor="Red" WidthRequest="20" HeightRequest="20"  VerticalOptions="CenterAndExpand"/>-->
-<!--            <Image x:Name="imgToolbarNotif" Source="iconNotif.png" Aspect="AspectFit" WidthRequest="20" HeightRequest="20"  />-->
-            <control:CustomButton x:Name="imgToolbarLogout" StyleCorner="Default" Margin="0" Padding="0" IsVisible="false" CBImage="iconLogout.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Logout_Clicked"/>
-            <control:CustomButton x:Name="imgToolbarFilter" StyleCorner="Default" CBImage="iconFilter.png" CBImageWidthRequest="20" CBImageHeightRequest="20" IsVisible="false" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Filter_Clicked"/>
+                <control:CustomButton x:Name="imgToolbarFilter" StyleCorner="Default" CBImage="iconFilter.png" CBImageWidthRequest="20" CBImageHeightRequest="20" IsVisible="false" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Filter_Clicked"/>
                         <control:CustomButton x:Name="imgToolbarRecherche" StyleCorner="Default" IsVisible="false" CBImage="iconSearch.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notification_Clicked"/>
-
                 <control:CustomButton x:Name="imgToolbarNotif" StyleCorner="Default" CBImage="iconNotif.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Notification_Clicked"/>
        </StackLayout>
         </Grid>
@@ -42,7 +38,7 @@
                 <local_Accueil:AccueilPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Actualite" Icon="iconActualite.png">
+        <NavigationPage Title="Actualités" ClassId="sd" Icon="iconActualite.png">
             <x:Arguments>
                      <local_Actualite:ActualitePage />
             </x:Arguments>

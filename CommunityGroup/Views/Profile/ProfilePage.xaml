@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" BackgroundColor="{StaticResource LightBackgroundColor}" x:Class="CommunityGroup.Views.Profile.ProfilePage">
+<!--    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="iconLogou 
+   tWhite.png" Order="Primary" Clicked="Logout_Clicked"/>
+    </ContentPage.ToolbarItems>-->
+    
+        <NavigationPage.TitleView>
+        <Grid x:Name="mainToolbar" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,0">
+         
+            <Image x:Name="imgToolbarLogo" Grid.Row="0" Margin="0,5" Source="logoSansEcriture.png" Aspect="AspectFit" WidthRequest="80" HeightRequest="80"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <StackLayout  Grid.Row="0" Padding="0,5" Orientation="Horizontal" Spacing="10" HorizontalOptions="End" VerticalOptions="FillAndExpand">
+                <control:CustomButton x:Name="imgToolbarLogout" StyleCorner="Default" CBImage="iconLogoutWhite.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" VerticalOptions="CenterAndExpand" Clicked="Logout_Clicked"/>
+       </StackLayout>
+        </Grid>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                     <StackLayout Spacing="0">
+                <StackLayout Spacing="0">
                     <Grid IsVisible="true" BackgroundColor="{StaticResource White}">
                         <Grid Grid.Row="0" RowSpacing="15" ColumnSpacing="10" Padding="15,10">
                             <Grid.RowDefinitions>
@@ -22,12 +37,9 @@
                             <BoxView Grid.Row="2" Grid.Column="3" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource Black}" Opacity=".5" WidthRequest="1" />
                             <BoxView Grid.Row="3" Grid.ColumnSpan="5" BackgroundColor="{StaticResource Black}" Opacity=".5" HeightRequest="1" />
                             <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Start" HorizontalOptions="Start" Padding="10,0">
-                      <Image x:Name="imgProfil" Source="photoMalal.png" Aspect="AspectFit" WidthRequest="80"/>
-                         <!--  <FF:CachedImage x:Name="imgProfil" Source="avatarProfil.png" Aspect="AspectFit" WidthRequest="80">
-                                    <FF:CachedImage.Transformations>
-                                        <FFTransformations:CircleTransformation />
-                                    </FF:CachedImage.Transformations>
-                                </FF:CachedImage>-->
+                                <Frame Grid.Row="0" OutlineColor="#20000000" HeightRequest="80" WidthRequest="80" CornerRadius="40" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
+                                    <Image x:Name="imgUser" Grid.Column="0" Source="photoMalal" Aspect="AspectFill" />
+                                </Frame>
                             </StackLayout>
                             <StackLayout x:Name="viewNameJob" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand">
                                 <Label x:Name="txtName" Text="MALAL Zakariae" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
@@ -47,12 +59,12 @@
                             </StackLayout>
                             <StackLayout Grid.Row="2" Grid.Column="4" Spacing="0">
                                 <Image Source="logoSansEcriture.png" HeightRequest="30" WidthRequest="30" Margin="5" />
-                                <Label x:Name="titleStories" Text="10"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="18" />
+                                <Label x:Name="titleStories" Text="10" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="18" />
                                 <Label Text="Lives / Stories" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="10" FontAttributes="Bold" />
                             </StackLayout>
                         </Grid>
                     </Grid>
-                    <Grid  ColumnSpacing="15">
+                    <Grid ColumnSpacing="15">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -72,24 +84,68 @@
                             <Label Grid.Column="0" TextColor="{StaticResource Black}" FontAttributes="Bold">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="Ingénieur" FontSize="30" />
+                                        <Span Text="Ingénieur" FontSize="20" />
                                         <Span Text=" EMI - 2010" FontSize="13" />
-                                        <Span Text="&#xA;&#xA;Diplômé de l'Ecole Mohammadia d'ingénieur, Option système d'information et qualité logiciel" FontSize="15" TextColor="#50000000"/>
+                                        <Span Text="&#xA;&#xA;Diplômé de l'Ecole Mohammadia d'ingénieur, Option système d'information et qualité logiciel" FontSize="13" TextColor="#50000000" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
                             <Label Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" TextColor="{StaticResource Black}" FontAttributes="Bold">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="UX/UI" FontSize="30" />
+                                        <Span Text="UX/UI" FontSize="20" />
                                         <Span Text=" OCP SA - depuis 2013" FontSize="13" />
-                                        <Span Text="&#xA;&#xA;Pilotage de déploiement de solutions digitales innovantes " FontSize="15" TextColor="#50000000"/>
+                                        <Span Text="&#xA;&#xA;Pilotage de déploiement de solutions digitales innovantes " FontSize="13" TextColor="#50000000" />
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
                         </Grid>
                     </Grid>
-            </StackLayout>
+                </StackLayout>
+                <Grid  Padding="20,0,0,10">
+                    <StackLayout Spacing="20" Margin="0,50,0,0">
+                      <Grid RowSpacing="0" ColumnSpacing="0"> 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="1" Source="info.png" WidthRequest="40" />
+              <Label Grid.Row="0" Grid.Column="3" Text="HR Digital Manager" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource DarkTextColor}"/>
+              <Label Grid.Row="0" Grid.Column="4" Text="09/2011 à 08/2013" FontSize="12" FontAttributes="Italic" TextColor="{StaticResource OrangeColor}"/>
+              <Label Grid.Row="1" Grid.Column="3" Text="P&amp;G" FontSize="15"  FontAttributes="Bold"  TextColor="{StaticResource OrangeColor}"/>
+              <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Text="Pilotage et développment des solution digitales innovantes pour le Capital Humain d'OCP" FontSize="12" TextColor="#50000000" />
+                    </Grid>
+                        
+                          <Grid RowSpacing="0" ColumnSpacing="0" > 
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="1" Source="info.png" WidthRequest="40" />
+              <Label Grid.Row="0" Grid.Column="3" Text="Chef de project  SIRH" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource DarkTextColor}"/>
+              <Label Grid.Row="0" Grid.Column="4" Text="09/2008 à 06/2011" FontSize="12" FontAttributes="Italic" TextColor="{StaticResource OrangeColor}"/>
+              <Label Grid.Row="1" Grid.Column="3" Text="IBM" FontSize="15"  FontAttributes="Bold"  TextColor="{StaticResource OrangeColor}"/>
+              <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Text="Accompagnement des métiers CH dans la digitalisation des processus" FontSize="12" TextColor="#50000000" />
+                    </Grid>
+                    </StackLayout>
+                    
+                        <BoxView Margin="0,0,0,-10" WidthRequest="5" BackgroundColor="{StaticResource White}" VerticalOptions="FillAndExpand" HorizontalOptions="Start"/>
+                </Grid>
+              
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
