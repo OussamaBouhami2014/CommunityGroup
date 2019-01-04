@@ -47,13 +47,176 @@ namespace CommunityGroup.Views.Accueil
 
             });
 
+            AccueilScrollView.Scrolled += AccueilScrollViewOnScrolled;
         }
-
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            if (height > 0)
+            {
+                AccueilScrollView.TranslationY = viewTopics.Height;
+            }
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
         }
+        double OldY = 0;
+        int i = 0;
+        private void AccueilScrollViewOnScrolled(object sender, ScrolledEventArgs e)
+        {
+            //if (e.ScrollY >= 0)
+            //{
+
+            //    if (viewTopics.TranslationY >= -viewTopics.Height)
+            //    {
+            //        viewTopics.TranslationY = -e.ScrollY;
+            //        viewMur.TranslationY = -e.ScrollY;
+            //        i = 0;
+            //    }
+            //    else if (e.ScrollY < OldY)
+            //    {
+
+            //        var newPosition = viewTopics.TranslationY - 10;
+
+            //        i++;
+            //        //viewTopics.TranslationY = (viewTopics.TranslationY + (e.ScrollY - OldY)) - viewTopics.Height;
+            //        //viewMur.TranslationY =  (viewTopics.TranslationY + (e.ScrollY - OldY)) - viewTopics.Height;
+
+            //        viewTopics.TranslationY = i;
+            //        viewMur.TranslationY = i;
+            //    }
+
+            //    OldY = e.ScrollY;
+            //}
+        }
+
+        private void TopicOne_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (viewTopicOne.BackgroundColor == App.TopicLightBackgroundColor)
+                {
+                    viewTopicOne.BackgroundColor =  App.TopicOneColor;
+                }
+                else
+                {
+                    viewTopicOne.BackgroundColor = App.TopicLightBackgroundColor;
+                }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private void TopicTwo_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (viewTopicTwo.BackgroundColor == App.TopicLightBackgroundColor)
+                {
+                    viewTopicTwo.BackgroundColor = App.TopicTwoColor;
+                }
+                else
+                {
+                    viewTopicTwo.BackgroundColor = App.TopicLightBackgroundColor;
+                }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private void TopicThree_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (viewTopicThree.BackgroundColor == App.TopicLightBackgroundColor)
+                {
+                    viewTopicThree.BackgroundColor = App.TopicThreeColor;
+                }
+                else
+                {
+                    viewTopicThree.BackgroundColor = App.TopicLightBackgroundColor;
+                }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private void TopicFour_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (viewTopicFour.BackgroundColor == App.TopicLightBackgroundColor)
+                {
+                    viewTopicFour.BackgroundColor = App.TopicFourColor;
+                }
+                else
+                {
+                    viewTopicFour.BackgroundColor = App.TopicLightBackgroundColor;
+                }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private void TopicFive_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (viewTopicFive.BackgroundColor == App.TopicLightBackgroundColor)
+                {
+                    viewTopicFive.BackgroundColor = App.TopicFiveColor;
+                }
+                else
+                {
+                    viewTopicFive.BackgroundColor = App.TopicLightBackgroundColor;
+                }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private void TopicSix_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (viewTopicSix.BackgroundColor == App.TopicLightBackgroundColor)
+                {
+                    viewTopicSix.BackgroundColor = App.TopicSixColor;
+                }
+                else
+                {
+                    viewTopicSix.BackgroundColor = App.TopicLightBackgroundColor;
+                }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private void TopicMore_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
 
         private void More_Clicked(object sender, System.EventArgs e)
         {

@@ -1,11 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" 
-             xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" 
-             x:Class="CommunityGroup.Views.Accueil.AccueilPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" x:Class="CommunityGroup.Views.Accueil.AccueilPage">
     <ContentPage.Content>
-        <ScrollView>
+        <Grid x:Name="mainPage" >
+<!--             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>-->
+            
+             <!--VIEW TOPICS HERE-->
+                <StackLayout x:Name="viewTopics" BackgroundColor="Gray" VerticalOptions="Start" Grid.Row="0" Spacing="0">
+                    <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="{StaticResource White}" Padding="15,10,0,0" Margin="0,0,0,0">
+                        <Label Text="IDEATION TOPICS" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
+                        <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".0" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    <ScrollView HorizontalScrollBarVisibility="Never" BackgroundColor="{StaticResource White}" VerticalScrollBarVisibility="Never" Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal" Spacing="10" Padding="10,10">
+                            <control:CustomTemplateButton Clicked="TopicOne_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicOne" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="futuristic.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="INNOVATION" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicTwo_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicTwo" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="transparent.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="DIGITAL" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicThree_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicThree" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="synthetic-ecology.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="AGRICULTURE" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicFour_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicFour" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="brain.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="MINING" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicFive_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicFive" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="hologram.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="INTERNATIONAL" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicSix_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicSix" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="smart-house.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="ECO-SYSTEME" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicMore_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="iconMore.png" Margin="30" Opacity=".5" />
+                                    </Frame>
+                                    <Label Text="AUTRE" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            <ContentView x:Name="viewMur">
+               <ScrollView x:Name="AccueilScrollView"  Grid.Row="0">
             <StackLayout Spacing="0" BackgroundColor="{StaticResource LightBackgroundColor}">
-                <Grid >
+                <!--VIEW SLIDER HERE-->
+                <Grid IsVisible="false">
                     <CarouselView:CarouselView x:Name="carouselEvenment" HeightRequest="200" VerticalOptions="Start" ItemsSource="{Binding ActualiteList}" PositionSelected="CarouselEvenment_PositionSelected" Position="{Binding Position, Mode=TwoWay}">
                         <CarouselView:CarouselView.ItemTemplate>
                             <DataTemplate>
@@ -31,154 +104,240 @@
                         <Label Text="FLASH NEWS" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource Accent}" />
                     </Frame>
                 </Grid>
-<!--                    <BoxView Style="{StaticResource SeparatorStyle}" HeightRequest="10" BackgroundColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" />-->
-                
-                <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="{StaticResource White}" Padding="15,10,0,0" Margin="0,10,0,0">
-<!--                    <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand" />-->
-                    <Label Text="IDEATION TOPICS" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
-                    <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".0" HorizontalOptions="FillAndExpand" />
-                </StackLayout>
-                <ScrollView HorizontalScrollBarVisibility="Never" BackgroundColor="{StaticResource White}" VerticalScrollBarVisibility="Never" Orientation="Horizontal">
-                    <StackLayout Orientation="Horizontal" Spacing="10" Padding="10,10">
-                        <control:CustomTemplateButton WidthRequest="100">
-                            <StackLayout Spacing="15">
-                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                    <Image Source="futuristic.png" Margin="20" />
-                                </Frame>
-                                <Label Text="INNOVATION" LineBreakMode="TailTruncation"  HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                            </StackLayout>
-                        </control:CustomTemplateButton>
-                        <control:CustomTemplateButton WidthRequest="100">
-                            <StackLayout Spacing="15">
-                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                    <Image Source="transparent.png" Margin="20" />
-                                </Frame>
-                                <Label Text="DIGITAL" LineBreakMode="TailTruncation"  HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                            </StackLayout>
-                        </control:CustomTemplateButton>
-                       
-                        <control:CustomTemplateButton WidthRequest="100">
-                            <StackLayout Spacing="15">
-                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                    <Image Source="synthetic-ecology.png" Margin="20" />
-                                </Frame>
-                                <Label Text="AGRICULTURE" LineBreakMode="TailTruncation"  HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                            </StackLayout>
-                        </control:CustomTemplateButton>
-                        <control:CustomTemplateButton WidthRequest="100">
-                            <StackLayout Spacing="15">
-                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                    <Image Source="brain.png" Margin="20" />
-                                </Frame>
-                                <Label Text="MINING" LineBreakMode="TailTruncation"  HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                            </StackLayout>
-                        </control:CustomTemplateButton>
-                         <control:CustomTemplateButton WidthRequest="100">
-                            <StackLayout Spacing="15">
-                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="45" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                    <Image Source="hologram.png" Margin="20" />
-                                </Frame>
-                                <Label Text="INTERNATIONAL" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                            </StackLayout>
-                        </control:CustomTemplateButton>
-                        <control:CustomTemplateButton WidthRequest="100">
-                            <StackLayout Spacing="15">
-                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                    <Image Source="smart-house.png" Margin="20" />
-                                </Frame>
-                                <Label Text="ECO-SYSTEME" LineBreakMode="TailTruncation"  HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                            </StackLayout>
-                        </control:CustomTemplateButton>
-                        
-                        <control:CustomTemplateButton WidthRequest="100">
-                            <StackLayout Spacing="15">
-                                <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                    <Image Source="iconMore.png" Margin="30" Opacity=".5" />
-                                </Frame>
-                                <Label Text="AUTRE" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                            </StackLayout>
-                        </control:CustomTemplateButton>
-                    </StackLayout>
-                </ScrollView>
-
+               
+                <!--VIEW MUR HERE-->
                 <ContentView BackgroundColor="{StaticResource LightBackgroundColor}" Padding="0,10">
                     <StackLayout Spacing="10" BackgroundColor="{StaticResource LightBackgroundColor}">
                         <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="200" />
+                                <RowDefinition Height="50" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <StackLayout Grid.Row="0" Padding="10,5">
                                 <StackLayout Spacing="15" Orientation="Horizontal">
-                                  
-                                          <Frame  OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="26" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
-        <Image Source="photoMalal.png" Aspect="AspectFill"/>
-        </Frame>
-                                    
-                                   
-                                    <Label Text="MALAL Zakariae" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource Black}" FontAttributes="Bold" />
-                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Opacity=".5" Clicked="More_Clicked" />
+                                    <Frame OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="25" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start" HorizontalOptions="Start">
+                                        <Image Source="photoMalal.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <StackLayout>
+                                        <Label Text="MALAL Zakariae" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
+                                       <StackLayout Spacing="10" Orientation="Horizontal"> 
+                                        <Label Text="2 Jan, 2019 à 08:15" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                               <Frame BackgroundColor="{StaticResource OrangeColor}"  Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
+                                                <Label Text="Innovation" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="10" />
+                                            </Frame>
+                                        </StackLayout>
+                                    </StackLayout>
+                                     
+                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="15" CBImageHeightRequest="15" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Padding="0" VerticalOptions="StartAndExpand"
+                                        Opacity=".5" Clicked="More_Clicked" />
                                 </StackLayout>
+                             
                                 <Label Text="Première participation d'OCP à la CIIE" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
                             </StackLayout>
-                            <Grid Grid.Row="1">
+                            <Grid Grid.Row="1" >
                                 <Image Source="EventFour.png" Aspect="AspectFill" />
                             </Grid>
-                            <StackLayout Grid.Row="2" Padding="10,10" Spacing="5" Orientation="Horizontal">
-                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
-                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
-                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
+                            <StackLayout Grid.Row="2"  VerticalOptions="Start" Padding="15,0" Spacing="5" Orientation="Horizontal">
+                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
+                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
+                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
+                                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                    <Label Text="12 Repondes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                    <Label Text="14 J'aimes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Row="3" Padding="15,0,15,10" Spacing="10">
+                                <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".5" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+                                <Grid  HorizontalOptions="FillAndExpand"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="20" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                        <Image Source="avatarWomen.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
+                                        <StackLayout HorizontalOptions="EndAndExpand" Spacing="0">
+                                            <Label Text="Amal Haki" TextColor="{StaticResource Black}" FontSize="14" FontAttributes="Bold" />
+                                            <Label Text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" TextColor="{StaticResource Black}" FontSize="14" />
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                                   <Grid  HorizontalOptions="FillAndExpand"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0"  OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="21" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                        <Image Source="photoMalal.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
+                                                                               <Grid  HorizontalOptions="FillAndExpand" Padding="0">
+                                            <control:CustomEntry BorderColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" IsCustom="true" Placeholder="Votre Commentaire..." BackgroundColor="Transparent" PlaceholderColor="{StaticResource DarkTextColor}" Padding="15,15,15,15" />
+                                            <control:CustomButton CBImage="iconCamera.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" />
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                   
                             </StackLayout>
                         </Grid>
                         <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
+                                <RowDefinition Height="50" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <StackLayout Grid.Row="0" Padding="10,5">
                                 <StackLayout Spacing="15" Orientation="Horizontal">
-                                    <Image Source="photoTahiri.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="Start" />
-                                    <Label Text="TAHIRI Meriem" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource Black}" FontAttributes="Bold" />
-                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Opacity=".5" Clicked="More_Clicked" />
+                                    <Frame OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="25" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start" HorizontalOptions="Start">
+                                        <Image Source="photoTahiri.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <StackLayout>
+                                        <Label Text="TAHIRI Meriem" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
+                                       <StackLayout Spacing="10" Orientation="Horizontal"> 
+                                        <Label Text="3 Jan, 2019 à 02:33" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                               <Frame BackgroundColor="{StaticResource RedColor}"  Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
+                                                <Label Text="Digital" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="10" />
+                                            </Frame>
+                                        </StackLayout>
+                                    </StackLayout>
+                                     
+                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="15" CBImageHeightRequest="15" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Padding="0" VerticalOptions="StartAndExpand"
+                                        Opacity=".5" Clicked="More_Clicked" />
                                 </StackLayout>
+                             
                                 <Label Text="Hello cher club, je suis à la recherche d'un encadrant pour le développement d'une solution digital sur Android" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
                             </StackLayout>
-                            <StackLayout Grid.Row="1" Padding="10,10" Spacing="5" Orientation="Horizontal">
-                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
-                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
-                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
-                                <control:CustomButton CBImage="iconStar.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Clicked="Star_Clicked" />
+                           
+                            <StackLayout Grid.Row="1"  VerticalOptions="Start" Padding="15,0" Spacing="5" Orientation="Horizontal">
+                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
+                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
+                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
+                                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                    <Label Text="37 Repondes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                    <Label Text="22 J'aimes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Row="2" Padding="15,0,15,10" Spacing="10">
+                                <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".5" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+                                <Grid  HorizontalOptions="FillAndExpand"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="20" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                        <Image Source="avatarWomen.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
+                                        <StackLayout Spacing="0">
+                                            <Label Text="Yassin Kasimi" TextColor="{StaticResource Black}" FontSize="14" FontAttributes="Bold" />
+                                            <Label Text="The point of using Lorem Ipsum is that it" TextColor="{StaticResource Black}" FontSize="14" />
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                                   <Grid  HorizontalOptions="FillAndExpand"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0"  OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="21" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                        <Image Source="photoMalal.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
+                                                                               <Grid  HorizontalOptions="FillAndExpand" Padding="0">
+                                            <control:CustomEntry BorderColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" IsCustom="true" Placeholder="Votre Commentaire..." BackgroundColor="Transparent" PlaceholderColor="{StaticResource DarkTextColor}" Padding="15,15,15,15" />
+                                            <control:CustomButton CBImage="iconCamera.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" />
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                   
                             </StackLayout>
                         </Grid>
-                        <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
+                          <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="200" />
+                                <RowDefinition Height="50" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <StackLayout Grid.Row="0" Padding="10,5">
                                 <StackLayout Spacing="15" Orientation="Horizontal">
-                                                                      <Frame  OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="26" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
-        <Image Source="photoDerrij.png" Aspect="AspectFill"/>
-        </Frame>   
-                                    <Label Text="DERRIJ Faris" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource Black}" FontAttributes="Bold" />
-                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Opacity=".5" Clicked="More_Clicked" />
+                                    <Frame OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="25" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start" HorizontalOptions="Start">
+                                        <Image Source="photoDerrij.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <StackLayout>
+                                        <Label Text="DERRIJ Faris" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
+                                       <StackLayout Spacing="10" Orientation="Horizontal"> 
+                                        <Label Text="4 Jan, 2019 à 05:51" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                               <Frame BackgroundColor="{StaticResource BlueColor}"  Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
+                                                <Label Text="International" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="10" />
+                                            </Frame>
+                                        </StackLayout>
+                                    </StackLayout>
+                                     
+                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="15" CBImageHeightRequest="15" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Padding="0" VerticalOptions="StartAndExpand"
+                                        Opacity=".5" Clicked="More_Clicked" />
                                 </StackLayout>
+                             
                                 <Label Text="Félicitation à OCP qui a reçu la médaille d'Or HSE" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
                             </StackLayout>
-                            <Grid Grid.Row="1">
-                                <Image Source="EventThree.png" Aspect="AspectFill" />
+                            <Grid Grid.Row="1" >
+                                <Image Source="EventFour.png" Aspect="AspectFill" />
                             </Grid>
-                            <StackLayout Grid.Row="2" Padding="10,10" Spacing="5" Orientation="Horizontal">
-                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
-                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
-                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25" CBImageHeightRequest="50" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
+                            <StackLayout Grid.Row="2"  VerticalOptions="Start" Padding="15,0" Spacing="5" Orientation="Horizontal">
+                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
+                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
+                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
+                                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                    <Label Text="18 Repondes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                    <Label Text="51 J'aimes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Row="3" Padding="15,0,15,10" Spacing="10">
+                                <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".5" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+                                <Grid  HorizontalOptions="FillAndExpand"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="20" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                        <Image Source="avatarWomen.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
+                                        <StackLayout HorizontalOptions="EndAndExpand" Spacing="0">
+                                            <Label Text="Amal Haki" TextColor="{StaticResource Black}" FontSize="14" FontAttributes="Bold" />
+                                            <Label Text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" TextColor="{StaticResource Black}" FontSize="14" />
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                                   <Grid  HorizontalOptions="FillAndExpand"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0"  OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="21" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                        <Image Source="photoMalal.png" Aspect="AspectFill" />
+                                    </Frame>
+                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
+                                                                               <Grid  HorizontalOptions="FillAndExpand" Padding="0">
+                                            <control:CustomEntry BorderColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" IsCustom="true" Placeholder="Votre Commentaire..." BackgroundColor="Transparent" PlaceholderColor="{StaticResource DarkTextColor}" Padding="15,15,15,15" />
+                                            <control:CustomButton CBImage="iconCamera.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" />
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                   
                             </StackLayout>
                         </Grid>
+                  
+    
                     </StackLayout>
                 </ContentView>
             </StackLayout>
         </ScrollView>
+                </ContentView>
+        </Grid>
+     
     </ContentPage.Content>
 </ContentPage>

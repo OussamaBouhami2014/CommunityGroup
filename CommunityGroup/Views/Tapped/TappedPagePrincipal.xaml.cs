@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CommunityGroup.Helpers;
 using CommunityGroup.Views.Actualite;
+using CommunityGroup.Views.Network;
 using FormsToolkit;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
@@ -37,8 +38,8 @@ namespace CommunityGroup.Views.Tapped
             {
                 var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
 
-                imgToolbarFilter.IsVisible = currentPage.Title == "Actualités" ? true : false;
-                imgToolbarRecherche.IsVisible = currentPage.Title == "Network" ? true : false;
+                imgToolbarFilter.IsVisible = currentPage.GetType() == typeof(ActualitePage) ? true : false;
+                imgToolbarRecherche.IsVisible = currentPage.GetType() == typeof(NetworkPage) ? true : false;
 
                 foreach (var item in this.Children)
                 {
