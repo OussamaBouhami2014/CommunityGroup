@@ -34,12 +34,12 @@
     </NavigationPage.TitleView>
 
     <TabbedPage.Children>
-        <NavigationPage Title="Accueil" Icon="iconAccueilActive">
+        <NavigationPage Title="Home" Icon="iconAccueilActive">
             <x:Arguments>
                 <local_Accueil:AccueilPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Actualités"  Icon="iconActualite">
+        <NavigationPage Title="News"  Icon="iconActualite">
             <x:Arguments>
                      <local_Actualite:ActualitePage />
             </x:Arguments>

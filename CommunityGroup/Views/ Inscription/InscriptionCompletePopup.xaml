@@ -23,7 +23,7 @@
                     <StackLayout Spacing="20">
                         <Label Text="Titre" FontSize="15" TextColor="{StaticResource BlackTextColor}" HorizontalTextAlignment="Center" FontAttributes="Bold" />
                         <StackLayout VerticalOptions="FillAndExpand" Spacing="15" Padding="20">
-                    <Editor x:Name="txtCommentaire"   AutoSize="TextChanges" Placeholder="Commentaire" FontSize="15"  HeightRequest="100" TextColor="{StaticResource DarkTextColor}" HorizontalOptions="FillAndExpand" />
+                    <control:CustomEditor x:Name="txtCommentaire" IsExpandable="true" HasRoundedCorner="true"  AutoSize="TextChanges" Placeholder="Commentaire" FontSize="15"  HeightRequest="100" TextColor="{StaticResource DarkTextColor}" HorizontalOptions="FillAndExpand" />
                             
                         <Label  x:Name="txtMessage" IsVisible="false" FontSize="10" TextColor="#e74c3c" HorizontalTextAlignment="Center"  Margin="0,10"/>
                             <BoxView HeightRequest="1" VerticalOptions="Center" BackgroundColor="{StaticResource LightBorderColor}" Margin="10,0" />

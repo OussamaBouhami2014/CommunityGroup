@@ -70,15 +70,8 @@
                     <BoxView Style="{StaticResource SeparatorStyle}" HorizontalOptions="FillAndExpand" />
                     <Grid Padding="0,15" ColumnSpacing="5" BackgroundColor="{StaticResource MediumBackgroundColor}">
                         <Grid Padding="10,0">
-                            <control:CustomEntry x:Name="entryComment" IsTextPredictionEnabled="false" Placeholder="Comment" PlaceholderColor="{StaticResource LightTextColor}" BackgroundColor="{StaticResource White}" FontSize="15" ReturnType="Done" Completed="Comment_Completed">
-                                <control:CustomEntry.Keyboard>
-                                    <Keyboard x:FactoryMethod="Create">
-                                        <x:Arguments>
-                                            <KeyboardFlags>CapitalizeNone</KeyboardFlags>
-                                        </x:Arguments>
-                                    </Keyboard>
-                                </control:CustomEntry.Keyboard>
-                            </control:CustomEntry>
+                            <control:CustomEditor x:Name="entryComment" HasRoundedCorner="true" IsExpandable="true" Placeholder="Comment" PlaceholderColor="{StaticResource LightTextColor}" BackgroundColor="{StaticResource White}" FontSize="15" Completed="Comment_Completed"/>
+                    
                             <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Spacing="0">
                                 <control:CustomButton CBImage="iconCameraSmall.png" CBHasShadow="false" CBPadding="5" CBBackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="End" CBImageWidthRequest="20" CBImageHeightRequest="20" StyleCorner="Default" Clicked="Camera_Clicked" />
                                 <control:CustomButton CBImage="iconJoinSmall.png" CBHasShadow="false" CBPadding="5" CBBackgroundColor="Transparent" VerticalOptions="CenterAndExpand" HorizontalOptions="End" CBImageWidthRequest="20" CBImageHeightRequest="20" StyleCorner="Default" Clicked="Join_Clicked" />

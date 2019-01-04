@@ -48,7 +48,7 @@
                             </Picker.ItemsSource>
                         </control:CustomPicker>
                     </Grid>
-                    <Editor x:Name="txtCommentaire"   AutoSize="TextChanges" Placeholder="Décrire vos motivations pour rejoindre le club OTN Commentaire" FontSize="15"  HeightRequest="100" TextColor="{StaticResource DarkTextColor}" HorizontalOptions="FillAndExpand" />
+                    <control:CustomEditor x:Name="txtCommentaire" IsExpandable="true" HasRoundedCorner="true"   AutoSize="TextChanges" Placeholder="Décrire vos motivations pour rejoindre le club OTN Commentaire" FontSize="15"  HeightRequest="100" TextColor="{StaticResource DarkTextColor}" HorizontalOptions="FillAndExpand" />
                     <StackLayout Spacing="5" Padding="0,10">
                         <Label Text="Ajouter diplômes :" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" />
                         <control:CustomButton CBImage="iconAdd.png"  CBHasShadow="false" StyleCorner="Default" CBPadding="0" CBBackgroundColor="Transparent" Clicked="AddDiplome_Clicked" />
