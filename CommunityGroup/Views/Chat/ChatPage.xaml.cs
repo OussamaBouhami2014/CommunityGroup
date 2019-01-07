@@ -123,7 +123,6 @@ namespace CommunityGroup.Views.Chat
 
             });
 
-
         }
 
         private async void Audio_Clicked(object sender, EventArgs e)
@@ -145,7 +144,6 @@ namespace CommunityGroup.Views.Chat
 
             if (file == null)
                 return;
-
 
             var btn = sender as Button;
             var messageChat = btn?.BindingContext as DtoMessage;
@@ -188,7 +186,6 @@ namespace CommunityGroup.Views.Chat
             //      boole = true;
             //  }
 
-
             //  entryMessage.Text = "";
             //  vm?.SendMessage.Execute(messageChat);
 
@@ -216,7 +213,6 @@ namespace CommunityGroup.Views.Chat
             if (file == null)
                 return;
 
-
             var btn = sender as Button;
             var messageChat = btn?.BindingContext as DtoMessage;
             Vm = BindingContext as ChatMessageViewModel;
@@ -237,7 +233,6 @@ namespace CommunityGroup.Views.Chat
 
                     Vm.StatutsMsg = "SentImage";
 
-
                     boole = false;
                 }
                 else
@@ -256,7 +251,6 @@ namespace CommunityGroup.Views.Chat
                     boole = true;
                 }
 
-
                 entryMessage.Text = "";
                 Vm?.SendMessage.Execute(messageChat);
 
@@ -272,6 +266,7 @@ namespace CommunityGroup.Views.Chat
         {
             await SendMessage();
         }
+
         private async void Call_Clicked(object sender, EventArgs e)
         {
 
@@ -337,7 +332,6 @@ namespace CommunityGroup.Views.Chat
                     contentAdd.IsVisible = false;
                     await frameAdd.TranslateTo(0, 300, 250, Easing.CubicInOut);
                 }
-
             }
         }
         #endregion
@@ -374,9 +368,7 @@ namespace CommunityGroup.Views.Chat
 
         private async void entryMessage_Completed(object sender, EventArgs e)
         {
-            await SendMessage();
-
-        
+            //await SendMessage();
         }
 
         private string ImageNameFromResource(string u)

@@ -80,7 +80,6 @@ namespace CommunityGroup.Views.Actualite
             }
         }
 
-
         private void Star_Clicked(object sender, System.EventArgs e)
         {
             try
@@ -93,8 +92,6 @@ namespace CommunityGroup.Views.Actualite
                 AppsHelper.Snack(Ex.Message);
             }
         }
-
-       
 
 
         private async void Handle_Clicked(object sender, System.EventArgs e)
@@ -128,6 +125,5 @@ namespace CommunityGroup.Views.Actualite
 
             ((ListView)sender).SelectedItem = null;
         }
-    
     }
 }

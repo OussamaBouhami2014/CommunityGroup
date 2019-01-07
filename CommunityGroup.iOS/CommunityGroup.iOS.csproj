@@ -336,6 +336,7 @@
     <BundleResource Include="Resources\iconLogoutWhite%401x.png" />
     <BundleResource Include="Resources\iconLogoutWhite%402x.png" />
     <BundleResource Include="Resources\iconLogoutWhite%403x.png" />
+    <BundleResource Include="Resources\iconRightFlesh.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

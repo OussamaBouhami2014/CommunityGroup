@@ -18,7 +18,7 @@
                
                <Grid x:Name="ImageContainer" HeightRequest="200">
                     
-                    <Image x:Name="ActualiteImage" Source="{Binding ImageActualite}"  Aspect="Fill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                    <Image x:Name="ActualiteImage" Source="{Binding ImageActualite}"  Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
                    
                     <Grid x:Name="BackgroundShadow"  Opacity="0.2" VerticalOptions="FillAndExpand" BackgroundColor="#000000" HorizontalOptions="FillAndExpand" />
                </Grid>
@@ -30,9 +30,9 @@
             
             <ContentView Grid.Row="1" Padding="10">
                   <Frame  Style="{StaticResource CardStyle}" >
-                <StackLayout Spacing="15">
+                <StackLayout Spacing="15" Padding="15,10">
                     <!--DETAIL ACTUALITE-->
-                    <Label FormattedText="{Binding Text}" TextColor="{StaticResource LightTextColor}" />
+                    <Label FormattedText="{Binding Text}" TextColor="{StaticResource Black}" FontSize="16"/>
                 </StackLayout>
             </Frame>
             </ContentView>

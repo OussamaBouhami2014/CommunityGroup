@@ -215,6 +215,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\DemiCircle.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconSearch.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconLogoutWhite.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconRightFlesh.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

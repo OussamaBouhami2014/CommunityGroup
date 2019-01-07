@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using CommunityGroup.Models;
 using CommunityGroup.Popups;
@@ -12,49 +13,34 @@ namespace CommunityGroup.Views.Accueil
     {
         private CommentPopup CommentPopup;
 
-        private EventViewModel Vm;
+        private StatusViewModel Vm;
+
+        Dictionary<string, bool> Topics = new Dictionary<string, bool>()
+        {
+            {"Innovation",false},
+            {"Digital",false},
+            {"Agriculture",false},
+            {"Mining",false},
+            {"International",false},
+            {"Eco-systeme",false},
+            {"Autre",false},
+        };
 
         public AccueilPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            Vm = new EventViewModel();
+            Vm = new StatusViewModel();
             this.BindingContext = Vm;
 
-            carouselEvenment.ItemsSource = Vm.ListEvent;
-            carouselIndicators.ItemsSource = Vm.ListEvent;
-
-
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                try
-                {
-                    while (true)
-                    {
-                        await Task.Delay(2000);
-
-                        Vm.Position++;
-                        if (Vm.Position == (Vm.ListEvent.Count))
-                        {
-                            Vm.Position = 0;
-                        }
-                    }
-                }
-                catch (Exception Ex)
-                {
-                    AppsHelper.Snack(Ex.Message);
-                }
-
-            });
-
-            AccueilScrollView.Scrolled += AccueilScrollViewOnScrolled;
+            //AccueilScrollView.Scrolled += AccueilScrollViewOnScrolled;
         }
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
             if (height > 0)
             {
-                AccueilScrollView.TranslationY = viewTopics.Height;
+                //AccueilScrollView.Margin = new Thickness(0,viewTopics.Height,0,0) ;
             }
         }
         protected override void OnAppearing()
@@ -62,6 +48,7 @@ namespace CommunityGroup.Views.Accueil
             base.OnAppearing();
 
         }
+
         double OldY = 0;
         int i = 0;
         private void AccueilScrollViewOnScrolled(object sender, ScrolledEventArgs e)
@@ -90,7 +77,7 @@ namespace CommunityGroup.Views.Accueil
 
             //    OldY = e.ScrollY;
             //}
-        }
+         }
 
         private void TopicOne_Clicked(object sender, System.EventArgs e)
         {
@@ -99,11 +86,15 @@ namespace CommunityGroup.Views.Accueil
                 if (viewTopicOne.BackgroundColor == App.TopicLightBackgroundColor)
                 {
                     viewTopicOne.BackgroundColor =  App.TopicOneColor;
+                    Topics["Innovation"] = true;
                 }
                 else
                 {
                     viewTopicOne.BackgroundColor = App.TopicLightBackgroundColor;
+                    Topics["Innovation"] = false;
                 }
+
+                Vm.Filtrer.Execute(Topics);
             }
             catch (Exception Ex)
             {
@@ -118,11 +109,16 @@ namespace CommunityGroup.Views.Accueil
                 if (viewTopicTwo.BackgroundColor == App.TopicLightBackgroundColor)
                 {
                     viewTopicTwo.BackgroundColor = App.TopicTwoColor;
+                    Topics["Digital"] = true;
                 }
                 else
                 {
                     viewTopicTwo.BackgroundColor = App.TopicLightBackgroundColor;
+                    Topics["Digital"] = false;
                 }
+
+                Vm.Filtrer.Execute(Topics);
+
             }
             catch (Exception Ex)
             {
@@ -137,11 +133,16 @@ namespace CommunityGroup.Views.Accueil
                 if (viewTopicThree.BackgroundColor == App.TopicLightBackgroundColor)
                 {
                     viewTopicThree.BackgroundColor = App.TopicThreeColor;
+                    Topics["Agriculture"] = true;
                 }
                 else
                 {
                     viewTopicThree.BackgroundColor = App.TopicLightBackgroundColor;
+                    Topics["Agriculture"] = false;
                 }
+
+                Vm.Filtrer.Execute(Topics);
+
             }
             catch (Exception Ex)
             {
@@ -156,11 +157,16 @@ namespace CommunityGroup.Views.Accueil
                 if (viewTopicFour.BackgroundColor == App.TopicLightBackgroundColor)
                 {
                     viewTopicFour.BackgroundColor = App.TopicFourColor;
+                    Topics["Mining"] = true;
                 }
                 else
                 {
                     viewTopicFour.BackgroundColor = App.TopicLightBackgroundColor;
+                    Topics["Mining"] = false;
                 }
+
+                Vm.Filtrer.Execute(Topics);
+
             }
             catch (Exception Ex)
             {
@@ -175,11 +181,16 @@ namespace CommunityGroup.Views.Accueil
                 if (viewTopicFive.BackgroundColor == App.TopicLightBackgroundColor)
                 {
                     viewTopicFive.BackgroundColor = App.TopicFiveColor;
+                    Topics["International"] = true;
                 }
                 else
                 {
                     viewTopicFive.BackgroundColor = App.TopicLightBackgroundColor;
+                    Topics["International"] = false;
                 }
+
+                Vm.Filtrer.Execute(Topics);
+
             }
             catch (Exception Ex)
             {
@@ -194,11 +205,16 @@ namespace CommunityGroup.Views.Accueil
                 if (viewTopicSix.BackgroundColor == App.TopicLightBackgroundColor)
                 {
                     viewTopicSix.BackgroundColor = App.TopicSixColor;
+                    Topics["Eco-systeme"] = true;
                 }
                 else
                 {
                     viewTopicSix.BackgroundColor = App.TopicLightBackgroundColor;
+                    Topics["Eco-systeme"] = false;
                 }
+
+                Vm.Filtrer.Execute(Topics);
+
             }
             catch (Exception Ex)
             {
@@ -217,11 +233,22 @@ namespace CommunityGroup.Views.Accueil
             }
         }
 
-
         private void More_Clicked(object sender, System.EventArgs e)
         {
             try
             {
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+        private void GoTop_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                var firstItem = StatutsListView.ItemsSource.Cast<object>().FirstOrDefault();
+                StatutsListView.ScrollTo(firstItem, ScrollToPosition.End, true);
             }
             catch (Exception Ex)
             {
@@ -298,15 +325,39 @@ namespace CommunityGroup.Views.Accueil
 
         private void Carousel_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var Item = e.SelectedItem as CarouselViewPageModel;
-            if (Item != null)
+            try
             {
-                //currentPage = Item;
+                var Item = e.SelectedItem as CarouselViewPageModel;
+                if (Item != null)
+                {
+                    //currentPage = Item;
+                }
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
             }
         }
 
         private void CarouselEvenment_PositionSelected(object sender, Xamarin.Forms.SelectedPositionChangedEventArgs e)
         {
+            try
+            {
+               
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+        }
+
+        private async void MurListView_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            //var item = ((ListView)sender).SelectedItem as DtoEvent;
+            //if (item == null)
+                //return;
+
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

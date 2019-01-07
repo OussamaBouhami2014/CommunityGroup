@@ -67,8 +67,6 @@ namespace CommunityGroup.ViewModels
                     NbrComment = 13,
                     IsVue = false},
 
-
-
                     new DtoEvent() {
                     EventId = 4,
                     CodeUnivers = "OCP NEWS",

@@ -29,12 +29,12 @@ namespace CommunityGroup
         public static string LightBackgroundColor = "#f5f5f5";
 
         public static Color TopicLightBackgroundColor = Color.FromHex("#F8F8F8");
-        public static Color TopicOneColor = Color.FromHex("#5000adb5");
-        public static Color TopicTwoColor = Color.FromHex("#50F9B64C");
-        public static Color TopicThreeColor = Color.FromHex("#50e41b76");
-        public static Color TopicFourColor = Color.FromHex("#503f51b5");
-        public static Color TopicFiveColor = Color.FromHex("#50F9B64C");
-        public static Color TopicSixColor = Color.FromHex("#50e6811f");
+        public static Color TopicOneColor = Color.FromHex("#9000adb5");
+        public static Color TopicTwoColor = Color.FromHex("#90F9B64C");
+        public static Color TopicThreeColor = Color.FromHex("#90e41b76");
+        public static Color TopicFourColor = Color.FromHex("#903f51b5");
+        public static Color TopicFiveColor = Color.FromHex("#90F9B64C");
+        public static Color TopicSixColor = Color.FromHex("#90e6811f");
 
         public static bool IsLogout = true;
         public static bool IsLogin = false;

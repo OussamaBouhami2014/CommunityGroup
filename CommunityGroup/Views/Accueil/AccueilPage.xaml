@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" x:Class="CommunityGroup.Views.Accueil.AccueilPage">
     <ContentPage.Content>
-        <Grid x:Name="mainPage" >
-<!--             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>-->
-            
-             <!--VIEW TOPICS HERE-->
+        <Grid>
+        <ListView x:Name="StatutsListView" ItemsSource="{Binding ListStatuts}" BackgroundColor="{StaticResource White}" HasUnevenRows="True" ItemSelected="MurListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="None" SeparatorColor="{StaticResource BorderColor}" Footer="">
+            <ListView.Header>
                 <StackLayout x:Name="viewTopics" BackgroundColor="Gray" VerticalOptions="Start" Grid.Row="0" Spacing="0">
                     <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="{StaticResource White}" Padding="15,10,0,0" Margin="0,0,0,0">
                         <Label Text="IDEATION TOPICS" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
@@ -74,270 +70,98 @@
                         </StackLayout>
                     </ScrollView>
                 </StackLayout>
-            <ContentView x:Name="viewMur">
-               <ScrollView x:Name="AccueilScrollView"  Grid.Row="0">
-            <StackLayout Spacing="0" BackgroundColor="{StaticResource LightBackgroundColor}">
-                <!--VIEW SLIDER HERE-->
-                <Grid IsVisible="false">
-                    <CarouselView:CarouselView x:Name="carouselEvenment" HeightRequest="200" VerticalOptions="Start" ItemsSource="{Binding ActualiteList}" PositionSelected="CarouselEvenment_PositionSelected" Position="{Binding Position, Mode=TwoWay}">
-                        <CarouselView:CarouselView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid ColumnSpacing="10" VerticalOptions="Start" HeightRequest="200">
-                                    <Image Grid.Column="0" Source="{Binding ImageEvent}" Aspect="AspectFill" />
-                                    <Image Grid.Column="0" Source="ShadowImage.png" Aspect="AspectFill" />
-                                    <Grid Grid.Column="0" VerticalOptions="EndAndExpand" Padding="10,25">
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView Padding="0,10,0,0" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="FillAndExpand">
+                            <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" Padding="10,5">
+                                    <StackLayout Spacing="15" Orientation="Horizontal">
+                                        <Frame OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="25.5" HasShadow="false" Padding=".5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start" HorizontalOptions="Start">
+                                            <Image Source="{Binding photoUser}" Aspect="AspectFill" />
+                                        </Frame>
+                                        <StackLayout>
+                                            <Label Text="{Binding fullNameUser}" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
+                                            <StackLayout Spacing="10" Orientation="Horizontal">
+                                                <Label Text="{Binding DatePublication}" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                                <Frame BackgroundColor="{Binding BackgroundTopic}" Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
+                                                    <Label Text="{Binding Topic}" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="10" />
+                                                </Frame>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="15" CBImageHeightRequest="15" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Padding="0" VerticalOptions="StartAndExpand"
+                                            Opacity=".5" Clicked="More_Clicked" />
+                                    </StackLayout>
+                                    <Label Text="{Binding Title}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
+                                </StackLayout>
+                                <Grid Grid.Row="1" IsVisible="{Binding IsImageVisible}">
+                                    <Image Source="{Binding Image}" Aspect="AspectFill" HeightRequest="200" />
+                                </Grid>
+                                <StackLayout Grid.Row="2" VerticalOptions="Start" Padding="15,0" Spacing="5" Orientation="Horizontal">
+                                    <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
+                                    <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
+                                    <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
+                                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                        <Label Text="{Binding NbrComment ,StringFormat='{0} Repondes'}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                        <Label Text="{Binding NbrLikes ,StringFormat='{0} Likes'}" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Grid.Row="3" Padding="15,0,15,10" Spacing="10">
+                                    <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".5" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
+                                    <Grid HorizontalOptions="FillAndExpand">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto" />
                                             <ColumnDefinition Width="*" />
                                         </Grid.ColumnDefinitions>
-                                        <Frame Grid.Column="0" BackgroundColor="{StaticResource Primary}" VerticalOptions="FillAndExpand" HorizontalOptions="Start" Padding="5" HasShadow="false" IsClippedToBounds="true" CornerRadius="8">
-                                            <Label Text="{Binding CodeUnivers}" FontAttributes="Bold" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="14" />
+                                        <Frame Grid.Column="0" OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="20" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="StartAndExpand"
+                                            HorizontalOptions="StartAndExpand">
+                                            <Image Source="{Binding Comment.PhotoUser}" Aspect="AspectFill" />
                                         </Frame>
-                                        <Label Grid.Column="1" Text="{Binding Title}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="{StaticResource White}" />
+                                        <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
+                                            <StackLayout Spacing="0">
+                                                <Label Text="{Binding Comment.FullNameUser}" TextColor="{StaticResource Black}" FontSize="14" FontAttributes="Bold" />
+                                                <Label Text="{Binding Comment.Text}" TextColor="{StaticResource Black}" FontSize="14" />
+                                            </StackLayout>
+                                        </Frame>
                                     </Grid>
-                                </Grid>
-                            </DataTemplate>
-                        </CarouselView:CarouselView.ItemTemplate>
-                    </CarouselView:CarouselView>
-                    <control:CarouselIndicators x:Name="carouselIndicators" Padding="5" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" IndicatorHeight="8" IndicatorWidth="8" UnselectedIndicator="whiteCircle.png" SelectedIndicator="whiteCircle.png" Position="{Binding Position}" />
-                    <Frame VerticalOptions="Start" Margin="0,30,-20,0" HasShadow="false" HorizontalOptions="EndAndExpand" WidthRequest="100" Padding="5,5,20,5" CornerRadius="15" BackgroundColor="{StaticResource LightBackgroundColor}">
-                        <Label Text="FLASH NEWS" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="{StaticResource Accent}" />
-                    </Frame>
-                </Grid>
-               
-                <!--VIEW MUR HERE-->
-                <ContentView BackgroundColor="{StaticResource LightBackgroundColor}" Padding="0,10">
-                    <StackLayout Spacing="10" BackgroundColor="{StaticResource LightBackgroundColor}">
-                        <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="200" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <StackLayout Grid.Row="0" Padding="10,5">
-                                <StackLayout Spacing="15" Orientation="Horizontal">
-                                    <Frame OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="25" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start" HorizontalOptions="Start">
-                                        <Image Source="photoMalal.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <StackLayout>
-                                        <Label Text="MALAL Zakariae" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
-                                       <StackLayout Spacing="10" Orientation="Horizontal"> 
-                                        <Label Text="2 Jan, 2019 à 08:15" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                               <Frame BackgroundColor="{StaticResource OrangeColor}"  Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
-                                                <Label Text="Innovation" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="10" />
-                                            </Frame>
-                                        </StackLayout>
-                                    </StackLayout>
-                                     
-                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="15" CBImageHeightRequest="15" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Padding="0" VerticalOptions="StartAndExpand"
-                                        Opacity=".5" Clicked="More_Clicked" />
+                                    <Grid HorizontalOptions="FillAndExpand">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Frame Grid.Column="0" OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="20.5" HasShadow="false" Padding=".5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="StartAndExpand">
+                                            <Image Source="photoMalal.png" Aspect="AspectFill" />
+                                        </Frame>
+                                        <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
+                                            <Grid HorizontalOptions="FillAndExpand" Padding="0">
+                                                <control:CustomEntry BorderColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" IsCustom="true" Placeholder="Votre Commentaire..." BackgroundColor="Transparent" PlaceholderColor="{StaticResource DarkTextColor}" Padding="15,15,15,15" />
+                                                <control:CustomButton CBImage="iconCamera.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" />
+                                            </Grid>
+                                        </Frame>
+                                    </Grid>
                                 </StackLayout>
-                             
-                                <Label Text="Première participation d'OCP à la CIIE" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
-                            </StackLayout>
-                            <Grid Grid.Row="1" >
-                                <Image Source="EventFour.png" Aspect="AspectFill" />
                             </Grid>
-                            <StackLayout Grid.Row="2"  VerticalOptions="Start" Padding="15,0" Spacing="5" Orientation="Horizontal">
-                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
-                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
-                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
-                                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
-                                    <Label Text="12 Repondes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                    <Label Text="14 J'aimes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                </StackLayout>
-                            </StackLayout>
-                            <StackLayout Grid.Row="3" Padding="15,0,15,10" Spacing="10">
-                                <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".5" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
-                                <Grid  HorizontalOptions="FillAndExpand"  >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Frame Grid.Column="0" OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="20" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
-                                        <Image Source="avatarWomen.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
-                                        <StackLayout HorizontalOptions="EndAndExpand" Spacing="0">
-                                            <Label Text="Amal Haki" TextColor="{StaticResource Black}" FontSize="14" FontAttributes="Bold" />
-                                            <Label Text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" TextColor="{StaticResource Black}" FontSize="14" />
-                                        </StackLayout>
-                                    </Frame>
-                                </Grid>
-                                   <Grid  HorizontalOptions="FillAndExpand"  >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Frame Grid.Column="0"  OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="21" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
-                                        <Image Source="photoMalal.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
-                                                                               <Grid  HorizontalOptions="FillAndExpand" Padding="0">
-                                            <control:CustomEntry BorderColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" IsCustom="true" Placeholder="Votre Commentaire..." BackgroundColor="Transparent" PlaceholderColor="{StaticResource DarkTextColor}" Padding="15,15,15,15" />
-                                            <control:CustomButton CBImage="iconCamera.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" />
-                                        </Grid>
-                                    </Frame>
-                                </Grid>
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+                </ListView>
                    
-                            </StackLayout>
-                        </Grid>
-                        <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <StackLayout Grid.Row="0" Padding="10,5">
-                                <StackLayout Spacing="15" Orientation="Horizontal">
-                                    <Frame OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="25" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start" HorizontalOptions="Start">
-                                        <Image Source="photoTahiri.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <StackLayout>
-                                        <Label Text="TAHIRI Meriem" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
-                                       <StackLayout Spacing="10" Orientation="Horizontal"> 
-                                        <Label Text="3 Jan, 2019 à 02:33" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                               <Frame BackgroundColor="{StaticResource RedColor}"  Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
-                                                <Label Text="Digital" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="10" />
-                                            </Frame>
-                                        </StackLayout>
-                                    </StackLayout>
-                                     
-                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="15" CBImageHeightRequest="15" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Padding="0" VerticalOptions="StartAndExpand"
-                                        Opacity=".5" Clicked="More_Clicked" />
-                                </StackLayout>
-                             
-                                <Label Text="Hello cher club, je suis à la recherche d'un encadrant pour le développement d'une solution digital sur Android" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
-                            </StackLayout>
-                           
-                            <StackLayout Grid.Row="1"  VerticalOptions="Start" Padding="15,0" Spacing="5" Orientation="Horizontal">
-                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
-                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
-                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
-                                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
-                                    <Label Text="37 Repondes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                    <Label Text="22 J'aimes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                </StackLayout>
-                            </StackLayout>
-                            <StackLayout Grid.Row="2" Padding="15,0,15,10" Spacing="10">
-                                <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".5" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
-                                <Grid  HorizontalOptions="FillAndExpand"  >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Frame Grid.Column="0" OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="20" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
-                                        <Image Source="avatarWomen.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
-                                        <StackLayout Spacing="0">
-                                            <Label Text="Yassin Kasimi" TextColor="{StaticResource Black}" FontSize="14" FontAttributes="Bold" />
-                                            <Label Text="The point of using Lorem Ipsum is that it" TextColor="{StaticResource Black}" FontSize="14" />
-                                        </StackLayout>
-                                    </Frame>
-                                </Grid>
-                                   <Grid  HorizontalOptions="FillAndExpand"  >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Frame Grid.Column="0"  OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="21" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
-                                        <Image Source="photoMalal.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
-                                                                               <Grid  HorizontalOptions="FillAndExpand" Padding="0">
-                                            <control:CustomEntry BorderColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" IsCustom="true" Placeholder="Votre Commentaire..." BackgroundColor="Transparent" PlaceholderColor="{StaticResource DarkTextColor}" Padding="15,15,15,15" />
-                                            <control:CustomButton CBImage="iconCamera.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" />
-                                        </Grid>
-                                    </Frame>
-                                </Grid>
-                   
-                            </StackLayout>
-                        </Grid>
-                          <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="200" />
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <StackLayout Grid.Row="0" Padding="10,5">
-                                <StackLayout Spacing="15" Orientation="Horizontal">
-                                    <Frame OutlineColor="#20000000" HeightRequest="50" WidthRequest="50" CornerRadius="25" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start" HorizontalOptions="Start">
-                                        <Image Source="photoDerrij.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <StackLayout>
-                                        <Label Text="DERRIJ Faris" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
-                                       <StackLayout Spacing="10" Orientation="Horizontal"> 
-                                        <Label Text="4 Jan, 2019 à 05:51" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                               <Frame BackgroundColor="{StaticResource BlueColor}"  Padding="5,1" HasShadow="false" IsClippedToBounds="true" CornerRadius="4">
-                                                <Label Text="International" LineBreakMode="TailTruncation" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="White" FontSize="10" />
-                                            </Frame>
-                                        </StackLayout>
-                                    </StackLayout>
-                                     
-                                    <control:CustomButton CBImage="iconMore.png" CBImageWidthRequest="15" CBImageHeightRequest="15" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" Rotation="90" Padding="0" VerticalOptions="StartAndExpand"
-                                        Opacity=".5" Clicked="More_Clicked" />
-                                </StackLayout>
-                             
-                                <Label Text="Félicitation à OCP qui a reçu la médaille d'Or HSE" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="{StaticResource DarkTextColor}" />
-                            </StackLayout>
-                            <Grid Grid.Row="1" >
-                                <Image Source="EventFour.png" Aspect="AspectFill" />
-                            </Grid>
-                            <StackLayout Grid.Row="2"  VerticalOptions="Start" Padding="15,0" Spacing="5" Orientation="Horizontal">
-                                <control:CustomButton CBImage="iconLike.png" CBImageWidthRequest="25" CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Like_Clicked" />
-                                <control:CustomButton CBImage="iconChat.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Commenter_Clicked" />
-                                <control:CustomButton CBImage="iconShare.png" CBImageWidthRequest="25"  CBHasShadow="false" CBPadding="0" StyleCorner="Default" Clicked="Share_Clicked" />
-                                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
-                                    <Label Text="18 Repondes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                    <Label Text="51 J'aimes"  VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand" TextColor="{StaticResource DarkTextColor}" FontSize="14" />
-                                </StackLayout>
-                            </StackLayout>
-                            <StackLayout Grid.Row="3" Padding="15,0,15,10" Spacing="10">
-                                <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".5" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
-                                <Grid  HorizontalOptions="FillAndExpand"  >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Frame Grid.Column="0" OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="20" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
-                                        <Image Source="avatarWomen.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,5" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
-                                        <StackLayout HorizontalOptions="EndAndExpand" Spacing="0">
-                                            <Label Text="Amal Haki" TextColor="{StaticResource Black}" FontSize="14" FontAttributes="Bold" />
-                                            <Label Text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout" TextColor="{StaticResource Black}" FontSize="14" />
-                                        </StackLayout>
-                                    </Frame>
-                                </Grid>
-                                   <Grid  HorizontalOptions="FillAndExpand"  >
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Frame Grid.Column="0"  OutlineColor="#20000000" HeightRequest="40" WidthRequest="40" CornerRadius="21" HasShadow="false" Padding="1" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
-                                        <Image Source="photoMalal.png" Aspect="AspectFill" />
-                                    </Frame>
-                                    <Frame Grid.Column="1" CornerRadius="20" HasShadow="false" Padding="15,0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="Start">
-                                                                               <Grid  HorizontalOptions="FillAndExpand" Padding="0">
-                                            <control:CustomEntry BorderColor="{StaticResource LightBackgroundColor}" HorizontalOptions="FillAndExpand" IsCustom="true" Placeholder="Votre Commentaire..." BackgroundColor="Transparent" PlaceholderColor="{StaticResource DarkTextColor}" Padding="15,15,15,15" />
-                                            <control:CustomButton CBImage="iconCamera.png" CBImageWidthRequest="20" CBImageHeightRequest="20" CBHasShadow="false" CBPadding="0" StyleCorner="Default" HorizontalOptions="EndAndExpand" />
-                                        </Grid>
-                                    </Frame>
-                                </Grid>
-                   
-                            </StackLayout>
-                        </Grid>
-                  
-    
-                    </StackLayout>
-                </ContentView>
-            </StackLayout>
-        </ScrollView>
-                </ContentView>
-        </Grid>
-     
+                         <control:CustomTemplateButton x:Name="btnFloating" VerticalOptions="End" HorizontalOptions="EndAndExpand" Clicked="GoTop_Clicked" Margin="20" Opacity=".9">
+                <Frame  Style="{StaticResource CardStyle}" Rotation="-90" HeightRequest="40" WidthRequest="40" CornerRadius="20" BackgroundColor="{StaticResource LightBackgroundColor}" Padding="0" >
+                    <Image Source="iconRightFlesh.png" Aspect="AspectFit" Margin="10" />
+                </Frame>
+                    
+                    </control:CustomTemplateButton>
+
+            </Grid>
     </ContentPage.Content>
 </ContentPage>

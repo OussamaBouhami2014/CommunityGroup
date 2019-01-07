@@ -17,7 +17,7 @@ namespace CommunityGroup.Views.Tapped
         {
             InitializeComponent();
 
-            this.CurrentPageChanged += OnCurrentPageChanged;
+            //this.CurrentPageChanged += OnCurrentPageChanged;
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -29,36 +29,34 @@ namespace CommunityGroup.Views.Tapped
                 App.StandardPageHeight = height;
                 App.StandardPageWidth = width;
             }
-
         }
 
-        private void OnCurrentPageChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
+        //private void OnCurrentPageChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        var currentPage = this.Children[this.Children.IndexOf(this.CurrentPage)];
 
-                imgToolbarFilter.IsVisible = currentPage.GetType() == typeof(ActualitePage) ? true : false;
-                imgToolbarRecherche.IsVisible = currentPage.GetType() == typeof(NetworkPage) ? true : false;
+        //        imgToolbarFilter.IsVisible = currentPage.GetType() == typeof(ActualitePage) ? true : false;
+        //        imgToolbarRecherche.IsVisible = currentPage.GetType() == typeof(NetworkPage) ? true : false;
 
-                foreach (var item in this.Children)
-                {
-                    if (item != currentPage)
-                    {
-                        item.Icon = item.Icon.File.Replace("Active","");
-                    }
-                    else
-                    {
-                        currentPage.Icon = currentPage.Icon.File + "Active";
-                    }
-                }
-            }
-            catch (Exception Ex)
-            {
-                AppsHelper.Snack(Ex.Message);
-            }
-        }
-
+        //        foreach (var item in this.Children)
+        //        {
+        //            if (item != currentPage)
+        //            {
+        //                item.Icon = item.Icon.File.Replace("Active","");
+        //            }
+        //            else
+        //            {
+        //                currentPage.Icon = currentPage.Icon.File + "Active";
+        //            }
+        //        }
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        AppsHelper.Snack(Ex.Message);
+        //    }
+        //}
 
         private async void Filter_Clicked(object sender, System.EventArgs e)
         {
@@ -70,7 +68,6 @@ namespace CommunityGroup.Views.Tapped
                 }
 
                 await PopupNavigation.Instance.PushPopupAsyncSingle(ActualiteFilterPopup, true);
-
             }
             catch (Exception Ex)
             {
@@ -82,7 +79,6 @@ namespace CommunityGroup.Views.Tapped
             try
             {
                 await Application.Current.MainPage.Navigation.PushAsyncSingle(new Notification.NotificationPage());
-
             }
             catch (Exception Ex)
             {
@@ -101,17 +97,13 @@ namespace CommunityGroup.Views.Tapped
             }
         }
 
-
-       
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(App.LightBackgroundColor);
             MessagingService.Current.SendMessage(MessageKeys.Message_ChangeStatutBarColor, App.ColorStatutBar);
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
-
         }
 
         protected override void OnDisappearing()

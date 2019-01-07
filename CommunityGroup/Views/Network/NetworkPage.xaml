@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CommunityGroup.Views.Network.NetworkPage" BackgroundColor="{StaticResource White}" Title="Network">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="15,20" Spacing="20">
-                <Grid>
-                    <Image Grid.Row="0" Source="DemiCircle.png" Grid.ColumnSpan="3" Margin="-15,-40,-15,0" Aspect="AspectFill"/>
-                    <StackLayout Grid.Column="0">
+        <Grid RowSpacing="0">
+            <BoxView Grid.Row="0" BackgroundColor="{StaticResource LightBackgroundColor}"/>
+            <BoxView Grid.Row="1" BackgroundColor="{StaticResource White}"/>
+            <StackLayout  Grid.Row="0" Grid.RowSpan="2" Spacing="20" >
+          
+                
+                      <ListView x:Name="NetworksListView" BackgroundColor="Transparent" ItemsSource="{Binding ListNetwork}" IsPullToRefreshEnabled="True" Refreshing="NetworksListView_Refreshing" HasUnevenRows="True" CachingStrategy="RecycleElementAndDataTemplate" ItemSelected="NetworksListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="Default" SeparatorColor="{StaticResource BorderColor}" Footer="" >
+                  <ListView.Header>
+                          <Grid Padding="15,20"  BackgroundColor="{StaticResource White}" >
+                     <Image Grid.Row="0" Source="DemiCircle.png" Grid.ColumnSpan="3" Margin="-15,-40,-15,0" Aspect="AspectFill"/>
+                    <StackLayout Grid.Column="0" >
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="0">
                             <Frame OutlineColor="{StaticResource White}" HeightRequest="40" WidthRequest="40" CornerRadius="20" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HasShadow="false" Padding="0" IsClippedToBounds="true" BackgroundColor="{StaticResource LightBackgroundColor}">
                                 <Image Grid.Column="0" Source="photoDerrij" Aspect="AspectFill" />
@@ -61,12 +67,11 @@
                     
                    
                 </Grid>
-                
-                      <ListView x:Name="MessagesListView" BackgroundColor="Transparent" ItemsSource="{Binding ListNetwork}" IsPullToRefreshEnabled="True" Refreshing="MessagesListView_Refreshing" HasUnevenRows="True" CachingStrategy="RecycleElementAndDataTemplate" ItemSelected="MessagesListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="Default" SeparatorColor="{StaticResource BorderColor}" Footer="" >
-                    <ListView.ItemTemplate>
+                </ListView.Header>
+                <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                             <ContentView Padding="10,15" >
+                             <ContentView Padding="20,15" BackgroundColor="{StaticResource White}" >
             <Grid  ColumnSpacing="10" VerticalOptions="Start">
        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
@@ -99,6 +104,6 @@
                 </ListView>
                 
             </StackLayout>
-        </ScrollView>
+            </Grid>
     </ContentPage.Content>
 </ContentPage>

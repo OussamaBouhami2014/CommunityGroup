@@ -45,6 +45,10 @@ namespace CommunityGroup.Droid.Renderers
 
         private void UpdateControl()
         {
+            try
+            {
+
+           
 
             var element = (CustomEntry)Element;
 
@@ -68,5 +72,11 @@ namespace CommunityGroup.Droid.Renderers
             if (element.IsBorderErrorVisible)
                 this.Control.Error = element.ErrorText;
         }
+            catch (System.Exception Ex)
+            {
+               string s = Ex.Message;
+                //Debug.WriteLine
+            }
+}
     }
 }

@@ -19,22 +19,29 @@ namespace CommunityGroup.Views.Network
 
         }
 
-        private void MessagesListView_Refreshing(object sender, System.EventArgs e)
+        private void NetworksListView_Refreshing(object sender, System.EventArgs e)
         {
-            MessagesListView.IsRefreshing = false;
+            NetworksListView.IsRefreshing = false;
         }
 
-        private async void MessagesListView_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        private async void NetworksListView_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            var item = ((ListView)sender).SelectedItem as DtoMessage;
-            if (item == null)
-                return;
+            try
+            {
+                var item = ((ListView)sender).SelectedItem as DtoNetwork;
+                if (item == null)
+                    return;
 
-            await Application.Current.MainPage.Navigation.PushAsyncSingle(new Chat.ChatPage(item));
+                //await Application.Current.MainPage.Navigation.PushAsyncSingle(new Chat.ChatPage(item));
 
-            ((ListView)sender).SelectedItem = null;
+                ((ListView)sender).SelectedItem = null;
+            }
+            catch (Exception Ex)
+            {
+                AppsHelper.Snack(Ex.Message);
+            }
+           
         }
-
 
     }
 }
