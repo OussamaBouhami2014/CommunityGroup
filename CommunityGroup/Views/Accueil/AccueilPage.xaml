@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" x:Class="CommunityGroup.Views.Accueil.AccueilPage">
     <ContentPage.Content>
-        <Grid>
-        <ListView x:Name="StatutsListView" ItemsSource="{Binding ListStatuts}" BackgroundColor="{StaticResource White}" HasUnevenRows="True" ItemSelected="MurListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="None" SeparatorColor="{StaticResource BorderColor}" Footer="">
-            <ListView.Header>
-                <StackLayout x:Name="viewTopics" BackgroundColor="Gray" VerticalOptions="Start" Grid.Row="0" Spacing="0">
+        <StackLayout Spacing="0">
+                   <StackLayout x:Name="viewTopics" BackgroundColor="Gray" VerticalOptions="Start" Grid.Row="0" Spacing="0">
                     <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="{StaticResource White}" Padding="15,10,0,0" Margin="0,0,0,0">
                         <Label Text="IDEATION TOPICS" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
                         <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".0" HorizontalOptions="FillAndExpand" />
@@ -70,7 +68,8 @@
                         </StackLayout>
                     </ScrollView>
                 </StackLayout>
-            </ListView.Header>
+        <ListView x:Name="StatutsListView" ItemsSource="{Binding ListStatuts}" BackgroundColor="{StaticResource White}" HasUnevenRows="True" ItemSelected="MurListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="None" SeparatorColor="{StaticResource BorderColor}" Footer="">
+
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -162,6 +161,6 @@
                     
                     </control:CustomTemplateButton>
 
-            </Grid>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>
