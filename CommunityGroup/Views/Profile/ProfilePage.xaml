@@ -11,7 +11,10 @@
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
-        <ScrollView>
+          <Grid RowSpacing="0">
+            <BoxView Grid.Row="0" BackgroundColor="{StaticResource White}"/>
+            <BoxView Grid.Row="1" BackgroundColor="{StaticResource LightBackgroundColor}"/>
+        <ScrollView Grid.Row="0" Grid.RowSpan="2">
             <StackLayout>
                 <StackLayout Spacing="0">
                     <Grid IsVisible="true" BackgroundColor="{StaticResource White}">
@@ -37,8 +40,8 @@
                                 </Frame>
                             </StackLayout>
                             <StackLayout x:Name="viewNameJob" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand">
-                                <Label x:Name="txtName" Text="MALAL Zakariae" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
-                                <Label x:Name="txtRole" Text="HR Digital Manager" TextColor="{StaticResource Black}" FontSize="10" FontAttributes="Bold" />
+                                <Label x:Name="txtName" Text="MALAL Zakariae" LineBreakMode="TailTruncation" TextColor="{StaticResource Black}" FontAttributes="Bold" FontSize="18" />
+                                <Label x:Name="txtRole" Text="HR Digital Manager" LineBreakMode="TailTruncation" TextColor="{StaticResource Black}" FontSize="10" FontAttributes="Bold" />
                             </StackLayout>
                             <control:CustomButton Grid.Row="0" Grid.Column="4" CBText="edit" ImageAlignment="Top" CBImage="iconEditAccent.png" StyleCorner="Default" CBTextColor="{StaticResource Black}" CBHasShadow="false" CBImageHeightRequest="15" CBImageWidthRequest="15"
                                 HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" CBPadding="5" Clicked="Edit_Clicked" />
@@ -143,5 +146,6 @@
               
             </StackLayout>
         </ScrollView>
+            </Grid>
     </ContentPage.Content>
 </ContentPage>

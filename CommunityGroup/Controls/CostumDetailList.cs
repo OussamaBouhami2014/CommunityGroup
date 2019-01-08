@@ -11,7 +11,7 @@ namespace CommunityGroup.Controls
     {
          
         private ICommand _innerSelectedCommand;
-        private readonly ScrollView _scrollView;
+        public readonly ScrollView _scrollView;
         private readonly StackLayout _itemsStackLayout;
 
 

@@ -33,25 +33,28 @@ namespace CommunityGroup.Views.Accueil
             Vm = new StatusViewModel();
             this.BindingContext = Vm;
 
-            //AccueilScrollView.Scrolled += AccueilScrollViewOnScrolled;
+            StatutsListView._scrollView.Scrolled += StatutsScrollViewOnScrolled;
+        }
+ 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
         }
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
             if (height > 0)
             {
-                //AccueilScrollView.Margin = new Thickness(0,viewTopics.Height,0,0) ;
-            }
-        }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
+                //viewMur.TranslationY = viewTopics.Height;
+                viewMur.Margin = new Thickness(0, viewTopics.Height, 0, 0);
 
+            }
         }
 
         double OldY = 0;
         int i = 0;
-        private void AccueilScrollViewOnScrolled(object sender, ScrolledEventArgs e)
+        private void StatutsScrollViewOnScrolled(object sender, ScrolledEventArgs e)
         {
             //if (e.ScrollY >= 0)
             //{
@@ -59,20 +62,20 @@ namespace CommunityGroup.Views.Accueil
             //    if (viewTopics.TranslationY >= -viewTopics.Height)
             //    {
             //        viewTopics.TranslationY = -e.ScrollY;
-            //        viewMur.TranslationY = -e.ScrollY;
-            //        i = 0;
+            //        StatutsListView._scrollView.ScaleTo(StatutsListView._scrollView.ScrollY + e.ScrollY);
+            //        //i = 0;
             //    }
             //    else if (e.ScrollY < OldY)
             //    {
 
-            //        var newPosition = viewTopics.TranslationY - 10;
+            //        //var newPosition = viewTopics.TranslationY - 10;
 
-            //        i++;
+            //        //i++;
             //        //viewTopics.TranslationY = (viewTopics.TranslationY + (e.ScrollY - OldY)) - viewTopics.Height;
             //        //viewMur.TranslationY =  (viewTopics.TranslationY + (e.ScrollY - OldY)) - viewTopics.Height;
 
-            //        viewTopics.TranslationY = i;
-            //        viewMur.TranslationY = i;
+            //        //viewTopics.TranslationY = i;
+            //        ////viewMur.TranslationY = i;
             //    }
 
             //    OldY = e.ScrollY;
@@ -248,7 +251,7 @@ namespace CommunityGroup.Views.Accueil
             try
             {
                 var firstItem = StatutsListView.ItemsSource.Cast<object>().FirstOrDefault();
-                StatutsListView.ScrollTo(firstItem, ScrollToPosition.End, true);
+                //StatutsListView.ScrollTo(firstItem, ScrollToPosition.End, true);
             }
             catch (Exception Ex)
             {

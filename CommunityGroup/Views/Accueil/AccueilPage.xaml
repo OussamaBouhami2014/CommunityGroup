@@ -1,78 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" x:Class="CommunityGroup.Views.Accueil.AccueilPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CommunityGroup.Controls" xmlns:CarouselView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" x:Class="CommunityGroup.Views.Accueil.AccueilPage" BackgroundColor="Teal">
     <ContentPage.Content>
-        <StackLayout Spacing="0">
-                   <StackLayout x:Name="viewTopics" BackgroundColor="Gray" VerticalOptions="Start" Grid.Row="0" Spacing="0">
-                    <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="{StaticResource White}" Padding="15,10,0,0" Margin="0,0,0,0">
-                        <Label Text="IDEATION TOPICS" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
-                        <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".0" HorizontalOptions="FillAndExpand" />
-                    </StackLayout>
-                    <ScrollView HorizontalScrollBarVisibility="Never" BackgroundColor="{StaticResource White}" VerticalScrollBarVisibility="Never" Orientation="Horizontal">
-                        <StackLayout Orientation="Horizontal" Spacing="10" Padding="10,10">
-                            <control:CustomTemplateButton Clicked="TopicOne_Clicked">
-                                <StackLayout Spacing="15">
-                                    <Frame x:Name="viewTopicOne" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="futuristic.png" Margin="20" />
-                                    </Frame>
-                                    <Label Text="INNOVATION" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                                </StackLayout>
-                            </control:CustomTemplateButton>
-                            <control:CustomTemplateButton Clicked="TopicTwo_Clicked">
-                                <StackLayout Spacing="15">
-                                    <Frame x:Name="viewTopicTwo" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="transparent.png" Margin="20" />
-                                    </Frame>
-                                    <Label Text="DIGITAL" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                                </StackLayout>
-                            </control:CustomTemplateButton>
-                            <control:CustomTemplateButton Clicked="TopicThree_Clicked">
-                                <StackLayout Spacing="15">
-                                    <Frame x:Name="viewTopicThree" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="synthetic-ecology.png" Margin="20" />
-                                    </Frame>
-                                    <Label Text="AGRICULTURE" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                                </StackLayout>
-                            </control:CustomTemplateButton>
-                            <control:CustomTemplateButton Clicked="TopicFour_Clicked">
-                                <StackLayout Spacing="15">
-                                    <Frame x:Name="viewTopicFour" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="brain.png" Margin="20" />
-                                    </Frame>
-                                    <Label Text="MINING" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                                </StackLayout>
-                            </control:CustomTemplateButton>
-                            <control:CustomTemplateButton Clicked="TopicFive_Clicked">
-                                <StackLayout Spacing="15">
-                                    <Frame x:Name="viewTopicFive" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="hologram.png" Margin="20" />
-                                    </Frame>
-                                    <Label Text="INTERNATIONAL" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                                </StackLayout>
-                            </control:CustomTemplateButton>
-                            <control:CustomTemplateButton Clicked="TopicSix_Clicked">
-                                <StackLayout Spacing="15">
-                                    <Frame x:Name="viewTopicSix" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="smart-house.png" Margin="20" />
-                                    </Frame>
-                                    <Label Text="ECO-SYSTEME" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                                </StackLayout>
-                            </control:CustomTemplateButton>
-                            <control:CustomTemplateButton Clicked="TopicMore_Clicked">
-                                <StackLayout Spacing="15">
-                                    <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="iconMore.png" Margin="30" Opacity=".5" />
-                                    </Frame>
-                                    <Label Text="AUTRE" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
-                                </StackLayout>
-                            </control:CustomTemplateButton>
-                        </StackLayout>
-                    </ScrollView>
-                </StackLayout>
-        <ListView x:Name="StatutsListView" ItemsSource="{Binding ListStatuts}" BackgroundColor="{StaticResource White}" HasUnevenRows="True" ItemSelected="MurListView_ItemSelected" VerticalOptions="FillAndExpand" SeparatorVisibility="None" SeparatorColor="{StaticResource BorderColor}" Footer="">
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+               
+         
+            <ContentView  Grid.Row="0" x:Name="viewMur" VerticalOptions="FillAndExpand">
+        <control:CostumList x:Name="StatutsListView" ItemsSource="{Binding ListStatuts}" BackgroundColor="{StaticResource White}"  SelectedItem="MurListView_ItemSelected" VerticalOptions="FillAndExpand"  >
 
-            <ListView.ItemTemplate>
+            <control:CostumList.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
                         <ContentView Padding="0,10,0,0" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource LightBackgroundColor}" VerticalOptions="FillAndExpand">
                             <Grid RowSpacing="0" BackgroundColor="{StaticResource White}">
                                 <Grid.RowDefinitions>
@@ -149,18 +89,76 @@
                                 </StackLayout>
                             </Grid>
                         </ContentView>
-                    </ViewCell>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-                </ListView>
-                   
-                         <control:CustomTemplateButton x:Name="btnFloating" VerticalOptions="End" HorizontalOptions="EndAndExpand" Clicked="GoTop_Clicked" Margin="20" Opacity=".9">
-                <Frame  Style="{StaticResource CardStyle}" Rotation="-90" HeightRequest="40" WidthRequest="40" CornerRadius="20" BackgroundColor="{StaticResource LightBackgroundColor}" Padding="0" >
-                    <Image Source="iconRightFlesh.png" Aspect="AspectFit" Margin="10" />
-                </Frame>
-                    
-                    </control:CustomTemplateButton>
-
-            </StackLayout>
+            </control:CostumList.ItemTemplate>
+                </control:CostumList>
+                </ContentView>
+                   <StackLayout x:Name="viewTopics"  BackgroundColor="Gray" VerticalOptions="Start" Grid.Row="0" Spacing="0">
+                    <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="{StaticResource White}" Padding="15,10,0,0" Margin="0,0,0,0">
+                        <Label Text="IDEATION TOPICS" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource Black}" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
+                        <BoxView Style="{StaticResource SeparatorStyle}" Opacity=".0" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    <ScrollView HorizontalScrollBarVisibility="Never" BackgroundColor="{StaticResource White}" VerticalScrollBarVisibility="Never" Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal" Spacing="10" Padding="10,10">
+                            <control:CustomTemplateButton Clicked="TopicOne_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicOne" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="futuristic.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="INNOVATION" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicTwo_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicTwo" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="transparent.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="DIGITAL" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicThree_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicThree" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="synthetic-ecology.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="AGRICULTURE" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicFour_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicFour" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="brain.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="MINING" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicFive_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicFive" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="hologram.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="INTERNATIONAL" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicSix_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame x:Name="viewTopicSix" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="smart-house.png" Margin="20" />
+                                    </Frame>
+                                    <Label Text="ECO-SYSTEME" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                            <control:CustomTemplateButton Clicked="TopicMore_Clicked">
+                                <StackLayout Spacing="15">
+                                    <Frame HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
+                                        <Image Source="iconMore.png" Margin="30" Opacity=".5" />
+                                    </Frame>
+                                    <Label Text="AUTRE" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
+                                </StackLayout>
+                            </control:CustomTemplateButton>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </Grid>
     </ContentPage.Content>
 </ContentPage>
