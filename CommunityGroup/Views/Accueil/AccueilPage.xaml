@@ -119,7 +119,7 @@
                             <control:CustomTemplateButton Clicked="TopicThree_Clicked">
                                 <StackLayout Spacing="15">
                                     <Frame x:Name="viewTopicThree" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="synthetic-ecology.png" Margin="20" />
+                                        <Image Source="synthetic_ecology.png" Margin="20" />
                                     </Frame>
                                     <Label Text="AGRICULTURE" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
                                 </StackLayout>
@@ -143,7 +143,7 @@
                             <control:CustomTemplateButton Clicked="TopicSix_Clicked">
                                 <StackLayout Spacing="15">
                                     <Frame x:Name="viewTopicSix" HeightRequest="100" WidthRequest="100" CornerRadius="50" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HasShadow="false" BackgroundColor="{StaticResource LightGrayColor}">
-                                        <Image Source="smart-house.png" Margin="20" />
+                                        <Image Source="smart_house.png" Margin="20" />
                                     </Frame>
                                     <Label Text="ECO-SYSTEME" LineBreakMode="TailTruncation" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="13" TextColor="{StaticResource Black}" />
                                 </StackLayout>

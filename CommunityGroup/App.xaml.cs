@@ -50,6 +50,10 @@ namespace CommunityGroup
 
         public static LoadingPopup LoadingPopup = new LoadingPopup();
 
+        public static string DBPath;
+
+
+
         public App()
         {
             InitializeComponent();
@@ -66,6 +70,23 @@ namespace CommunityGroup
                 MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
             }
               
+        }
+
+        public App(string dbPath)
+        {
+            InitializeComponent();
+
+            //if (Settings.IsLogOut)
+            //{
+            //    MainPage = new NavigationPage(new Views.Login.LoginPage());
+            //}
+            //else
+            //{
+            //    MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
+            //}
+            DBPath = dbPath;
+            MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
+
         }
 
         protected override void OnStart()

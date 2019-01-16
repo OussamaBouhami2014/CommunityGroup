@@ -54,7 +54,13 @@ namespace CommunityGroup.Droid
             #endregion
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            string dbName = "OTN_DB.db3";
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
+            string fullPath = Path.Combine(folderPath, dbName);
+
+
+            LoadApplication(new App(fullPath));
 
             #region MessagingServices
             // Change staut bar color.

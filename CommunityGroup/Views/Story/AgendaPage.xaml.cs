@@ -87,6 +87,7 @@ namespace CommunityGroup.Views.Story
 
             });
         }
+
         private void FloatingButton_Clicked(object sender, System.EventArgs e)
         {
             if (viewDetailFloating.IsVisible)

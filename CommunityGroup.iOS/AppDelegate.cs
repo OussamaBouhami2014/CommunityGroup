@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
@@ -36,7 +37,11 @@ namespace CommunityGroup.iOS
 
             //Xamarin.FormsMaps.Init();
 
-            LoadApplication(new App());
+            string dbName = "OTN_DB.db3";
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),"..","Library");
+            string fullPath = Path.Combine(folderPath, dbName);
+
+            LoadApplication(new App(fullPath));
 
             //Change TabBar Color To PrimaryColor
             UITabBar.Appearance.TintColor = new UIColor(red: 0.00f, green: 0.68f, blue: 0.71f, alpha: 1.0f);
