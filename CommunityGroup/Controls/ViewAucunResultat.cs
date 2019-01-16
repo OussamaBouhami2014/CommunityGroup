@@ -1,5 +1,4 @@
 ﻿using System;
-using FFImageLoading.Forms;
 using Xamarin.Forms;
 
 namespace CommunityGroup.Controls
@@ -29,11 +28,10 @@ namespace CommunityGroup.Controls
             this.Padding = new Thickness(50, 0);
             this.Spacing = 10;
 
-            var imageReessayer = new CachedImage()
+            var imageReessayer = new Image()
             {
                 Opacity = .2,
                 Source = "iconNotFound.png",
-                ErrorPlaceholder = "info.png",
                 VerticalOptions = LayoutOptions.Center,
                 HeightRequest = 60,
                 WidthRequest = 60

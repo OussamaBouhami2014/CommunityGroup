@@ -53,13 +53,10 @@ namespace CommunityGroup
         public static string DBPath;
 
 
-
-        public App()
+        public App(string dbPath)
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
-            return;
+            DBPath = dbPath;
 
             if (Settings.IsLogOut)
             {
@@ -69,24 +66,6 @@ namespace CommunityGroup
             {
                 MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
             }
-              
-        }
-
-        public App(string dbPath)
-        {
-            InitializeComponent();
-
-            //if (Settings.IsLogOut)
-            //{
-            //    MainPage = new NavigationPage(new Views.Login.LoginPage());
-            //}
-            //else
-            //{
-            //    MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
-            //}
-            DBPath = dbPath;
-            MainPage = new NavigationPage(new Views.Tapped.TappedPagePrincipal());
-
         }
 
         protected override void OnStart()
