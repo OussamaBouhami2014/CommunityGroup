@@ -315,11 +315,11 @@
     <BundleResource Include="Resources\simulation.png" />
     <BundleResource Include="Resources\immersive.png" />
     <BundleResource Include="Resources\hologram.png" />
-    <BundleResource Include="Resources\synthetic-ecology.png" />
+    <BundleResource Include="Resources\synthetic_ecology.png" />
     <BundleResource Include="Resources\weather.png" />
     <BundleResource Include="Resources\transparent.png" />
-    <BundleResource Include="Resources\medical-research.png" />
-    <BundleResource Include="Resources\smart-house.png" />
+    <BundleResource Include="Resources\medical_research.png" />
+    <BundleResource Include="Resources\smart_house.png" />
     <BundleResource Include="Resources\iconMore.png" />
     <BundleResource Include="Resources\brain.png" />
     <BundleResource Include="Resources\futuristic.png" />
